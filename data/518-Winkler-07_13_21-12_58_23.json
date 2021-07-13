@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJKxSsb8e2w1IR4pFl3tTSCjo",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJuYOucbu2w1IRazJOtmiuDvo",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.001084,
+                    "lng": -97.90673609999999
+                },
+                "southwest": {
+                    "lat": 48.992371,
+                    "lng": -97.90864169999999
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1024
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 168
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 167
+                    },
+                    "end_address": "7 Provincial Trunk Hwy 32, RM of Stanley, MB T5J 4C3, Canada",
+                    "end_location": {
+                        "lat": 49.001084,
+                        "lng": -97.9086147
+                    },
+                    "start_address": "ND-32, Walhalla, ND 58282, USA",
+                    "start_location": {
+                        "lat": 48.992371,
+                        "lng": -97.90673609999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 959
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 157
+                            },
+                            "end_location": {
+                                "lat": 49.0005035,
+                                "lng": -97.9086155
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-32 N</b> toward <b>109th St NE</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "iy_jHblqtQcAA_TB{@?o@?]?O?I@i@BU@SBMBKBICC?UHQDQPMLMPCHCLEPETI\\GTABEJA@EDGFi@b@SN_Ap@_@VMJIDI@E@I?EAIAECCAOMSKKCM@IBKFYFe@DcAF"
+                            },
+                            "start_location": {
+                                "lat": 48.992371,
+                                "lng": -97.90673609999999
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "213 ft",
+                                "value": 65
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 11
+                            },
+                            "end_location": {
+                                "lat": 49.001084,
+                                "lng": -97.9086147
+                            },
+                            "html_instructions": "Continue onto <b>MB-32 N</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "clajHzwqtQsBA"
+                            },
+                            "start_location": {
+                                "lat": 49.0005035,
+                                "lng": -97.9086155
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "iy_jHblqtQoY@aBDcALMCg@N_@^QZYrAQf@kA`AwBzAYBYIc@YKCM@UJ_ALcAFsBA"
+            },
+            "summary": "ND-32 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

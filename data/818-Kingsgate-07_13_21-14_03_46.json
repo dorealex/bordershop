@@ -1,0 +1,212 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJxZfMKkmHZFMRxHULe5t5Ly4",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ_RhIhDiHZFMRBypKQOQnx9Y",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.00096500000001,
+                    "lng": -116.1804526
+                },
+                "southwest": {
+                    "lat": 48.9934097,
+                    "lng": -116.1816378
+                }
+            },
+            "copyrights": "Map data \u00a92021 Google",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 960
+                    },
+                    "duration": {
+                        "text": "4 mins",
+                        "value": 214
+                    },
+                    "duration_in_traffic": {
+                        "text": "4 mins",
+                        "value": 227
+                    },
+                    "end_address": "6917 BC-95, Kingsgate, BC V0B 1V1, Canada",
+                    "end_location": {
+                        "lat": 49.00096500000001,
+                        "lng": -116.1806824
+                    },
+                    "start_address": "53761 US-95, Bonners Ferry, ID 83805, USA",
+                    "start_location": {
+                        "lat": 48.9934097,
+                        "lng": -116.1814829
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 747
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 90
+                            },
+                            "end_location": {
+                                "lat": 48.9999946,
+                                "lng": -116.1811372
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-95 N</b> toward <b>Ferry Ave</b>",
+                            "polyline": {
+                                "points": "y_`jHfubdUA?i@Jc@Fi@De@Bi@@u@?o@Ew@Gc@EIAs@Oo@Q}@WkA_@_@Ma@Mc@MCA{Ae@]K[GUAUBKBKB_Cl@a@LeAXKBMBMB[@o@B"
+                            },
+                            "start_location": {
+                                "lat": 48.9934097,
+                                "lng": -116.1814829
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "164 ft",
+                                "value": 50
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 8
+                            },
+                            "end_location": {
+                                "lat": 49.0000238,
+                                "lng": -116.1804526
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Ferry Ave</b>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "}hajHbsbdUEiC"
+                            },
+                            "start_location": {
+                                "lat": 48.9999946,
+                                "lng": -116.1811372
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "154 ft",
+                                "value": 47
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 14
+                            },
+                            "end_location": {
+                                "lat": 49.0004464,
+                                "lng": -116.1804891
+                            },
+                            "html_instructions": "Turn <b>left</b> at the 1st cross street onto <b>Immigration St</b>",
+                            "maneuver": "turn-left",
+                            "polyline": {
+                                "points": "ciajHxnbdUuAF"
+                            },
+                            "start_location": {
+                                "lat": 49.0000238,
+                                "lng": -116.1804526
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "154 ft",
+                                "value": 47
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 14
+                            },
+                            "end_location": {
+                                "lat": 49.0004567,
+                                "lng": -116.1811391
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>Boundary St</b>",
+                            "maneuver": "turn-left",
+                            "polyline": {
+                                "points": "ykajH`obdUA`C"
+                            },
+                            "start_location": {
+                                "lat": 49.0004464,
+                                "lng": -116.1804891
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "39 ft",
+                                "value": 12
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 26
+                            },
+                            "end_location": {
+                                "lat": 49.0005565,
+                                "lng": -116.1810952
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>US-95 N</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "{kajHbsbdUA?A?CAA?AAAAC?AA"
+                            },
+                            "start_location": {
+                                "lat": 49.0004567,
+                                "lng": -116.1811391
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "187 ft",
+                                "value": 57
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 62
+                            },
+                            "end_location": {
+                                "lat": 49.00096500000001,
+                                "lng": -116.1806824
+                            },
+                            "html_instructions": "<b>US-95 N</b> turns slightly <b>right</b> and becomes <b>BC-95 N</b>",
+                            "polyline": {
+                                "points": "olajHzrbdUAECCIUACACACAACCACAAACGEIGICEAMC"
+                            },
+                            "start_location": {
+                                "lat": 49.0005565,
+                                "lng": -116.1810952
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "y_`jHfubdUk@JmALoADeBEeBOcBa@iCw@iBk@yBq@q@Ia@FkCp@aCn@i@Do@BEiCuAFA`CC?IEKKOa@IKIISKSE"
+            },
+            "summary": "US-95 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

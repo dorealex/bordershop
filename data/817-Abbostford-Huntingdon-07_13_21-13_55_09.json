@@ -1,0 +1,140 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ_5LpITRLhFQRyE_octDKLSw",
+            "types": [
+                "premise"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJYf3VYiVLhFQROSxKLLJNQlo",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0026763,
+                    "lng": -122.264881
+                },
+                "southwest": {
+                    "lat": 48.9938927,
+                    "lng": -122.2651762
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 980
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 205
+                    },
+                    "duration_in_traffic": {
+                        "text": "4 mins",
+                        "value": 233
+                    },
+                    "end_address": "2 Sumas Way, Abbotsford, BC V2S 8B7, Canada",
+                    "end_location": {
+                        "lat": 49.0026763,
+                        "lng": -122.2651762
+                    },
+                    "start_address": "1042 Cherry St, Sumas, WA 98295, USA",
+                    "start_location": {
+                        "lat": 48.9938927,
+                        "lng": -122.2649898
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 948
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 193
+                            },
+                            "end_location": {
+                                "lat": 49.0023877,
+                                "lng": -122.2651393
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>Cherry St</b> toward <b>Mitchell St</b>",
+                            "polyline": {
+                                "points": "yb`jHd{fiVG?C@KBU?O?cA?_BAyA?wD?_F?cD?aD?sACw@Ae@A{BCY?q@?E?]Mi@?]?Q@E@SDWHc@LMDOFK@Q@"
+                            },
+                            "start_location": {
+                                "lat": 48.9938927,
+                                "lng": -122.2649898
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "89 ft",
+                                "value": 27
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 10
+                            },
+                            "end_location": {
+                                "lat": 49.0026316,
+                                "lng": -122.2651678
+                            },
+                            "html_instructions": "Continue onto <b>BC-11</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "}wajHb|fiVo@D"
+                            },
+                            "start_location": {
+                                "lat": 49.0023877,
+                                "lng": -122.2651393
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "16 ft",
+                                "value": 5
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 2
+                            },
+                            "end_location": {
+                                "lat": 49.0026763,
+                                "lng": -122.2651762
+                            },
+                            "html_instructions": "Continue straight onto <b>Sumas Way</b>/<wbr/><b>BC-11 N</b>",
+                            "maneuver": "straight",
+                            "polyline": {
+                                "points": "myajHh|fiVI@"
+                            },
+                            "start_location": {
+                                "lat": 49.0026316,
+                                "lng": -122.2651678
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "yb`jHd{fiVm@DmGA}U?mHKkA?c@MgA?WB}Ab@[HaAFI@"
+            },
+            "summary": "Cherry St",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ16FMRLpUnVQRr7_mFIW1b68",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJFdlMHbpUnVQREFKnZTL_6BM",
+            "types": [
+                "premise"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0004695,
+                    "lng": -118.7610875
+                },
+                "southwest": {
+                    "lat": 48.9989283,
+                    "lng": -118.7613479
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.1 mi",
+                        "value": 175
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 19
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 18
+                    },
+                    "end_address": "100 Dominion St, Midway, BC V0H 1M0, Canada",
+                    "end_location": {
+                        "lat": 49.0004695,
+                        "lng": -118.7612361
+                    },
+                    "start_address": "1373 Customs Rd, Curlew, WA 99118, USA",
+                    "start_location": {
+                        "lat": 48.9989283,
+                        "lng": -118.7613479
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "404 ft",
+                                "value": 123
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 9
+                            },
+                            "end_location": {
+                                "lat": 49.0000152,
+                                "lng": -118.7610875
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>Customs Rd</b> toward <b>Dominion St</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "ibajHlqzsUOEgAOkBUUG"
+                            },
+                            "start_location": {
+                                "lat": 48.9989283,
+                                "lng": -118.7613479
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "171 ft",
+                                "value": 52
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 10
+                            },
+                            "end_location": {
+                                "lat": 49.0004695,
+                                "lng": -118.7612361
+                            },
+                            "html_instructions": "<b>Customs Rd</b> turns slightly <b>left</b> and becomes <b>Dominion St</b>",
+                            "polyline": {
+                                "points": "ciajHxozsU[@UDYJIDCB"
+                            },
+                            "start_location": {
+                                "lat": 49.0000152,
+                                "lng": -118.7610875
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "ibajHlqzsUwAUkBUUGq@Fc@PCB"
+            },
+            "summary": "Customs Rd and Dominion St",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

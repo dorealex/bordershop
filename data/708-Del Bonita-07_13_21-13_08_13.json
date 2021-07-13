@@ -1,0 +1,118 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJQ_E1CAsyaVMRTLtF1ufnSXM",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJDZiELuQzaVMRZH2RmQ3SU2Q",
+            "types": [
+                "airport",
+                "establishment",
+                "point_of_interest"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9995853,
+                    "lng": -112.7883082
+                },
+                "southwest": {
+                    "lat": 48.991103,
+                    "lng": -112.7883643
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 944
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 151
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 150
+                    },
+                    "end_address": "Whetstone International Airport, Cardston County, AB 59427, Canada",
+                    "end_location": {
+                        "lat": 48.9995853,
+                        "lng": -112.7883082
+                    },
+                    "start_address": "4020-4064 MT-213, Cut Bank, MT 59427, USA",
+                    "start_location": {
+                        "lat": 48.991103,
+                        "lng": -112.7883643
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 833
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 126
+                            },
+                            "end_location": {
+                                "lat": 48.998591,
+                                "lng": -112.7883406
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>MT-213</b><div style=\"font-size:0.9em\">Entering Canada (Alberta)</div>",
+                            "polyline": {
+                                "points": "kq_jHf~koTcD?kKAoC?aD?mA?yIAI?eE?"
+                            },
+                            "start_location": {
+                                "lat": 48.991103,
+                                "lng": -112.7883643
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "364 ft",
+                                "value": 111
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 25
+                            },
+                            "end_location": {
+                                "lat": 48.9995853,
+                                "lng": -112.7883082
+                            },
+                            "html_instructions": "Continue onto <b>AB-62 N</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "e`ajHb~koTm@AU?c@AW?gAA"
+                            },
+                            "start_location": {
+                                "lat": 48.998591,
+                                "lng": -112.7883406
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "kq_jHf~koTsg@CmHC_BA"
+            },
+            "summary": "MT-213",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

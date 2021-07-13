@@ -1,0 +1,140 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJSyuwXNvbglQRxDhWOZWdM-g",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJZ0VPbN7bglQRUk8PLO4UvsE",
+            "types": [
+                "premise"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0009892,
+                    "lng": -119.658762
+                },
+                "southwest": {
+                    "lat": 48.99931429999999,
+                    "lng": -119.6711432
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1006
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 71
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 71
+                    },
+                    "end_address": "100 Nighthawk Rd, Cawston, BC V0X 1C3, Canada",
+                    "end_location": {
+                        "lat": 49.0009892,
+                        "lng": -119.6711432
+                    },
+                    "start_address": "Similkameen Rd, Loomis, WA 98827, USA",
+                    "start_location": {
+                        "lat": 48.99931429999999,
+                        "lng": -119.658762
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 852
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 60
+                            },
+                            "end_location": {
+                                "lat": 49.0000217,
+                                "lng": -119.6702882
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>Similkameen Rd</b>",
+                            "polyline": {
+                                "points": "udajHfziyUQp@CLId@[rBOzAGr@SpBGl@Gt@ANCd@K|BArA?V?lB?hIAlB?jB?lB?v@?xE?~E?N?~C"
+                            },
+                            "start_location": {
+                                "lat": 48.99931429999999,
+                                "lng": -119.658762
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "112 ft",
+                                "value": 34
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 2
+                            },
+                            "end_location": {
+                                "lat": 49.00006,
+                                "lng": -119.6707499
+                            },
+                            "html_instructions": "Continue onto <b>Nighthawk Rd</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "ciajHhblyUCx@C`@"
+                            },
+                            "start_location": {
+                                "lat": 49.0000217,
+                                "lng": -119.6702882
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "394 ft",
+                                "value": 120
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 9
+                            },
+                            "end_location": {
+                                "lat": 49.0009892,
+                                "lng": -119.6711432
+                            },
+                            "html_instructions": "Continue straight to stay on <b>Nighthawk Rd</b>",
+                            "maneuver": "straight",
+                            "polyline": {
+                                "points": "kiajHdelyU?@EVGXEJGFMDyA@u@A"
+                            },
+                            "start_location": {
+                                "lat": 49.00006,
+                                "lng": -119.6707499
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "udajHfziyUU~@e@xCs@nHIdAObDAbPAh^MtBMd@ULoC?"
+            },
+            "summary": "Similkameen Rd",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

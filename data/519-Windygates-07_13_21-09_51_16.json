@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJI_J4J5EDw1IRwrFcBUUQ3lM",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJS0HijZUDw1IR9N78wXPhwKA",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0011253,
+                    "lng": -98.36014399999999
+                },
+                "southwest": {
+                    "lat": 48.994907,
+                    "lng": -98.36571599999999
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 993
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 176
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 175
+                    },
+                    "end_address": "MB-31, Snowflake, MB R0G 2K0, Canada",
+                    "end_location": {
+                        "lat": 49.0011253,
+                        "lng": -98.36014399999999
+                    },
+                    "start_address": "ND-1, Langdon, ND 58249, USA",
+                    "start_location": {
+                        "lat": 48.994907,
+                        "lng": -98.3649344
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.4 mi",
+                                "value": 622
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 54
+                            },
+                            "end_location": {
+                                "lat": 49.00026399999999,
+                                "lng": -98.36493039999999
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-1 N</b> toward <b>MB-31 N</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "ei`jHx{jwQ}@?_B?sI?KBC?CBMFUNc@VWN}@\\yDt@S@M?YKa@YSYe@q@W[KEICIE"
+                            },
+                            "start_location": {
+                                "lat": 48.994907,
+                                "lng": -98.3649344
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 mi",
+                                "value": 371
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 122
+                            },
+                            "end_location": {
+                                "lat": 49.0011253,
+                                "lng": -98.36014399999999
+                            },
+                            "html_instructions": "<b>ND-1 N</b> turns slightly <b>right</b> and becomes <b>MB-31 N</b>",
+                            "polyline": {
+                                "points": "sjajHx{jwQMKEOEc@AmBAmABaAAg@GiAIoAOiAGg@AKKs@G[UgAAGYmACKQm@EQCE"
+                            },
+                            "start_location": {
+                                "lat": 49.00026399999999,
+                                "lng": -98.36493039999999
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "ei`jHx{jwQ}C?_JBk@Z{@f@}@\\yDt@a@@YKa@Yy@kAc@a@SIS[Ec@AmB@oCIqBYyC]cCu@iD[eA"
+            },
+            "summary": "ND-1 N and MB-31 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

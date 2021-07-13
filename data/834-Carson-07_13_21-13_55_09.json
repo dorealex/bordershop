@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ1zwLfVipYlMREX_zyV3ZApI",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ6_qtUPmrYlMRgfv2q1d01xI",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0001249,
+                    "lng": -118.503192
+                },
+                "southwest": {
+                    "lat": 48.9921924,
+                    "lng": -118.5081204
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 968
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 72
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 71
+                    },
+                    "end_address": "4900 BC-41, Grand Forks, BC V0H 1H5, Canada",
+                    "end_location": {
+                        "lat": 49.0001249,
+                        "lng": -118.503192
+                    },
+                    "start_address": "3 4th of July Creek Rd, Danville, WA 99121, USA",
+                    "start_location": {
+                        "lat": 48.9921924,
+                        "lng": -118.5081204
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 960
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 71
+                            },
+                            "end_location": {
+                                "lat": 49.0000569,
+                                "lng": -118.5031873
+                            },
+                            "html_instructions": "Head <b>northeast</b> on <b>WA-21 N</b> toward <b>Boulos Rd</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "ex_jHvbirUiAcAy@s@_@[g@c@q@k@]WKIAA_Ak@y@c@u@_@i@WOGKGyAs@}@a@k@YKEOGs@[qAk@aA]kA_@kA]sA[_@KuA]WGICk@QYUa@o@]{@K]CECCk@GSA"
+                            },
+                            "start_location": {
+                                "lat": 48.9921924,
+                                "lng": -118.5081204
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "26 ft",
+                                "value": 8
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 1
+                            },
+                            "end_location": {
+                                "lat": 49.0001249,
+                                "lng": -118.503192
+                            },
+                            "html_instructions": "Continue onto <b>Danville Hwy</b>/<wbr/><b>BC-41 N</b>",
+                            "polyline": {
+                                "points": "kiajH|chrUK?"
+                            },
+                            "start_location": {
+                                "lat": 49.0000569,
+                                "lng": -118.5031873
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "ex_jHvbirUkEwD}AoAyBoA_Bw@sDeB{BcAsCiAwC}@aFmAu@UYUa@o@i@yAGIkAI"
+            },
+            "summary": "WA-21 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

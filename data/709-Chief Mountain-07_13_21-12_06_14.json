@@ -1,0 +1,93 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "EiMxMzU1IE1ULTE3LCBCcm93bmluZywgTVQgNTk0MTcsIFVTQSIbEhkKFAoSCdealdGnSW9TEa_Yh1PKnwPhEMsK",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJK9eV8KpJb1MRiFO83pw2a3g",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9977965,
+                    "lng": -113.654801
+                },
+                "southwest": {
+                    "lat": 48.99053869999999,
+                    "lng": -113.6608693
+                }
+            },
+            "copyrights": "Map data \u00a92021 Google",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 941
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 55
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 54
+                    },
+                    "end_address": "AB-6, Mountain View, AB T0K 1N0, Canada",
+                    "end_location": {
+                        "lat": 48.9977965,
+                        "lng": -113.6608693
+                    },
+                    "start_address": "1355 MT-17, Browning, MT 59417, USA",
+                    "start_location": {
+                        "lat": 48.99053869999999,
+                        "lng": -113.654801
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 941
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 55
+                            },
+                            "end_location": {
+                                "lat": 48.9977965,
+                                "lng": -113.6608693
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>MT-17 N</b>",
+                            "polyline": {
+                                "points": "{m_jHneutTGPKZM^_@z@O\\KTKTKPS^S^W^[b@[^SVWXYZWRQPGFSNQNOJMJQJWNMFOHIDOHSHa@PSFSFQDMDOBODSDYHk@LSDSDODSF[J[JWJYLWLSJa@V}@n@wAdAsAjAeA~@cAz@o@d@"
+                            },
+                            "start_location": {
+                                "lat": 48.99053869999999,
+                                "lng": -113.654801
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "{m_jHneutTaAhCs@zA{AbCaBlBeA|@aAr@_Af@yAl@cAViBb@kAXiBp@k@X_BfAkDpCiCzBo@d@"
+            },
+            "summary": "MT-17 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

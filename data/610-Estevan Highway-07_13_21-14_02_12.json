@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJT4QutNQ4IFMRyolwalz6RFk",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJZZXyANQ-IFMRvAFzOdQsL0c",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0015311,
+                    "lng": -103.0023759
+                },
+                "southwest": {
+                    "lat": 48.993066,
+                    "lng": -103.0054382
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1016
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 176
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 175
+                    },
+                    "end_address": "SK-47, Bienfait, SK S0C 0M0, Canada",
+                    "end_location": {
+                        "lat": 49.0015311,
+                        "lng": -103.0023759
+                    },
+                    "start_address": "ND-40, Noonan, ND 58765, USA",
+                    "start_location": {
+                        "lat": 48.993066,
+                        "lng": -103.0050716
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.4 mi",
+                                "value": 711
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 116
+                            },
+                            "end_location": {
+                                "lat": 48.9993618,
+                                "lng": -103.0048231
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-40 N</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "u}_jHtdusRaC?Y?wDAaCAm@?c@CK?Y?WBMF]JaA\\[L[Di@FwDCOAEAC?IC[MOI_@QMIa@Qa@QYIQEMG"
+                            },
+                            "start_location": {
+                                "lat": 48.993066,
+                                "lng": -103.0050716
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 mi",
+                                "value": 305
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 60
+                            },
+                            "end_location": {
+                                "lat": 49.0015311,
+                                "lng": -103.0023759
+                            },
+                            "html_instructions": "Continue onto <b>SK-47 N</b>",
+                            "polyline": {
+                                "points": "_eajHbcusRi@Q[MYQSQUQ]]AAy@cA_AoAy@iA_@eAc@w@EKII"
+                            },
+                            "start_location": {
+                                "lat": 48.9993618,
+                                "lng": -103.0048231
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "u}_jHtdusRuMCqACe@?e@J_Bh@w@Ri@FwDCUCMCyAs@cAc@YIeBm@m@c@s@o@{@eAyByC_@eAc@w@OU"
+            },
+            "summary": "ND-40 N and SK-47 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

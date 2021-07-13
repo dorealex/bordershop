@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ41JxMTjia1MRuhHyXUyWB6k",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ7aSqKknia1MRdapAudRoQLo",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9986896,
+                    "lng": -111.9595225
+                },
+                "southwest": {
+                    "lat": 48.9909489,
+                    "lng": -111.9601363
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.5 mi",
+                        "value": 867
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 173
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 198
+                    },
+                    "end_address": "39825 I-15, Sweet Grass, MT 59484, USA",
+                    "end_location": {
+                        "lat": 48.9986896,
+                        "lng": -111.9601363
+                    },
+                    "start_address": "I-15, Sweet Grass, MT 59484, USA",
+                    "start_location": {
+                        "lat": 48.9909489,
+                        "lng": -111.9596303
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 860
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 171
+                            },
+                            "end_location": {
+                                "lat": 48.9986293,
+                                "lng": -111.9601234
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>I-15 N</b><div style=\"font-size:0.9em\">Entering Canada (Alberta)</div>",
+                            "polyline": {
+                                "points": "mp_jHtbjjTw@B}ADoBBkB@wAAWAYAcD?A?kAEsACE?_AOo@?u@Ay@?O?_CCs@LOBSFk@PcEjA"
+                            },
+                            "start_location": {
+                                "lat": 48.9909489,
+                                "lng": -111.9596303
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "23 ft",
+                                "value": 7
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 2
+                            },
+                            "end_location": {
+                                "lat": 48.9986896,
+                                "lng": -111.9601363
+                            },
+                            "html_instructions": "Continue onto <b>AB-4 N</b>",
+                            "polyline": {
+                                "points": "m`ajHvejjTKB"
+                            },
+                            "start_location": {
+                                "lat": 48.9986293,
+                                "lng": -111.9601234
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "mp_jHtbjjTuCH{EDmHEgDI_AOo@?oBAoCCcAPoGhB"
+            },
+            "summary": "I-15 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

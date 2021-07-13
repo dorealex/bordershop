@@ -1,0 +1,118 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "EiI0MTQ0NiBNTi04OSwgUm9zZWF1LCBNTiA1Njc1MSwgVVNBIhwSGgoUChIJqV_fLLybwFIRzm4H3lFNh74Q5sMC",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ862Jxa-bwFIRLsiJaxqQhGc",
+            "types": [
+                "airport",
+                "establishment",
+                "point_of_interest"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0003926,
+                    "lng": -95.968909
+                },
+                "southwest": {
+                    "lat": 48.993476,
+                    "lng": -95.97847229999999
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1044
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 109
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 108
+                    },
+                    "end_address": "Piney Pinecreek Border Airport, Dieter Township, MN 56751, USA",
+                    "end_location": {
+                        "lat": 49.0003926,
+                        "lng": -95.97847229999999
+                    },
+                    "start_address": "41446 MN-89, Roseau, MN 56751, USA",
+                    "start_location": {
+                        "lat": 48.993476,
+                        "lng": -95.968909
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 990
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 96
+                            },
+                            "end_location": {
+                                "lat": 48.9999414,
+                                "lng": -95.9781898
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>MN-89 N</b> toward <b>Roy Rice</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "g``jHt|vhQyC~EqAxBsExHw@pAoEnHuHhMaA`BINYf@eAhB?@QXEHGFIH]PYP"
+                            },
+                            "start_location": {
+                                "lat": 48.993476,
+                                "lng": -95.968909
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "177 ft",
+                                "value": 54
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 13
+                            },
+                            "end_location": {
+                                "lat": 49.0003926,
+                                "lng": -95.97847229999999
+                            },
+                            "html_instructions": "Continue onto <b>MB-89 N</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "shajHtvxhQQJi@XULGB"
+                            },
+                            "start_location": {
+                                "lat": 48.9999414,
+                                "lng": -95.9781898
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "g``jHt|vhQia@pq@qBlDMPg@ZkBdAGB"
+            },
+            "summary": "MN-89 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

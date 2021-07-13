@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "EiQxMDg4NSBORC0yOCwgU2hlcndvb2QsIE5EIDU4NzgyLCBVU0EiGxIZChQKEgm7OJsmD7PfUhFaosdUuC_87BCFVQ",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJAayRLA2z31IRfHTpjXur-lQ",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.000986,
+                    "lng": -101.6278363
+                },
+                "southwest": {
+                    "lat": 48.992867,
+                    "lng": -101.6281754
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 912
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 89
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 88
+                    },
+                    "end_address": "SK-8, Carievale, SK S0C 0P0, Canada",
+                    "end_location": {
+                        "lat": 49.000986,
+                        "lng": -101.6280048
+                    },
+                    "start_address": "10885 ND-28, Sherwood, ND 58782, USA",
+                    "start_location": {
+                        "lat": 48.992867,
+                        "lng": -101.6278592
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.4 mi",
+                                "value": 707
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 64
+                            },
+                            "end_location": {
+                                "lat": 48.99914440000001,
+                                "lng": -101.6278414
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-28 N</b> toward <b>109th St NW</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "m|_jHbehkRcB?uH?_C?qG?Q?QDw@d@QJM@Y@sCBWGQMUUIEGEQGG?c@C"
+                            },
+                            "start_location": {
+                                "lat": 48.992867,
+                                "lng": -101.6278592
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 205
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 25
+                            },
+                            "end_location": {
+                                "lat": 49.000986,
+                                "lng": -101.6280048
+                            },
+                            "html_instructions": "Continue onto <b>SK-8 N</b>",
+                            "polyline": {
+                                "points": "scajH~dhkRg@?]?s@@aBDW@E@k@F{@HO@"
+                            },
+                            "start_location": {
+                                "lat": 48.99914440000001,
+                                "lng": -101.6278414
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "m|_jHbehkRkX?Q?QDiAp@g@BsCBWGg@c@QKYGkACkEH}BT"
+            },
+            "summary": "ND-28 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

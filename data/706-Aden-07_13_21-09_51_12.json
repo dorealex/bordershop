@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJfd5d8yG9a1MRwBPA66l-awQ",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJRVhYxju9a1MR9i-ykHeSyaA",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9973953,
+                    "lng": -111.2579352
+                },
+                "southwest": {
+                    "lat": 48.98951599999999,
+                    "lng": -111.259224
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 932
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 75
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 74
+                    },
+                    "end_address": "AB-880, Aden, AB T0K 0A0, Canada",
+                    "end_location": {
+                        "lat": 48.9973953,
+                        "lng": -111.2579352
+                    },
+                    "start_address": "County Rd 409 Port of Entry, Whitlash, MT 59545, USA",
+                    "start_location": {
+                        "lat": 48.98951599999999,
+                        "lng": -111.2591749
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 854
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 67
+                            },
+                            "end_location": {
+                                "lat": 48.9971371,
+                                "lng": -111.2588886
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>County Rd 409 Port of Entry</b> toward <b>AB-880 N</b><div style=\"font-size:0.9em\">Entering Canada (Alberta)</div>",
+                            "polyline": {
+                                "points": "og_jHxhafTgA?c@?wE?oC?kB?sD?gA?c@?wE?c@?_@?sBDcA@u@@Q?S@SASEKKo@o@"
+                            },
+                            "start_location": {
+                                "lat": 48.98951599999999,
+                                "lng": -111.2591749
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "256 ft",
+                                "value": 78
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 8
+                            },
+                            "end_location": {
+                                "lat": 48.9973953,
+                                "lng": -111.2579352
+                            },
+                            "html_instructions": "<b>County Rd 409 Port of Entry</b> turns slightly <b>right</b> and becomes <b>AB-880 N</b>",
+                            "polyline": {
+                                "points": "cw`jH`gafTQc@KWI_@Ge@Ac@AW"
+                            },
+                            "start_location": {
+                                "lat": 48.9971371,
+                                "lng": -111.2588886
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "og_jHxhafT{X?_I?_GHg@?SEKKo@o@Qc@Uw@IiAAW"
+            },
+            "summary": "County Rd 409 Port of Entry",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

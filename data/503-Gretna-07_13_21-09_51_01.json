@@ -1,0 +1,93 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "EiExMDkwOCBORC0xOCwgTmVjaGUsIE5EIDU4MjY1LCBVU0EiGxIZChQKEglRy7Lt4tDDUhEBI9RW05XZmRCcVQ",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJPX0pcBzRw1IRfkpGOQYXXqw",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.00120310000001,
+                    "lng": -97.5566867
+                },
+                "southwest": {
+                    "lat": 48.993005,
+                    "lng": -97.5576348
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 942
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 158
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 157
+                    },
+                    "end_address": "ND-18, Gretna, North Dakota R0G 0V0",
+                    "end_location": {
+                        "lat": 49.00120310000001,
+                        "lng": -97.5566867
+                    },
+                    "start_address": "10908 ND-18, Neche, ND 58265, USA",
+                    "start_location": {
+                        "lat": 48.993005,
+                        "lng": -97.5572024
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 942
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 158
+                            },
+                            "end_location": {
+                                "lat": 49.00120310000001,
+                                "lng": -97.5566867
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-18 N</b> toward <b>109th St NE</b>",
+                            "polyline": {
+                                "points": "g}_jHncmrQkLQiKOm@@QCIAW@K@I@IBKFMJIHCBMNOPQNSLKDODO@w@@yAA{@@U@KAMCIEIIMOMSU]MOMOOMIEICOCSCOCIEKGc@Se@?"
+                            },
+                            "start_location": {
+                                "lat": 48.993005,
+                                "lng": -97.5572024
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "g}_jHncmrQuXa@m@@QCa@?UBUJWTs@t@_@RODgABuC?a@?WIWYc@q@k@m@SIc@GYIo@[e@?"
+            },
+            "summary": "ND-18 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

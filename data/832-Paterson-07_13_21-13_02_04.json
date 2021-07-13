@@ -1,0 +1,93 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ5eOgGn_DYlMRRs1faySGL10",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJGSQp54PEYlMRKa9enwMKgcc",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0012733,
+                    "lng": -117.8306682
+                },
+                "southwest": {
+                    "lat": 48.9933428,
+                    "lng": -117.831677
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 911
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 144
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 142
+                    },
+                    "end_address": "10 BC-22, Rossland, BC V0G 1Y0, Canada",
+                    "end_location": {
+                        "lat": 49.0012733,
+                        "lng": -117.831677
+                    },
+                    "start_address": "WA-25, Northport, WA 99157, USA",
+                    "start_location": {
+                        "lat": 48.9933428,
+                        "lng": -117.8307492
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 911
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 144
+                            },
+                            "end_location": {
+                                "lat": 49.0012733,
+                                "lng": -117.831677
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>WA-25 N</b>",
+                            "polyline": {
+                                "points": "k_`jHdydnUKBSF_@Ha@Ja@HUDWDe@D[@U@c@@_@?}@?s@Ci@Gi@Im@KmCc@m@Gg@Ei@Ae@@_@@SBS?WDe@Hc@LUHIDCBEFCDGL[`@A?A@KLMHKFMDMBQBc@Km@QW?K@QF[NYPEBG@G@MACAECKGECCCECEAG?G@QDw@b@"
+                            },
+                            "start_location": {
+                                "lat": 48.9933428,
+                                "lng": -117.8307492
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "k_`jHdydnUaB`@w@N}@JuBDqBCsAQ{Do@uAMoA?s@Dk@DiAV_@NIJg@t@]XYL_@FqA]c@@m@V_@TOBQC[SKEO@QDw@b@"
+            },
+            "summary": "WA-25 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

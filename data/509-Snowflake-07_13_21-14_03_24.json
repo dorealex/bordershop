@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJKw2cawQhw1IRvju8CCbY5ag",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJRWgUqfkgw1IRSGOTGbPB4t0",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0008103,
+                    "lng": -98.69408849999999
+                },
+                "southwest": {
+                    "lat": 48.9925071,
+                    "lng": -98.6943459
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 925
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 63
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 63
+                    },
+                    "end_address": "MB-242, Snowflake, MB R0G 2K0, Canada",
+                    "end_location": {
+                        "lat": 49.0008103,
+                        "lng": -98.69408849999999
+                    },
+                    "start_address": "Port Rd, Wales, ND 58281, USA",
+                    "start_location": {
+                        "lat": 48.9925071,
+                        "lng": -98.6943459
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 843
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 58
+                            },
+                            "end_location": {
+                                "lat": 49.0000882,
+                                "lng": -98.69430559999999
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>91st Ave NE</b>/<wbr/><b>Port Rd</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "ez_jHtfkyQ}@Aq@?c[EA?_B?oA?_@@cBBo@?_A?k@?OAUC"
+                            },
+                            "start_location": {
+                                "lat": 48.9925071,
+                                "lng": -98.6943459
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "269 ft",
+                                "value": 82
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 5
+                            },
+                            "end_location": {
+                                "lat": 49.0008103,
+                                "lng": -98.69408849999999
+                            },
+                            "html_instructions": "Continue onto <b>MB-242 N</b>",
+                            "polyline": {
+                                "points": "qiajHlfkyQiA[{@OE?C?"
+                            },
+                            "start_location": {
+                                "lat": 49.0000882,
+                                "lng": -98.69430559999999
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "ez_jHtfkyQu^GoD?cCDoB?{@A_B_@aAOC?"
+            },
+            "summary": "91st Ave NE/Port Rd",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

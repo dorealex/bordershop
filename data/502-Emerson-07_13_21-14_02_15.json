@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJryZbYL56wVIReFBRJ6c9XkM",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJJZStUZd6wVIR9_cSFykh2gg",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.001432,
+                    "lng": -97.2371356
+                },
+                "southwest": {
+                    "lat": 48.9935756,
+                    "lng": -97.2419215
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 958
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 142
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 160
+                    },
+                    "end_address": "4 5th St W, Emerson, MB R0A 0L0, Canada",
+                    "end_location": {
+                        "lat": 49.001432,
+                        "lng": -97.2371356
+                    },
+                    "start_address": "US-81, Pembina, ND 58271, USA",
+                    "start_location": {
+                        "lat": 48.9935756,
+                        "lng": -97.2419215
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 851
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 112
+                            },
+                            "end_location": {
+                                "lat": 49.00046570000001,
+                                "lng": -97.237157
+                            },
+                            "html_instructions": "Head <b>northeast</b> on <b>I-29 N</b>",
+                            "polyline": {
+                                "points": "{``jH~popQu@o@wIqHeHgGu@o@SOyAgAo@c@k@[k@Y_A_@AA_@MQG]Io@MUCWC}AOs@C"
+                            },
+                            "start_location": {
+                                "lat": 48.9935756,
+                                "lng": -97.2419215
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "351 ft",
+                                "value": 107
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 30
+                            },
+                            "end_location": {
+                                "lat": 49.001432,
+                                "lng": -97.2371356
+                            },
+                            "html_instructions": "Continue onto <b>MB-75 N</b>",
+                            "polyline": {
+                                "points": "}kajHfsnpQMA{@Aw@?}@?"
+                            },
+                            "start_location": {
+                                "lat": 49.00046570000001,
+                                "lng": -97.237157
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "{``jH~popQmKaJ{IwHmBwA{A_AkBy@a@Oo@QeAQuBSaAEqDA"
+            },
+            "summary": "I-29 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,93 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJVcKomtDdYlMRXjkO99FFG24",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJD26Tr3jeYlMROcEK4bX4YY4",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0008484,
+                    "lng": -117.6246789
+                },
+                "southwest": {
+                    "lat": 48.9943199,
+                    "lng": -117.6334634
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1001
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 59
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 58
+                    },
+                    "end_address": "204 Waneta Hwy, Trail, BC V1R, Canada",
+                    "end_location": {
+                        "lat": 49.0008484,
+                        "lng": -117.6246789
+                    },
+                    "start_address": "4110 Deep Lake Boundary Rd, Colville, WA 99114, USA",
+                    "start_location": {
+                        "lat": 48.9943199,
+                        "lng": -117.6334634
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 1001
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 59
+                            },
+                            "end_location": {
+                                "lat": 49.0008484,
+                                "lng": -117.6246789
+                            },
+                            "html_instructions": "Head <b>northeast</b> on <b>Northport-Waneta Rd</b> toward <b>Waneta Hwy</b>/<wbr/><b>BC-22A</b>",
+                            "polyline": {
+                                "points": "oe`jHbh~lUACi@w@_@u@[q@k@qAUi@u@qAq@eAm@{@_AqAaAsAc@e@YUSIa@Qq@Sy@Q_@GGA]G[KQKMOMSIQAEIQOSw@cACCUa@AAQYo@sAq@oAmA_CIs@E]EWAICWG_@EUI[KSCIMUOYOSEGGKKMEIMSKM"
+                            },
+                            "start_location": {
+                                "lat": 48.9943199,
+                                "lng": -117.6334634
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "oe`jHbh~lUk@{@{@gBaA{BgBwCmBmCaAsAc@e@m@_@a@Qq@SyAYe@Im@W[c@KWYe@sAkBaE}HWsBKw@Oq@m@mAiAaB"
+            },
+            "summary": "Northport-Waneta Rd",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

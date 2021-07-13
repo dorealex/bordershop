@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ5VRjxjDoIVMR1GoXwbn3Aok",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJa9ZC9zvoIVMRKI_cIMfyCME",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9998662,
+                    "lng": -103.8060605
+                },
+                "southwest": {
+                    "lat": 48.9921487,
+                    "lng": -103.8097045
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 926
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 117
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 117
+                    },
+                    "end_address": "10935 US-85, Fortuna, ND 58844, USA",
+                    "end_location": {
+                        "lat": 48.9998662,
+                        "lng": -103.8093404
+                    },
+                    "start_address": "US-85, Fortuna, ND 58844, USA",
+                    "start_location": {
+                        "lat": 48.9921487,
+                        "lng": -103.8060605
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 878
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 105
+                            },
+                            "end_location": {
+                                "lat": 48.99945080000001,
+                                "lng": -103.8094658
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>US-85 N</b>",
+                            "polyline": {
+                                "points": "}w_jHzrqxREBu@h@iAz@qB~AqAbAoA`AYTUN]T]TQJa@R_@RC@KFSHUJQFq@V}@Ze@Ja@Hc@He@Hq@Fy@Hu@DODOPa@|@A@SJa@?yA_@k@O_@KA?gAL"
+                            },
+                            "start_location": {
+                                "lat": 48.9921487,
+                                "lng": -103.8060605
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "157 ft",
+                                "value": 48
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 12
+                            },
+                            "end_location": {
+                                "lat": 48.9998662,
+                                "lng": -103.8093404
+                            },
+                            "html_instructions": "Continue onto <b>SK-35 N</b><div style=\"font-size:0.9em\">Entering Saskatchewan</div>",
+                            "polyline": {
+                                "points": "qeajHdhrxRSASOWIS@"
+                            },
+                            "start_location": {
+                                "lat": 48.99945080000001,
+                                "lng": -103.8094658
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "}w_jHzrqxR{@l@{DzCqEjDoBjAcAf@wCfAqCh@qD\\OPa@|@ULa@?yA_@kA[iALSASOWIS@"
+            },
+            "summary": "US-85 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

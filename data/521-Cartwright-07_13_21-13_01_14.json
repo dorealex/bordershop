@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "EiMxMDk0MyBORC00LCBIYW5zYm9ybywgTkQgNTgzMzksIFVTQSIbEhkKFAoSCX-56ZZVJ91SEeVW4SF_g9vSEL9V",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ0_05YU8n3VIR5CJN9-MwuFo",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0003839,
+                    "lng": -99.3469008
+                },
+                "southwest": {
+                    "lat": 48.992101,
+                    "lng": -99.35078600000001
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1002
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 205
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 205
+                    },
+                    "end_address": "MB-5, Cartwright, MB R0K 0L0, Canada",
+                    "end_location": {
+                        "lat": 49.0003839,
+                        "lng": -99.3469008
+                    },
+                    "start_address": "10943 ND-4, Hansboro, ND 58339, USA",
+                    "start_location": {
+                        "lat": 48.992101,
+                        "lng": -99.35078600000001
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 895
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 150
+                            },
+                            "end_location": {
+                                "lat": 48.9994194,
+                                "lng": -99.346949
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-4 N</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "sw_jHlmk}QkA?YA]?e@A]CWCQCI?o@I}@Qe@Mi@Qi@USIc@W_@Su@i@u@k@mAiA_B_BWYw@y@e@a@UMOCQAUHUHUF[FYAE?UIu@QqAi@UMKKCEMSGUEIMe@OYQSSKQE"
+                            },
+                            "start_location": {
+                                "lat": 48.992101,
+                                "lng": -99.35078600000001
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "351 ft",
+                                "value": 107
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 55
+                            },
+                            "end_location": {
+                                "lat": 49.0003839,
+                                "lng": -99.3469008
+                            },
+                            "html_instructions": "Continue onto <b>MB-5 N</b>",
+                            "polyline": {
+                                "points": "keajHluj}Qw@CQAu@A_@A_@?"
+                            },
+                            "start_location": {
+                                "lat": 48.9994194,
+                                "lng": -99.346949
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "sw_jHlmk}QiDCqAKmB[oA_@}@_@cAk@kBuAmDiDoAsAe@a@UMa@Ek@Rq@N_@AkA[gBw@OQUi@So@a@m@e@QiAEuBC"
+            },
+            "summary": "ND-4 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

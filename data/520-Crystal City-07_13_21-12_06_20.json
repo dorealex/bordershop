@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJwQQXWI8pw1IR_CmmTECMgMI",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJTwzfcfMpw1IRrJMBGj2Jxz4",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.00010229999999,
+                    "lng": -98.9350331
+                },
+                "southwest": {
+                    "lat": 48.9914139,
+                    "lng": -98.93786759999999
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1031
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 44
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 44
+                    },
+                    "end_address": "Provincial Trunk Hwy 34, Crystal City, MB R0K 0N0, Canada",
+                    "end_location": {
+                        "lat": 49.00010229999999,
+                        "lng": -98.93786759999999
+                    },
+                    "start_address": "ND-20, Sarles, ND 58372, USA",
+                    "start_location": {
+                        "lat": 48.9914139,
+                        "lng": -98.9350331
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 1003
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 43
+                            },
+                            "end_location": {
+                                "lat": 48.9999227,
+                                "lng": -98.93760180000001
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-20 N</b> toward <b>109th St NE</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "is_jH|fzzQmJ@{L?aE@o@@w@D[D{@LWFSDi@RUHWNi@XiAx@YVY\\[`@[b@KNgAbBaA`B"
+                            },
+                            "start_location": {
+                                "lat": 48.9914139,
+                                "lng": -98.9350331
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "92 ft",
+                                "value": 28
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 1
+                            },
+                            "end_location": {
+                                "lat": 49.00010229999999,
+                                "lng": -98.93786759999999
+                            },
+                            "html_instructions": "Continue onto <b>Provincial Trunk Hwy 34 N</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "ohajH~vzzQU^MT"
+                            },
+                            "start_location": {
+                                "lat": 48.9999227,
+                                "lng": -98.93760180000001
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "is_jH|fzzQiX@qFBsAJsAT}@Xm@Xi@XiAx@s@t@kCxDeBvC"
+            },
+            "summary": "ND-20 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

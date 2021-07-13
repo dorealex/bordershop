@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJVYeUWDAd3VIRmi51B2pVGh0",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJzezJgCgd3VIRmSD-9EH-ZMg",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.999756,
+                    "lng": -99.65694719999999
+                },
+                "southwest": {
+                    "lat": 48.991247,
+                    "lng": -99.65956
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1017
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 44
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 44
+                    },
+                    "end_address": "10935 ND-30, St John, ND 58369, USA",
+                    "end_location": {
+                        "lat": 48.999756,
+                        "lng": -99.65956
+                    },
+                    "start_address": "10861-10833 ND-30, St John, ND 58369, USA",
+                    "start_location": {
+                        "lat": 48.991247,
+                        "lng": -99.65694719999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 943
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 41
+                            },
+                            "end_location": {
+                                "lat": 48.9992792,
+                                "lng": -99.6588613
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-30 N</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "ir_jH|fg_R{D?eB?sW@iAAgA@I?I@I@G@G@G@G@E@IBKDOFUHEDGBEBEDi@j@_@h@SXSXABW^A@Wd@e@z@GRA?MV"
+                            },
+                            "start_location": {
+                                "lat": 48.991247,
+                                "lng": -99.65694719999999
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "243 ft",
+                                "value": 74
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 3
+                            },
+                            "end_location": {
+                                "lat": 48.999756,
+                                "lng": -99.65956
+                            },
+                            "html_instructions": "Continue onto <b>MB-18 N</b>",
+                            "polyline": {
+                                "points": "odajHzrg_RmApBQX"
+                            },
+                            "start_location": {
+                                "lat": 48.9992792,
+                                "lng": -99.6588613
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "ir_jH|fg_R_c@?eBD_@Fk@Ri@Vo@p@s@bAo@~@}@`BIRmBbD"
+            },
+            "summary": "ND-30 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

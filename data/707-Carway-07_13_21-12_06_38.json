@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJef9koE4yb1MRAMhqvRnpRO8",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ2ZYQODgyb1MRoMmllsg-GKg",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9989001,
+                    "lng": -113.3787749
+                },
+                "southwest": {
+                    "lat": 48.9908315,
+                    "lng": -113.3809232
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 913
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 102
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 102
+                    },
+                    "end_address": "AB-2, Aetna, AB T0K 1Y0, Canada",
+                    "end_location": {
+                        "lat": 48.9989001,
+                        "lng": -113.3787749
+                    },
+                    "start_address": "US-89, Babb, MT 59411, USA",
+                    "start_location": {
+                        "lat": 48.9908315,
+                        "lng": -113.3809232
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 878
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 80
+                            },
+                            "end_location": {
+                                "lat": 48.9985869,
+                                "lng": -113.3788523
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-89 N</b> toward <b>Chief Mountain Cir</b><div style=\"font-size:0.9em\">Entering Canada (Alberta)</div>",
+                            "polyline": {
+                                "points": "uo_jHvu_sT}I_BeEs@eGgAqBa@qB_@cKgBi@A_@FQSa@I"
+                            },
+                            "start_location": {
+                                "lat": 48.9908315,
+                                "lng": -113.3809232
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "115 ft",
+                                "value": 35
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 22
+                            },
+                            "end_location": {
+                                "lat": 48.9989001,
+                                "lng": -113.3787749
+                            },
+                            "html_instructions": "Continue onto <b>AB-2 N</b>",
+                            "polyline": {
+                                "points": "e`ajHxh_sTa@GYEAA"
+                            },
+                            "start_location": {
+                                "lat": 48.9985869,
+                                "lng": -113.3788523
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "uo_jHvu_sT{[}FuNgCi@A_@FQSa@I{@MAA"
+            },
+            "summary": "US-89 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

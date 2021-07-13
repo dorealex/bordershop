@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJg7PnManGhVQR68npAJdFzaA",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJpYC48xzEhVQRDrpSVy5mLbg",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0029651,
+                    "lng": -122.734682
+                },
+                "southwest": {
+                    "lat": 48.994114,
+                    "lng": -122.7353423
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1001
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 173
+                    },
+                    "duration_in_traffic": {
+                        "text": "4 mins",
+                        "value": 259
+                    },
+                    "end_address": "42 176 St, Surrey, BC V3S 9R9, Canada",
+                    "end_location": {
+                        "lat": 49.0029651,
+                        "lng": -122.7347581
+                    },
+                    "start_address": "1388 H St Rd, Blaine, WA 98230, USA",
+                    "start_location": {
+                        "lat": 48.994114,
+                        "lng": -122.7349371
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 874
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 132
+                            },
+                            "end_location": {
+                                "lat": 49.0019247,
+                                "lng": -122.7353226
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>WA-543 N</b>/<wbr/><b>Truck Route</b> toward <b>State Rd 543 N Truck</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "ed`jHjtblVgAAgFCWS}BGoEOu@AaA?m@?i@JUBUBUBG?YDI@aCXa@Hm@HwAV[DOBg@DSBQ?YBS@W?Y@E?i@AQ?"
+                            },
+                            "start_location": {
+                                "lat": 48.994114,
+                                "lng": -122.7349371
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "417 ft",
+                                "value": 127
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 41
+                            },
+                            "end_location": {
+                                "lat": 49.0029651,
+                                "lng": -122.7347581
+                            },
+                            "html_instructions": "Continue onto <b>BC-15 N</b>",
+                            "polyline": {
+                                "points": "_uajHvvblVOBI?E?GCIEECIIKOMOKOIIIEOIMGIEOCQ?K?"
+                            },
+                            "start_location": {
+                                "lat": 49.0019247,
+                                "lng": -122.7353226
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "ed`jHjtblVoHEWS}BGeGQoB?_ANk@FmD`@cEp@}AL_BFo@Aa@BO?QIi@m@UYYOWMa@CK?"
+            },
+            "summary": "WA-543 N/Truck Route",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ0a53-KaN31IRgJ_VdY-nyCM",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJgw4Y2wiN31IRlGN1wOEoptg",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.999638,
+                    "lng": -102.2710021
+                },
+                "southwest": {
+                    "lat": 48.9920731,
+                    "lng": -102.2756158
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 952
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 117
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 121
+                    },
+                    "end_address": "Saskota Flyway, North Portal, SK S0C 1W0, Canada",
+                    "end_location": {
+                        "lat": 48.999638,
+                        "lng": -102.2751508
+                    },
+                    "start_address": "10852-10898 ND-8, Flaxton, ND 58737, USA",
+                    "start_location": {
+                        "lat": 48.9920731,
+                        "lng": -102.2710021
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 864
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 103
+                            },
+                            "end_location": {
+                                "lat": 48.9988451,
+                                "lng": -102.275143
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>ND-8 N</b> toward <b>109th St NW</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "mw_jHvxeoRIJIJ}DtFgCjDq@x@?@q@t@m@j@[Xi@^s@b@_Bz@w@Vk@N}@Pm@FOBg@BG@G@EBCBm@bACDEDCBE?GAc@CYGiA[ICUMKIEECCICIC{@CKC"
+                            },
+                            "start_location": {
+                                "lat": 48.9920731,
+                                "lng": -102.2710021
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "289 ft",
+                                "value": 88
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 14
+                            },
+                            "end_location": {
+                                "lat": 48.999638,
+                                "lng": -102.2751508
+                            },
+                            "html_instructions": "Continue onto <b>SK-9 N</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "yaajHrrfoRa@@{B?"
+                            },
+                            "start_location": {
+                                "lat": 48.9988451,
+                                "lng": -102.275143
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "mw_jHvxeoRyIxLq@z@_B`BeAx@sC~AcBf@kBXgAJIFq@hAIHMA}@KsA_@a@WIISGgAG}C@"
+            },
+            "summary": "ND-8 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJt9NVbQYUv1IRVH19_3Koicg",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJrbkcC_cTv1IRNM6T5Fiw0DE",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0000935,
+                    "lng": -95.37158699999999
+                },
+                "southwest": {
+                    "lat": 48.9919021,
+                    "lng": -95.3765806
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 984
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 82
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 85
+                    },
+                    "end_address": "Provincial Trunk Hwy 12, Middlebro, MB R0A 1B0, Canada",
+                    "end_location": {
+                        "lat": 49.0000935,
+                        "lng": -95.3765806
+                    },
+                    "start_address": "41675-41253 MN-313, Warroad, MN 56763, USA",
+                    "start_location": {
+                        "lat": 48.9919021,
+                        "lng": -95.37158699999999
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 874
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 71
+                            },
+                            "end_location": {
+                                "lat": 48.9991284,
+                                "lng": -95.37630329999999
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>MN-313 N</b> toward <b>Provincial Trunk Hwy 12 N</b>/<wbr/><b>MB-12 N</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "kv_jHlgbeQaRbKeDjBe@To@^a@T_@Ra@Ty@b@mEdCcB~@wB|A"
+                            },
+                            "start_location": {
+                                "lat": 48.9919021,
+                                "lng": -95.37158699999999
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "361 ft",
+                                "value": 110
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 11
+                            },
+                            "end_location": {
+                                "lat": 49.0000935,
+                                "lng": -95.3765806
+                            },
+                            "html_instructions": "<b>MN-313 N</b> turns slightly <b>right</b> and becomes <b>MOM's Way</b>/<wbr/><b>Provincial Trunk Hwy 12 N</b>/<wbr/><b>MB-12 N</b>",
+                            "polyline": {
+                                "points": "qcajHzdceQ]BK@KD]LWHQD]BUDMB"
+                            },
+                            "start_location": {
+                                "lat": 48.9991284,
+                                "lng": -95.37630329999999
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "kv_jHlgbeQ{^hSqHdEwB|A]BWFu@VsAR"
+            },
+            "summary": "MOM's Way",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

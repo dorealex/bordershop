@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "EiMxMDg4NiBORC0yNTYsIEFudGxlciwgTkQgNTg3MTEsIFVTQSIbEhkKFAoSCYH8pxTdRN5SESUvv6kSUaNQEIZV",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJPRttou5E3lIRACCtRNZ8wCU",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0005127,
+                    "lng": -101.2951261
+                },
+                "southwest": {
+                    "lat": 48.992664,
+                    "lng": -101.3002022
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1012
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 122
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 122
+                    },
+                    "end_address": "MB-256, Lyleton, MB R0M 1G0, Canada",
+                    "end_location": {
+                        "lat": 49.0005127,
+                        "lng": -101.2951261
+                    },
+                    "start_address": "10886 ND-256, Antler, ND 58711, USA",
+                    "start_location": {
+                        "lat": 48.992664,
+                        "lng": -101.3001898
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 839
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 99
+                            },
+                            "end_location": {
+                                "lat": 48.99933850000001,
+                                "lng": -101.2966693
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-256 N</b> toward <b>109th St NW</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "c{_jHdehiRW?c@@iA?gAAyB?qA?gA@m@?c@?U?]C_@Ca@E]GSEYIYI]MWMWGSOWSa@YYWYO[MSGUMQUQY{BgEUo@AGQo@AGQc@s@wA"
+                            },
+                            "start_location": {
+                                "lat": 48.992664,
+                                "lng": -101.3001898
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 173
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 23
+                            },
+                            "end_location": {
+                                "lat": 49.0005127,
+                                "lng": -101.2951261
+                            },
+                            "html_instructions": "Continue onto <b>MB-256 N</b>",
+                            "polyline": {
+                                "points": "{dajHdogiRm@kAc@w@AA[g@_@i@o@w@QQUOAA"
+                            },
+                            "start_location": {
+                                "lat": 48.99933850000001,
+                                "lng": -101.2966693
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "c{_jHdehiRmE?aI@y@?}@G_AMm@OgBm@gBuA_Bs@c@o@{BgEUo@Sw@Sk@gC}E{@qAaAiAWQ"
+            },
+            "summary": "ND-256 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

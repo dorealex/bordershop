@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJa3yuK7jNZVMR0y2Bd2e3ivw",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJA5i_XDixZVMRyZYegRbzrYg",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0005271,
+                    "lng": -115.0549873
+                },
+                "southwest": {
+                    "lat": 48.9916694,
+                    "lng": -115.0575946
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1027
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 126
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 114
+                    },
+                    "end_address": "5600 BC-93, Grasmere, BC V0B 1R0, Canada",
+                    "end_location": {
+                        "lat": 49.0005271,
+                        "lng": -115.0551735
+                    },
+                    "start_address": "7740 US-93, Eureka, MT 59917, USA",
+                    "start_location": {
+                        "lat": 48.9916694,
+                        "lng": -115.0575946
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 890
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 79
+                            },
+                            "end_location": {
+                                "lat": 48.99957149999999,
+                                "lng": -115.0558636
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-93 N</b> toward <b>Poverty Flats Rd</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "}t_jH|dg}ToAI[EG?kBOiBO_AI]CuHm@_Ge@WCkBS[E_@I]I_@Is@S[Ic@MkBm@oA_@_@Q"
+                            },
+                            "start_location": {
+                                "lat": 48.9916694,
+                                "lng": -115.0575946
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "449 ft",
+                                "value": 137
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 47
+                            },
+                            "end_location": {
+                                "lat": 49.0005271,
+                                "lng": -115.0551735
+                            },
+                            "html_instructions": "Continue onto <b>BC-93 S</b>",
+                            "polyline": {
+                                "points": "ifajHbzf}TWOGGGKGKEMISQg@MWEGEGIIE?EAM?IBC@GDGFKJEB"
+                            },
+                            "start_location": {
+                                "lat": 48.99957149999999,
+                                "lng": -115.0558636
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "}t_jH|dg}T}UkBwGi@gCYqCq@{FeBw@a@OSi@uAS_@OQKAWB_@ZEB"
+            },
+            "summary": "US-93 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

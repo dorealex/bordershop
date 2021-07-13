@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJk5AcfZ8OIlMRIHju1hKPq8g",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJByy06qUOIlMR3EMLmwZE8FM",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9999994,
+                    "lng": -104.5744462
+                },
+                "southwest": {
+                    "lat": 48.992073,
+                    "lng": -104.5748408
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 889
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 165
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 202
+                    },
+                    "end_address": "SK-6, Lake Alma, SK S0C 1M0, Canada",
+                    "end_location": {
+                        "lat": 48.9999994,
+                        "lng": -104.5744883
+                    },
+                    "start_address": "1384-1416 MT-16, Outlook, MT 59252, USA",
+                    "start_location": {
+                        "lat": 48.992073,
+                        "lng": -104.5744462
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 799
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 128
+                            },
+                            "end_location": {
+                                "lat": 48.9991959,
+                                "lng": -104.5745576
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>MT-16 N</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "mw_jHhug}RG?yB?c@@wB?gD@kDBg@AmB@S@SHcAd@c@PO@E?QAcAK{@OWEgAa@}A@ODA?eABc@?O@G?"
+                            },
+                            "start_location": {
+                                "lat": 48.992073,
+                                "lng": -104.5744462
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "295 ft",
+                                "value": 90
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 37
+                            },
+                            "end_location": {
+                                "lat": 48.9999994,
+                                "lng": -104.5744883
+                            },
+                            "html_instructions": "Continue onto <b>SK-6 N</b>",
+                            "polyline": {
+                                "points": "_dajH~ug}R]Co@G[Ca@ASB"
+                            },
+                            "start_location": {
+                                "lat": 48.9991959,
+                                "lng": -104.5745576
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "mw_jHhug}RgWFS@SHgBv@U@uAMsAUgAa@}A@QDiBBW@mAK}@ESB"
+            },
+            "summary": "MT-16 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

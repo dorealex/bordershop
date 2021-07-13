@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJFzYKo7it3VIRalM-UMAqqpw",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJg5ABhtqt3VIRLojfcX5C3i0",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0005548,
+                    "lng": -100.0521318
+                },
+                "southwest": {
+                    "lat": 48.9924367,
+                    "lng": -100.052354
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 906
+                    },
+                    "duration": {
+                        "text": "3 mins",
+                        "value": 160
+                    },
+                    "duration_in_traffic": {
+                        "text": "3 mins",
+                        "value": 183
+                    },
+                    "end_address": "MB-10, Boissevain, MB R0K 0E0, Canada",
+                    "end_location": {
+                        "lat": 49.0005548,
+                        "lng": -100.0522221
+                    },
+                    "start_address": "10814-10894 US-281, Dunseith, ND 58329, USA",
+                    "start_location": {
+                        "lat": 48.9924367,
+                        "lng": -100.0522565
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 761
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 58
+                            },
+                            "end_location": {
+                                "lat": 48.999253,
+                                "lng": -100.0522734
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-281 N</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "wy_jHrmtaRoB@aC@_B@iA?qBFgC@k@?c@?O?kC@yCAe@QSIUEYEA?a@Ae@?U?SBYFODm@H"
+                            },
+                            "start_location": {
+                                "lat": 48.9924367,
+                                "lng": -100.0522565
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "476 ft",
+                                "value": 145
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 102
+                            },
+                            "end_location": {
+                                "lat": 49.0005548,
+                                "lng": -100.0522221
+                            },
+                            "html_instructions": "Continue onto <b>MB-10 N</b>",
+                            "polyline": {
+                                "points": "idajHtmtaRQBW@qDSU?OBA?"
+                            },
+                            "start_location": {
+                                "lat": 48.999253,
+                                "lng": -100.0522734
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "wy_jHrmtaR{KDqBFgC@oA?{C@yCAe@Qi@O[EgAAi@BiBZW@qDSe@BA?"
+            },
+            "summary": "US-281 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

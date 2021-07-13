@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJXXZWASMZY1MR_mBSDaIDLis",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJO8QNbh8ZY1MRUKqGrVbsBc4",
+            "types": [
+                "premise"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0001901,
+                    "lng": -117.2993665
+                },
+                "southwest": {
+                    "lat": 48.9917665,
+                    "lng": -117.3008264
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 976
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 56
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 56
+                    },
+                    "end_address": "9999 BC-6, Salmo, BC V0G 1Z0, Canada",
+                    "end_location": {
+                        "lat": 49.0001901,
+                        "lng": -117.2993665
+                    },
+                    "start_address": "26785 WA-31, Metaline Falls, WA 99153, USA",
+                    "start_location": {
+                        "lat": 48.9917665,
+                        "lng": -117.3008264
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 933
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 51
+                            },
+                            "end_location": {
+                                "lat": 48.99988279999999,
+                                "lng": -117.2997317
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>WA-31 N</b> toward <b>BC-6</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "qu_jHdi}jUIEc@Qg@QEAo@Qo@Qk@QMESG}@WmA]YI{@W]IOCGCOCSCMCc@EQAWAO?Q@a@BWBQDKBG@SFEB[J[Nm@Zi@TYLUHKD]JE@QB]DUBE?]?G?[AGA]Ea@GAA_@KC?_@KCAg@MYIA?SEKAA?KAW@M@I@I?KAICCCQMIKMOAAUU"
+                            },
+                            "start_location": {
+                                "lat": 48.9917665,
+                                "lng": -117.3008264
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "141 ft",
+                                "value": 43
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 5
+                            },
+                            "end_location": {
+                                "lat": 49.0001901,
+                                "lng": -117.2993665
+                            },
+                            "html_instructions": "Continue onto <b>BC-6 N</b>",
+                            "polyline": {
+                                "points": "ghajHhb}jU_@i@]]"
+                            },
+                            "start_location": {
+                                "lat": 48.99988279999999,
+                                "lng": -117.2997317
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "qu_jHdi}jU{Ak@yC{@yDgAqBi@uAQkAAy@F]H}@XmCnAeA\\kALiAC_AMa@MoA[{@Qs@@S@UEUQW[WW}@gA"
+            },
+            "summary": "WA-31 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ-1b1LT5zFlMR-C7Ivyr5TKs",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJkcohnqdzFlMRaHvpU6U8b8w",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0003109,
+                    "lng": -107.830357
+                },
+                "southwest": {
+                    "lat": 48.9920526,
+                    "lng": -107.8318644
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 939
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 65
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 65
+                    },
+                    "end_address": "53855 US-191, Loring, MT 59537, USA",
+                    "end_location": {
+                        "lat": 49.0003109,
+                        "lng": -107.8318597
+                    },
+                    "start_address": "State Hwy 191, Loring, MT 59537, USA",
+                    "start_location": {
+                        "lat": 48.9920526,
+                        "lng": -107.830357
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 882
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 58
+                            },
+                            "end_location": {
+                                "lat": 48.9997941,
+                                "lng": -107.8318469
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>US-191 N</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "iw_jHvrcqSaAz@s@h@m@`@gAj@kAf@eAXg@LODQB_@Hs@Hk@Dq@BA?a@?gA?{@?K?c@?kB?gJ?i@?c@?c@?kAAg@?"
+                            },
+                            "start_location": {
+                                "lat": 48.9920526,
+                                "lng": -107.830357
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "187 ft",
+                                "value": 57
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 7
+                            },
+                            "end_location": {
+                                "lat": 49.0003109,
+                                "lng": -107.8318597
+                            },
+                            "html_instructions": "Continue onto <b>SK-4 N</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "ugajH`|cqSQ@_@?s@?A?"
+                            },
+                            "start_location": {
+                                "lat": 48.9997941,
+                                "lng": -107.8318469
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "iw_jHvrcqSaAz@s@h@uBlAkAf@eAXw@Rq@L_BN}CBqT?sBAq@@u@?"
+            },
+            "summary": "US-191 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

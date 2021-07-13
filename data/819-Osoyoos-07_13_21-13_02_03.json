@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJmYlv4obPglQRluc7mE9bbU8",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJK2y3TXnFglQRBpHfyrtXMtQ",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.000482,
+                    "lng": -119.4580908
+                },
+                "southwest": {
+                    "lat": 48.9921734,
+                    "lng": -119.462717
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1030
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 130
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 114
+                    },
+                    "end_address": "4 2 Ave, Osoyoos, BC V0H 1V1, Canada",
+                    "end_location": {
+                        "lat": 49.0004796,
+                        "lng": -119.462717
+                    },
+                    "start_address": "33600 US-97, Oroville, WA 98844, USA",
+                    "start_location": {
+                        "lat": 48.9921734,
+                        "lng": -119.4580908
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 900
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 81
+                            },
+                            "end_location": {
+                                "lat": 48.999888,
+                                "lng": -119.4618137
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-97 N</b> toward <b>Shirley Rd</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "ax_jH`tbxUsEzAiCz@sBp@gDfAi@\\kBt@cH|CqBx@}@b@UJeA^a@N{Bz@i@L"
+                            },
+                            "start_location": {
+                                "lat": 48.9921734,
+                                "lng": -119.4580908
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "427 ft",
+                                "value": 130
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 49
+                            },
+                            "end_location": {
+                                "lat": 49.0004796,
+                                "lng": -119.462717
+                            },
+                            "html_instructions": "<b>US-97 N</b> turns slightly <b>right</b> and becomes <b>BC-97 N</b>",
+                            "polyline": {
+                                "points": "ihajHhkcxUg@IIAA?[?E?A@G?E@EBCFCHAZ?vB?R"
+                            },
+                            "start_location": {
+                                "lat": 48.999888,
+                                "lng": -119.4618137
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "ax_jH`tbxUyRpGi@\\kBt@uKvEsAn@gBn@{Bz@i@Lq@Ke@@M@IJCHAZ?jC"
+            },
+            "summary": "US-97 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

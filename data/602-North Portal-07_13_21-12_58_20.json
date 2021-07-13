@@ -1,0 +1,117 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJwU7R-rt0IFMRWCLF9zqIJcA",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJU75Oiq50IFMRoaFs2IwY8KI",
+            "types": [
+                "establishment",
+                "point_of_interest"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.99943709999999,
+                    "lng": -102.5427912
+                },
+                "southwest": {
+                    "lat": 48.9921419,
+                    "lng": -102.5545417
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.8 mi",
+                        "value": 1229
+                    },
+                    "duration": {
+                        "text": "5 mins",
+                        "value": 280
+                    },
+                    "duration_in_traffic": {
+                        "text": "7 mins",
+                        "value": 392
+                    },
+                    "end_address": "Highway 39, North Portal, SK S0C 1W0, Canada",
+                    "end_location": {
+                        "lat": 48.99943709999999,
+                        "lng": -102.5545417
+                    },
+                    "start_address": "US-52, Portal, ND 58772, USA",
+                    "start_location": {
+                        "lat": 48.9921419,
+                        "lng": -102.5427912
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 1025
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 186
+                            },
+                            "end_location": {
+                                "lat": 48.9989449,
+                                "lng": -102.552022
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-52 W</b> toward <b>Rhoades St</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "{w_jHl{zpRO@MBMBUDQDSJSJMFOHQLQNWTORMNQXU^iCrEgAjBeAjBcAdBeAnBeAjBgApBcAbB]n@k@`AgCxEe@v@cAdBa@t@QTUVSTMTWd@"
+                            },
+                            "start_location": {
+                                "lat": 48.9921419,
+                                "lng": -102.5427912
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 204
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 94
+                            },
+                            "end_location": {
+                                "lat": 48.99943709999999,
+                                "lng": -102.5545417
+                            },
+                            "html_instructions": "Continue onto <b>SK-39 N</b>",
+                            "polyline": {
+                                "points": "kbajHbu|pR_@n@Wf@S\\GH?@CFADAFAH?JAtD?@CpC"
+                            },
+                            "start_location": {
+                                "lat": 48.9989449,
+                                "lng": -102.552022
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "{w_jHl{zpRaANe@Pa@Ra@Vi@d@]b@g@x@{IpOkCzEkCtEwFbKeBzCg@l@a@j@w@tAs@pAI^EtI"
+            },
+            "summary": "US-52 W",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "EiIxMDg3OSBORC0xNCwgU291cmlzLCBORCA1ODc4MywgVVNBIhsSGQoUChIJyWBN1qDR3VIRHyZPSFQ2NC4Q_1Q",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ8X6GuK3R3VIR7jmshu8xx1w",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0000772,
+                    "lng": -100.5554186
+                },
+                "southwest": {
+                    "lat": 48.9916875,
+                    "lng": -100.5575606
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 961
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 65
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 64
+                    },
+                    "end_address": "Provincial Trunk Hwy 21, Goodlands, MB R0M 0R0, Canada",
+                    "end_location": {
+                        "lat": 49.0000772,
+                        "lng": -100.5554186
+                    },
+                    "start_address": "10879 ND-14, Souris, ND 58783, USA",
+                    "start_location": {
+                        "lat": 48.9916875,
+                        "lng": -100.5575606
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 872
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 56
+                            },
+                            "end_location": {
+                                "lat": 48.9993123,
+                                "lng": -100.5556246
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-14 N</b> toward <b>109th St NE</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "au_jHvcwdRm@Uk@Q}@[aBk@_DgAiBk@i@Oa@Mo@OYI[GiB]qB[m@Go@GI?c@Ls@^OFQBE?yBAw@EUGu@WaA_@QGg@?"
+                            },
+                            "start_location": {
+                                "lat": 48.9916875,
+                                "lng": -100.5575606
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "292 ft",
+                                "value": 89
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 9
+                            },
+                            "end_location": {
+                                "lat": 49.0000772,
+                                "lng": -100.5554186
+                            },
+                            "html_instructions": "Continue onto <b>Provincial Trunk Hwy 21 N</b>",
+                            "polyline": {
+                                "points": "udajHrwvdRW@OIUSAAEEICiA?"
+                            },
+                            "start_location": {
+                                "lat": 48.9993123,
+                                "lng": -100.5556246
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "au_jHvcwdRyFoBiGsBkA]oE_A_Dc@y@Gc@Ls@^a@J_CAw@EUGwBw@QGg@?W@OIWUOIiA?"
+            },
+            "summary": "ND-14 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

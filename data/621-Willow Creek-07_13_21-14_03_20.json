@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ3VCmxZLXFFMR4sdvnUJ_-k4",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ11z4uY_XFFMR1KrpeempYF8",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0002739,
+                    "lng": -109.7314694
+                },
+                "southwest": {
+                    "lat": 48.992088,
+                    "lng": -109.7317609
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 914
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 36
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 35
+                    },
+                    "end_address": "SK-21, Consul, SK S0N 0P0, Canada",
+                    "end_location": {
+                        "lat": 49.0002739,
+                        "lng": -109.7317609
+                    },
+                    "start_address": "St Joe Rd, Havre, MT 59501, USA",
+                    "start_location": {
+                        "lat": 48.992088,
+                        "lng": -109.7314694
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 841
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 33
+                            },
+                            "end_location": {
+                                "lat": 48.9996488,
+                                "lng": -109.731545
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>St Joe Rd</b> toward <b>MT-233</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "qw_jHt|v|SiD?s@?wB?uE?_A?W?I?cC?K?{C@cBJy@?S?mE?cC?M?[?"
+                            },
+                            "start_location": {
+                                "lat": 48.992088,
+                                "lng": -109.7314694
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "240 ft",
+                                "value": 73
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 3
+                            },
+                            "end_location": {
+                                "lat": 49.0002739,
+                                "lng": -109.7317609
+                            },
+                            "html_instructions": "Continue onto <b>SK-21 N</b>",
+                            "polyline": {
+                                "points": "yfajHb}v|S_@?C?Q@KBG@IDGBMHMHCD"
+                            },
+                            "start_location": {
+                                "lat": 48.9996488,
+                                "lng": -109.731545
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "qw_jHt|v|SqW?gD@cBJy@?aF?qC?qA@e@N_@X"
+            },
+            "summary": "St Joe Rd",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

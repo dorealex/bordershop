@@ -1,0 +1,118 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJwfL4K6OwYlMRayiMitMb2B8",
+            "types": [
+                "premise"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJr8hf1LmwYlMRXvSK_Kk6VV4",
+            "types": [
+                "airport",
+                "establishment",
+                "point_of_interest"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0005023,
+                    "lng": -118.2238023
+                },
+                "southwest": {
+                    "lat": 48.9914003,
+                    "lng": -118.2255053
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 1023
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 110
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 110
+                    },
+                    "end_address": "Avey Field State/Laurier Wa Usa Airport, Christina Lake, BC V0H 1E0, Canada",
+                    "end_location": {
+                        "lat": 49.0005023,
+                        "lng": -118.2238023
+                    },
+                    "start_address": "26962 US-395, Kettle Falls, WA 99141, USA",
+                    "start_location": {
+                        "lat": 48.9914003,
+                        "lng": -118.2253669
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 1011
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 106
+                            },
+                            "end_location": {
+                                "lat": 49.00040180000001,
+                                "lng": -118.2238456
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-395 N</b> toward <b>Stecker Rd</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "gs_jHp{qpUgDN{AHoA@aA?aBK}@G}@IYESEgBWAAgBYwF_AmEu@mCe@c@GgF{@s@M"
+                            },
+                            "start_location": {
+                                "lat": 48.9914003,
+                                "lng": -118.2253669
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "39 ft",
+                                "value": 12
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 4
+                            },
+                            "end_location": {
+                                "lat": 49.0005023,
+                                "lng": -118.2238023
+                            },
+                            "html_instructions": "Continue onto <b>British Columbia 395</b>",
+                            "polyline": {
+                                "points": "okajH`rqpUSI"
+                            },
+                            "start_location": {
+                                "lat": 49.00040180000001,
+                                "lng": -118.2238456
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "gs_jHp{qpUcGXqC@_DSwAOeFy@wRcD{GiASI"
+            },
+            "summary": "US-395 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

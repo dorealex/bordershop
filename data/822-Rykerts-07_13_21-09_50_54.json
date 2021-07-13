@@ -1,0 +1,140 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJA2ysNvt7Y1MRVPbsCBFxDrk",
+            "types": [
+                "premise"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ15YovfF7Y1MR39WV_kBR_jE",
+            "types": [
+                "premise"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0019132,
+                    "lng": -116.4964156
+                },
+                "southwest": {
+                    "lat": 48.9940633,
+                    "lng": -116.5003294
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 952
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 129
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 128
+                    },
+                    "end_address": "108 Creston-Rykerts Hwy, Creston, BC V0B 1G2, Canada",
+                    "end_location": {
+                        "lat": 49.0019132,
+                        "lng": -116.5002319
+                    },
+                    "start_address": "3046 Porthill Loop, Bonners Ferry, ID 83805, USA",
+                    "start_location": {
+                        "lat": 48.9940633,
+                        "lng": -116.4964156
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.3 mi",
+                                "value": 524
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 34
+                            },
+                            "end_location": {
+                                "lat": 48.9984489,
+                                "lng": -116.4982583
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>ID-1 N</b> toward <b>Porthill Loop</b>",
+                            "polyline": {
+                                "points": "{c`jHre`fUe@n@MTQVa@h@k@l@SRUPWPWNYLYJYFYFUD[BW@a@?K?S@o@A}@AuB?aAHc@LSFUJWP"
+                            },
+                            "start_location": {
+                                "lat": 48.9940633,
+                                "lng": -116.4964156
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 200
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 42
+                            },
+                            "end_location": {
+                                "lat": 48.999953,
+                                "lng": -116.499601
+                            },
+                            "html_instructions": "Slight <b>right</b> to stay on <b>ID-1 N</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "maneuver": "turn-slight-right",
+                            "polyline": {
+                                "points": "i_ajHbq`fU[@ODSHG@QFC@EBIFWPWVk@l@Yd@S\\KRUd@QJ"
+                            },
+                            "start_location": {
+                                "lat": 48.9984489,
+                                "lng": -116.4982583
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 228
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 53
+                            },
+                            "end_location": {
+                                "lat": 49.0019132,
+                                "lng": -116.5002319
+                            },
+                            "html_instructions": "Continue onto <b>Creston-Rykerts Hwy</b>/<wbr/><b>BC-21 N</b>",
+                            "polyline": {
+                                "points": "uhajHny`fUQTQLOHKBCB]Hc@Ja@LWFKBkA^A?K?ODGBC?C@E?C?GAECICA?QIE?E?"
+                            },
+                            "start_location": {
+                                "lat": 48.999953,
+                                "lng": -116.499601
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "{c`jHre`fUgBfC_A`Am@b@q@\\s@Ro@Ls@DqB?sDAaAHc@Li@RWP[@c@NYHk@^cAdAm@bAa@x@QJQTa@VOF{Bj@yAb@[DKBM@YIWIE?"
+            },
+            "summary": "ID-1 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,93 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJaaYypuljv1IR-gMZ92YGPnY",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJw7LHXJNjv1IRgga4d4Tlhj8",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9996172,
+                    "lng": -95.7664238
+                },
+                "southwest": {
+                    "lat": 48.9916451,
+                    "lng": -95.7685559
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 914
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 80
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 80
+                    },
+                    "end_address": "41999-41925 MN-310, Roseau, MN 56751, USA",
+                    "end_location": {
+                        "lat": 48.9996172,
+                        "lng": -95.76644569999999
+                    },
+                    "start_address": "40573 State Hwy 11, Roseau, MN 56751, USA",
+                    "start_location": {
+                        "lat": 48.9916451,
+                        "lng": -95.7685559
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 914
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 80
+                            },
+                            "end_location": {
+                                "lat": 48.9996172,
+                                "lng": -95.76644569999999
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>MN-310 N</b>",
+                            "polyline": {
+                                "points": "yt_jHnxogQ]?wFCuE@}A?cACK?aAG{@Mg@MICyA]w@[q@]w@_@SM]Uq@c@{@k@MKy@g@YSs@]UKKGUGUESEg@CY@YB"
+                            },
+                            "start_location": {
+                                "lat": 48.9916451,
+                                "lng": -95.7685559
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "yt_jHnxogQiQAoACaAG{@Mq@QyA]w@[iB}@q@c@uDcCmAq@a@Sk@M{@Is@D"
+            },
+            "summary": "MN-310 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

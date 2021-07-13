@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ_Srq0p7lF1MRnm_qH6j1K7E",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJhUQmrXDlF1MRyAGPBxnMDG4",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0003451,
+                    "lng": -106.3766698
+                },
+                "southwest": {
+                    "lat": 48.9945063,
+                    "lng": -106.3860146
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 942
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 42
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 42
+                    },
+                    "end_address": "SK-2, Rockglen, SK S0H 3R0, Canada",
+                    "end_location": {
+                        "lat": 49.0003451,
+                        "lng": -106.3766698
+                    },
+                    "start_address": "MT-24, Richland, MT 59260, USA",
+                    "start_location": {
+                        "lat": 48.9945063,
+                        "lng": -106.3860146
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 828
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 35
+                            },
+                            "end_location": {
+                                "lat": 48.9996234,
+                                "lng": -106.3777808
+                            },
+                            "html_instructions": "Head <b>northeast</b> on <b>MT-24 N</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "uf`jHpoihSGIQWc@u@Yg@s@sAsB{DmDwGwBeEwHuNMWWg@oAaCi@gA"
+                            },
+                            "start_location": {
+                                "lat": 48.9945063,
+                                "lng": -106.3860146
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "374 ft",
+                                "value": 114
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 7
+                            },
+                            "end_location": {
+                                "lat": 49.0003451,
+                                "lng": -106.3766698
+                            },
+                            "html_instructions": "Continue onto <b>SK-2 N</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "sfajHb|ghSqC}E"
+                            },
+                            "start_location": {
+                                "lat": 48.9996234,
+                                "lng": -106.3777808
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "uf`jHpoihSwA_CmMmVmLwT{DeH"
+            },
+            "summary": "MT-24 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

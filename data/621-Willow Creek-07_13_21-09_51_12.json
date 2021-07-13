@@ -1,0 +1,307 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ3VCmxZLXFFMR4sdvnUJ_-k4",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJe98alIola1MRgqj4v5bZP9s",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.992088,
+                    "lng": -109.7282843
+                },
+                "southwest": {
+                    "lat": 48.8860925,
+                    "lng": -110.2151723
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "36.1 mi",
+                        "value": 58032
+                    },
+                    "duration": {
+                        "text": "49 mins",
+                        "value": 2914
+                    },
+                    "duration_in_traffic": {
+                        "text": "49 mins",
+                        "value": 2912
+                    },
+                    "end_address": "Hwy 232, Havre, MT 59501, USA",
+                    "end_location": {
+                        "lat": 48.99176199999999,
+                        "lng": -110.215159
+                    },
+                    "start_address": "St Joe Rd, Havre, MT 59501, USA",
+                    "start_location": {
+                        "lat": 48.992088,
+                        "lng": -109.7314694
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "5.4 mi",
+                                "value": 8738
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 306
+                            },
+                            "end_location": {
+                                "lat": 48.9143346,
+                                "lng": -109.7282843
+                            },
+                            "html_instructions": "Head <b>south</b> on <b>St Joe Rd</b>",
+                            "polyline": {
+                                "points": "qw_jHt|v|S@?rC?`C?hB?|@?z@?X?lB?tCA~B@~@Af@?T?l@?~@?R?hD?p@?rD?zA?vAA|B?~@?`C?nB?rMCdH?dCAf@?jF?N?pF?j@?N?bA?tA?l@?|C?jG?P?rM?bI?vK?rE@`B?|C?lD?fC?vB?tCAjD@pE?vD?~G?nC?tG?H?nC?|M?bC?zD?~@?|B@dEAbI?nG?vA?jB?zF?x@?pF?dC?dK?vEAbF?vK?J?bG?~B@j@AnB?tF@hC?vE?fD?rC?`A?lD?dD@jD?rC?rDAnC@hC?`D?vC?l@AR?RAVCf@IRERETITIRIPINGRKRMROTQPORQFGFGNQRURWNWJOXe@Ra@NYJWL[FQFQFQFSJYH_@Ja@FW"
+                            },
+                            "start_location": {
+                                "lat": 48.992088,
+                                "lng": -109.7314694
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "3.1 mi",
+                                "value": 4976
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 309
+                            },
+                            "end_location": {
+                                "lat": 48.8954873,
+                                "lng": -109.7678098
+                            },
+                            "html_instructions": "Turn <b>right</b>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "qqpiHvhv|SVLJHJX@@BJDVDL?rF?|J?lN?nG?pG?fI?zE?pG?xE?tL?fa@?zD?dJ?bP?xE?pG?tX?jN?jTt@?fJ?rM?tN?~G?jK?bI?dB?h@KZIh@At@LNHHFVBF?ZCVCJ?rDEjBA~GGvIG"
+                            },
+                            "start_location": {
+                                "lat": 48.9143346,
+                                "lng": -109.7282843
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "1.0 mi",
+                                "value": 1648
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 123
+                            },
+                            "end_location": {
+                                "lat": 48.8861809,
+                                "lng": -109.7780348
+                            },
+                            "html_instructions": "Turn <b>right</b>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "y{liHx_~|SNhPFhCC|CClD@dA?d@B`@BJ`@^FFPTt@jApAbCv@vAPd@PVFDz@@\\@RDRNFLFV@X@zAHd@B\\Dd@A\\Cj@?^@P@HPPvC?zF?zF?~G?nC?rD?tA?"
+                            },
+                            "start_location": {
+                                "lat": 48.8954873,
+                                "lng": -109.7678098
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "3.5 mi",
+                                "value": 5624
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 315
+                            },
+                            "end_location": {
+                                "lat": 48.8860925,
+                                "lng": -109.8549453
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Rd 220 N</b>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "sakiHt_`}S?`L?xQ?jB@tX@pG?nG@bD?zE?jB?lB@pG?fI@xE?pG@bH?pC?|V@tL?pG?fI?fI@jN?nS?pG@|J?dD?T?tA?lBA|J?bE?tLAfI?xE?lB?bD?xE?jB?nB?jB?zE?bD?dU@xQ?fI?zE?xE?bP?lB?rL@lN"
+                            },
+                            "start_location": {
+                                "lat": 48.8861809,
+                                "lng": -109.7780348
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "1.0 mi",
+                                "value": 1607
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 104
+                            },
+                            "end_location": {
+                                "lat": 48.9005405,
+                                "lng": -109.8549083
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Amos Trail</b>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "aakiHl`o}SkHAgJ?wEAoC?wE?kB?oC?oCAqD?{F?cIA{F?kB?oC?"
+                            },
+                            "start_location": {
+                                "lat": 48.8860925,
+                                "lng": -109.8549453
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.0 mi",
+                                "value": 3226
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 189
+                            },
+                            "end_location": {
+                                "lat": 48.9005831,
+                                "lng": -109.8990414
+                            },
+                            "html_instructions": "Turn <b>left</b>",
+                            "maneuver": "turn-left",
+                            "polyline": {
+                                "points": "k{miHd`o}S?`T@nS?b\\@v]?tL?bD?xH?pD?zE?jNAv]?lN?fIAxQ?`P?xQAhBAVE`@@t@"
+                            },
+                            "start_location": {
+                                "lat": 48.9005405,
+                                "lng": -109.8549083
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "2.9 mi",
+                                "value": 4745
+                            },
+                            "duration": {
+                                "text": "5 mins",
+                                "value": 280
+                            },
+                            "end_location": {
+                                "lat": 48.9005071,
+                                "lng": -109.9639251
+                            },
+                            "html_instructions": "Continue onto <b>Rd 230 N</b>",
+                            "polyline": {
+                                "points": "s{miH~sw}SDl@?jD?xQ?xQ?|J?~J?|J?pGAbD?|V?hI?jB?nD@rG@jN?dA@|AHbp@?NAfI?|JCpS?fI?bDAbD?bDApG?lBAtL?xE?bD?lBAxE?lBA|J?~JApG?pGA|JAfI@v@@tBJh@"
+                            },
+                            "start_location": {
+                                "lat": 48.9005831,
+                                "lng": -109.8990414
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "5.0 mi",
+                                "value": 8082
+                            },
+                            "duration": {
+                                "text": "8 mins",
+                                "value": 471
+                            },
+                            "end_location": {
+                                "lat": 48.9003084,
+                                "lng": -110.0742863
+                            },
+                            "html_instructions": "Turn <b>right</b> at <b>Rd 365 N</b>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "e{miHpid~SMCEJE^AjACNOpB?n@AzE?rC?rD@dDBx@Hl@BJRnD@lH?jN@|J@zE?fI@xQ@|J@xQ?zE@`P@lN@xQ@nG?pG@vI?xH@`P?~J@fE?jB?hI@nS?bD?fI?pG@xE?lB?zE?bD?jB?dD?jB@|V?fI@hI?nG?hI?jB@zE?lB?jB?lB?xE?zE@xE?bD?tL@pG?lB?xE?bD?bD@~J?lKA|AArC?lNAzG@j@?|J@jMF~w@@`\\"
+                            },
+                            "start_location": {
+                                "lat": 48.9005071,
+                                "lng": -109.9639251
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "1.6 mi",
+                                "value": 2525
+                            },
+                            "duration": {
+                                "text": "3 mins",
+                                "value": 172
+                            },
+                            "end_location": {
+                                "lat": 48.90029759999999,
+                                "lng": -110.1088275
+                            },
+                            "html_instructions": "Continue onto <b>Hi Grade Rd</b>",
+                            "polyline": {
+                                "points": "}ymiHh{y~S@tL@nG?xE?dD?`H?xH?lB?pG?bDA|J?~J?|J?xQAzE@fI?nS?bP?rX?rI"
+                            },
+                            "start_location": {
+                                "lat": 48.9003084,
+                                "lng": -110.0742863
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "10.5 mi",
+                                "value": 16861
+                            },
+                            "duration": {
+                                "text": "11 mins",
+                                "value": 645
+                            },
+                            "end_location": {
+                                "lat": 48.99176199999999,
+                                "lng": -110.215159
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Hwy 232</b>/<wbr/><b>Wild Horse Trail</b><div style=\"font-size:0.9em\">Continue to follow Wild Horse Trail</div><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "{ymiHds`_TGFoFdFaD|Ci@j@iC`CkAdAk@d@_At@cBhAkC~Acc@|ViAn@wCdB]RSNMJUPQPONSTQTORQXMTQZO\\KRWp@Wz@Sv@Kd@GZEXCNEXCRCPIdAEl@A^AR?\\Ab@?|@?jE?nV?rUAda@?tX?hI?bH?xA?n_@Ah_@AlP?hX?dF?rg@ArM?dD?pd@?jN?bP?|R?|G?`BAh@?\\AVAh@MbBATM~@Il@Ot@K`@Mh@KXMb@MZA?[t@KTOVOVMP]b@_@b@e@`@A@YTMHMHa@TYLSFYHYFMDQBK@q@Hc@@mVAeJAoL?aAA[?]@[@SBeARk@Te@R]T_@T_@\\QNKLUVOPSXQXINGJYh@IPQb@EJM^Oh@ENGTKd@If@Ih@If@Iv@G~@C`@Cp@?l@?hF?fIBhT?tADna@ArBAn@Cf@AZEj@CVE`@QnAId@[pAOj@KXOb@KVQ\\S`@Yd@c@l@c@h@e@d@[T_@V[N]P}Ab@WBYBu@BeC@kZ?}@?md@?sDAys@@cK?gS@mA?}F?eL?gJ@gB?wD?mR?aZCwI@gF?}A?oI?qE@uC?wE?_B?wB?gD?o@?wE?wE?[?gC?yG?sCAsE?gD?wK?eB?"
+                            },
+                            "start_location": {
+                                "lat": 48.90029759999999,
+                                "lng": -110.1088275
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "qw_jHt|v|Sxc@AhkAG~lD@zaBArf@@ta@@dEAf@A~@Mf@KpAg@jAq@bA{@~@gAZg@l@gAp@_Bb@qATaAFWVLJHJXDLJd@?pR?vi@?|b@?z{B?jTt@?zX?dn@?dB?h@KZIh@At@LNHHFVBb@Cb@Cv[WNhPFhCGjI@jBFl@h@f@fA`BhCzEb@|@FDxABRDRNNd@BtBLbADd@A\\CjABZPPvC?vN?nL?hG??z^Bbm@D~s@Dt_D?rcC?~g@@lNkHA_QAcR?a[CgJ?oC??`T@rp@@lk@?jZAxfAC~x@Gx@@t@Dl@?dW?v]Ard@?bj@Db\\Hrp@AdUE`h@E~s@ElcA@tBJh@MCEJE^AjAS`CArQD~ELx@RnD@lH@hZDzn@JxgBF`eCFn}B@|V?n_@A`S?fIJjoBBda@?z]Al`B?vi@?rIGFqKbKsDlDwBjBcD~Bqn@r^uA`AgAlAaA~A[p@o@lBm@rCQnAOrBCr@AjIAv_DEfsD?j|@C`EOlCOtAYbBYjAi@xAg@jA_@n@k@t@eAdAw@j@{@b@m@PeARuAJsa@CqNAy@@o@DeARk@TcAh@_Ar@cAfAw@nAc@z@Wn@k@nBUlASpAQvBGrABhg@Ddd@CbDOfCWpBe@vBw@`Ce@~@}@rAiAnA{@l@y@`@}Ab@WBoAFq^@y`B?ekABom@C_Q@uW@sa@?ol@A"
+            },
+            "summary": "Wild Horse Trail",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

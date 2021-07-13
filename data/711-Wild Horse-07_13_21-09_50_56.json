@@ -1,0 +1,140 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJe98alIola1MRgqj4v5bZP9s",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJI-n_03wva1MRdlh-ibu-Xe8",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.999443,
+                    "lng": -110.2151317
+                },
+                "southwest": {
+                    "lat": 48.99176199999999,
+                    "lng": -110.2159379
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 904
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 141
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 140
+                    },
+                    "end_address": "AB-41, Aden, AB T0K 0A0, Canada",
+                    "end_location": {
+                        "lat": 48.999443,
+                        "lng": -110.2159379
+                    },
+                    "start_address": "Hwy 232, Havre, MT 59501, USA",
+                    "start_location": {
+                        "lat": 48.99176199999999,
+                        "lng": -110.215159
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 725
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 98
+                            },
+                            "end_location": {
+                                "lat": 48.9982261,
+                                "lng": -110.2154537
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>Hwy 232</b>/<wbr/><b>Wild Horse Trail</b>",
+                            "polyline": {
+                                "points": "ou_jHvku_TC?kTA{F?SCm@?M@KDIDGFEFWNMJMDMBQ?eA?iA?GAAA"
+                            },
+                            "start_location": {
+                                "lat": 48.99176199999999,
+                                "lng": -110.215159
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 156
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 40
+                            },
+                            "end_location": {
+                                "lat": 48.999431,
+                                "lng": -110.2156246
+                            },
+                            "html_instructions": "Slight <b>right</b> to stay on <b>Hwy 232</b>/<wbr/><b>Wild Horse Trail</b><div style=\"font-size:0.9em\">Entering Canada (Alberta)</div>",
+                            "maneuver": "turn-slight-right",
+                            "polyline": {
+                                "points": "}}`jHpmu_TKMGEq@a@IEGAw@?KBKDSBI@GBEDCDEHEHCFADADAJAJ"
+                            },
+                            "start_location": {
+                                "lat": 48.9982261,
+                                "lng": -110.2154537
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "75 ft",
+                                "value": 23
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 3
+                            },
+                            "end_location": {
+                                "lat": 48.999443,
+                                "lng": -110.2159379
+                            },
+                            "html_instructions": "<b>Hwy 232</b>/<wbr/><b>Wild Horse Trail</b> turns slightly <b>left</b> and becomes <b>AB-41 N</b>",
+                            "polyline": {
+                                "points": "meajHrnu_TAR?j@"
+                            },
+                            "start_location": {
+                                "lat": 48.999431,
+                                "lng": -110.2156246
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "ou_jHvku_ToTA{F?SC{@@UJMNe@Z[HwA?iA?GAMOy@g@QGcAB_@HQDIJQ`@Gp@?j@"
+            },
+            "summary": "Hwy 232/Wild Horse Trail",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

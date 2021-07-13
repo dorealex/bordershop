@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJKfMSE1_GFVMR4ALzqsp-Z6g",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJf48Xm2fGFVMReyVElnGbvHM",
+            "types": [
+                "street_address"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9997011,
+                    "lng": -108.3888285
+                },
+                "southwest": {
+                    "lat": 48.991349,
+                    "lng": -108.3904428
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 941
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 95
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 94
+                    },
+                    "end_address": "41725 Turner Rd, Turner, MT, USA",
+                    "end_location": {
+                        "lat": 48.9997011,
+                        "lng": -108.3888285
+                    },
+                    "start_address": "41235 Turner Rd, Turner, MT 59542, USA",
+                    "start_location": {
+                        "lat": 48.991349,
+                        "lng": -108.3904428
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 922
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 90
+                            },
+                            "end_location": {
+                                "lat": 48.9995295,
+                                "lng": -108.3888533
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>State Hwy 241</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "}r_jHf_qtSmE?uB@mFAc@?m@?YCc@Ec@Ee@CgB]KCoHeBiBa@mDy@a@OMG]KmAa@"
+                            },
+                            "start_location": {
+                                "lat": 48.991349,
+                                "lng": -108.3904428
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "62 ft",
+                                "value": 19
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 5
+                            },
+                            "end_location": {
+                                "lat": 48.9997011,
+                                "lng": -108.3888285
+                            },
+                            "html_instructions": "Continue onto <b>SK-37 N</b>",
+                            "polyline": {
+                                "points": "afajHhuptS_@CA?"
+                            },
+                            "start_location": {
+                                "lat": 48.9995295,
+                                "lng": -108.3888533
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "}r_jHf_qtSuQ?gACgAKe@CgB]{HiBwG{Ao@WkBm@a@C"
+            },
+            "summary": "State Hwy 241",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

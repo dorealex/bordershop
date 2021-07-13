@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJpS76-LcawVIRjkN6bcGiRUY",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJldE5drUawVIRVjRcHQUP_DY",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0003399,
+                    "lng": -96.8000734
+                },
+                "southwest": {
+                    "lat": 48.9928047,
+                    "lng": -96.8024938
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 930
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 89
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 88
+                    },
+                    "end_address": "Provincial Trunk Hwy 59, Tolstoi, MB R0A 2E0, Canada",
+                    "end_location": {
+                        "lat": 49.0003399,
+                        "lng": -96.8024938
+                    },
+                    "start_address": "US-59, Lancaster, MN 56735, USA",
+                    "start_location": {
+                        "lat": 48.9928047,
+                        "lng": -96.8000734
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 816
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 51
+                            },
+                            "end_location": {
+                                "lat": 48.9999846,
+                                "lng": -96.8010838
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-59 N</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "_|_jHlgymQeEDoCDaQP}A@aA?w@@u@@U?M@I@YDSFYLSJYTYXKJILKNQXCD"
+                            },
+                            "start_location": {
+                                "lat": 48.9928047,
+                                "lng": -96.8000734
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "374 ft",
+                                "value": 114
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 38
+                            },
+                            "end_location": {
+                                "lat": 49.0003399,
+                                "lng": -96.8024938
+                            },
+                            "html_instructions": "Continue onto <b>Provincial Trunk Hwy 59 N</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
+                            "polyline": {
+                                "points": "{hajHvmymQQ`@Yn@ABGTETCTCV?FAN?`@Aj@?B"
+                            },
+                            "start_location": {
+                                "lat": 48.9999846,
+                                "lng": -96.8010838
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "_|_jHlgymQ{d@b@WBm@Lm@Xs@n@s@bAq@zAQ`AEpAAn@"
+            },
+            "summary": "US-59 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

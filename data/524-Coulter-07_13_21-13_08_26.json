@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "EiQxMDkyNSBVUy04MywgV2VzdGhvcGUsIE5EIDU4NzkzLCBVU0EiGxIZChQKEgkFeaC5jGXeUhHgCLL6J6827hCtVQ",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJ3fM0TvVl3lIRTF4mYBNGPTE",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0000384,
+                    "lng": -101.0163637
+                },
+                "southwest": {
+                    "lat": 48.993118,
+                    "lng": -101.0203328
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 948
+                    },
+                    "duration": {
+                        "text": "2 mins",
+                        "value": 144
+                    },
+                    "duration_in_traffic": {
+                        "text": "2 mins",
+                        "value": 143
+                    },
+                    "end_address": "Provincial Trunk Hwy 83, Coulter, MB R0M 0G0, Canada",
+                    "end_location": {
+                        "lat": 49.00003659999999,
+                        "lng": -101.0203328
+                    },
+                    "start_address": "10925 US-83, Westhope, ND 58793, USA",
+                    "start_location": {
+                        "lat": 48.993118,
+                        "lng": -101.0163637
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 749
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 107
+                            },
+                            "end_location": {
+                                "lat": 48.9995588,
+                                "lng": -101.0178046
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>US-83 N</b><div style=\"font-size:0.9em\">Entering Canada (Manitoba)</div>",
+                            "polyline": {
+                                "points": "_~_jHfwpgRyC@cS@K?I@I@EBEBEDKLUZa@h@EDGFIBEBIBWDk@J[DQD_@HO@S?Q?Q?Q@K@MBIDGDGFEFCFEFGPSj@"
+                            },
+                            "start_location": {
+                                "lat": 48.993118,
+                                "lng": -101.0163637
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 199
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 37
+                            },
+                            "end_location": {
+                                "lat": 49.00003659999999,
+                                "lng": -101.0203328
+                            },
+                            "html_instructions": "Continue onto <b>Provincial Trunk Hwy 83 N</b>",
+                            "polyline": {
+                                "points": "gfajHf`qgRId@I`@E^C\\Ed@Ab@?n@GXKTMRA@KNCHADCJ?L?zA?Z?@"
+                            },
+                            "start_location": {
+                                "lat": 48.9995588,
+                                "lng": -101.0178046
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "_~_jHfwpgRsXDUHiAxAMLOFiBZq@Nc@@u@@YDQJW^[|@SfAI|@GhA?n@Sn@_@n@EP?hB?\\"
+            },
+            "summary": "US-83 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

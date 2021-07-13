@@ -1,0 +1,116 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJMfWDLsTOIVMRdEZgQsbJxsU",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJCXHkocHOIVMR_rVhMAN2cP8",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 48.9995391,
+                    "lng": -103.4868011
+                },
+                "southwest": {
+                    "lat": 48.9910451,
+                    "lng": -103.4869891
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.6 mi",
+                        "value": 950
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 48
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 48
+                    },
+                    "end_address": "SK-350, Torquay, SK S0C 2L0, Canada",
+                    "end_location": {
+                        "lat": 48.9995391,
+                        "lng": -103.4868111
+                    },
+                    "start_address": "10937-10901 ND-42, Ambrose, ND 58833, USA",
+                    "start_location": {
+                        "lat": 48.9910451,
+                        "lng": -103.4868164
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 924
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 47
+                            },
+                            "end_location": {
+                                "lat": 48.9993065,
+                                "lng": -103.4868094
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>ND-42 N</b><div style=\"font-size:0.9em\">Entering Canada (Saskatchewan)</div>",
+                            "polyline": {
+                                "points": "aq_jHrgsvRK?c@?eQCeE@gG?kB?U?}@?SHABYT]?WOw@QAAeAA]?c@@gA?"
+                            },
+                            "start_location": {
+                                "lat": 48.9910451,
+                                "lng": -103.4868164
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "85 ft",
+                                "value": 26
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 1
+                            },
+                            "end_location": {
+                                "lat": 48.9995391,
+                                "lng": -103.4868111
+                            },
+                            "html_instructions": "Continue onto <b>SK-350 N</b>",
+                            "polyline": {
+                                "points": "udajHpgsvRQ?[?"
+                            },
+                            "start_location": {
+                                "lat": 48.9993065,
+                                "lng": -103.4868094
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "aq_jHrgsvR{XAgM?ULYT]?WOw@QgAC{C@[?"
+            },
+            "summary": "ND-42 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

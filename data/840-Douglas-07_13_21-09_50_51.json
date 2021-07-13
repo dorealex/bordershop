@@ -1,0 +1,117 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJLXKadAfEhVQRO9dCHiay4aM",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJmy5nHrbFhVQRx0Ho0eDOgvM",
+            "types": [
+                "establishment",
+                "point_of_interest"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0047792,
+                    "lng": -122.7547037
+                },
+                "southwest": {
+                    "lat": 49.00046510000001,
+                    "lng": -122.7570655
+                }
+            },
+            "copyrights": "Map data \u00a92021 Google",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.3 mi",
+                        "value": 520
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 86
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 76
+                    },
+                    "end_address": "16823 Peace Park Dr, Surrey, BC V3S 9N8, Canada",
+                    "end_location": {
+                        "lat": 49.0047792,
+                        "lng": -122.757032
+                    },
+                    "start_address": "100 A St, Blaine, WA 98230, USA",
+                    "start_location": {
+                        "lat": 49.00046510000001,
+                        "lng": -122.7547037
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 212
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 19
+                            },
+                            "end_location": {
+                                "lat": 49.0021444,
+                                "lng": -122.7560582
+                            },
+                            "html_instructions": "Head <b>northwest</b> on <b>I-5 N</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "}kajHzoflVWVCBg@f@c@\\o@j@eBjAk@\\WLKH"
+                            },
+                            "start_location": {
+                                "lat": 49.00046510000001,
+                                "lng": -122.7547037
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 mi",
+                                "value": 308
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 67
+                            },
+                            "end_location": {
+                                "lat": 49.0047792,
+                                "lng": -122.757032
+                            },
+                            "html_instructions": "Continue onto <b>BC-99 N</b>",
+                            "polyline": {
+                                "points": "kvajHjxflV_@Tw@h@EBC@_@Vq@b@OH]RC@]NMFE@G@KBKBWBWAI?sACi@?_@A"
+                            },
+                            "start_location": {
+                                "lat": 49.0021444,
+                                "lng": -122.7560582
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "}kajHzoflVgB`Bo@j@eBjAcAj@iBlAeBfAmAl@YFc@Fa@A}CE"
+            },
+            "summary": "I-5 N and BC-99 N",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

@@ -1,0 +1,117 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJSUC9zAnmhVQRPXdBfdEN8HA",
+            "types": [
+                "street_address"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJK3NNngvmhVQRdKsMJZe5KhQ",
+            "types": [
+                "premise"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.00221029999999,
+                    "lng": -123.0678855
+                },
+                "southwest": {
+                    "lat": 48.997061,
+                    "lng": -123.0679386
+                }
+            },
+            "copyrights": "Map data \u00a92021",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "0.4 mi",
+                        "value": 572
+                    },
+                    "duration": {
+                        "text": "1 min",
+                        "value": 63
+                    },
+                    "duration_in_traffic": {
+                        "text": "1 min",
+                        "value": 60
+                    },
+                    "end_address": "4 56 St, Delta, BC V4L 1Z2, Canada",
+                    "end_location": {
+                        "lat": 49.00221029999999,
+                        "lng": -123.067923
+                    },
+                    "start_address": "158 Tyee Dr, Point Roberts, WA 98281, USA",
+                    "start_location": {
+                        "lat": 48.997061,
+                        "lng": -123.0678895
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.3 mi",
+                                "value": 555
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 55
+                            },
+                            "end_location": {
+                                "lat": 49.0020551,
+                                "lng": -123.067929
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>Tyee Dr</b> toward <b>Dogwood Way</b><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "polyline": {
+                                "points": "sv`jHhucnVk@?YAc@?gA@c@?mB?S?gABc@?gAAu@?yCAgB?g@BU@o@Bi@AK?"
+                            },
+                            "start_location": {
+                                "lat": 48.997061,
+                                "lng": -123.0678895
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "56 ft",
+                                "value": 17
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 8
+                            },
+                            "end_location": {
+                                "lat": 49.00221029999999,
+                                "lng": -123.067923
+                            },
+                            "html_instructions": "Continue straight onto <b>56 St</b>/<wbr/><b>Tyee Dr</b>",
+                            "maneuver": "straight",
+                            "polyline": {
+                                "points": "{uajHpucnV]A"
+                            },
+                            "start_location": {
+                                "lat": 49.0020551,
+                                "lng": -123.067929
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "sv`jHhucnVqD?mFB{HCoCBeADsAC"
+            },
+            "summary": "Tyee Dr",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

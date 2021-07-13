@@ -1,0 +1,260 @@
+{
+    "geocoded_waypoints": [
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJLQD9KtrJhVQRsV_DqZGP9x8",
+            "types": [
+                "premise"
+            ]
+        },
+        {
+            "geocoder_status": "OK",
+            "place_id": "ChIJy_z3QsLJhVQRcaiXi2teJ60",
+            "types": [
+                "premise"
+            ]
+        }
+    ],
+    "routes": [
+        {
+            "bounds": {
+                "northeast": {
+                    "lat": 49.0169449,
+                    "lng": -122.4707268
+                },
+                "southwest": {
+                    "lat": 48.99404209999999,
+                    "lng": -122.4925931
+                }
+            },
+            "copyrights": "Map data \u00a92021 Google",
+            "legs": [
+                {
+                    "distance": {
+                        "text": "4.5 mi",
+                        "value": 7250
+                    },
+                    "duration": {
+                        "text": "12 mins",
+                        "value": 708
+                    },
+                    "duration_in_traffic": {
+                        "text": "11 mins",
+                        "value": 666
+                    },
+                    "end_address": "10 BC-13, Aldergrove, BC V4W 2L8, Canada",
+                    "end_location": {
+                        "lat": 49.0028787,
+                        "lng": -122.4851371
+                    },
+                    "start_address": "110 H Street Rd, Lynden, WA 98264, USA",
+                    "start_location": {
+                        "lat": 48.99404209999999,
+                        "lng": -122.4851188
+                    },
+                    "steps": [
+                        {
+                            "distance": {
+                                "text": "0.5 mi",
+                                "value": 756
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 54
+                            },
+                            "end_location": {
+                                "lat": 49.0008387,
+                                "lng": -122.4850295
+                            },
+                            "html_instructions": "Head <b>north</b> on <b>WA-539 N</b>",
+                            "polyline": {
+                                "points": "wc`jH~zqjVc@AW?mAKyB?sOC_D?WAK?c@?mCAoAAI@y@?m@B"
+                            },
+                            "start_location": {
+                                "lat": 48.99404209999999,
+                                "lng": -122.4851188
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.2 mi",
+                                "value": 258
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 95
+                            },
+                            "end_location": {
+                                "lat": 49.0028386,
+                                "lng": -122.4842392
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>Guide Meridian Rd</b><div style=\"font-size:0.9em\">Closed 12:00 \u2013 8:00 AM</div><div style=\"font-size:0.9em\">Entering Canada (British Columbia)</div>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "gnajHlzqjV@SAQGQU_@Q]GMEGCEKMEEGCEEICGCICE?EAI?SBG@GBGBA@A?C@E?E?E@m@?M?O@SBMBI?}@@"
+                            },
+                            "start_location": {
+                                "lat": 49.0008387,
+                                "lng": -122.4850295
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.1 mi",
+                                "value": 175
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 63
+                            },
+                            "end_location": {
+                                "lat": 49.0038917,
+                                "lng": -122.4852726
+                            },
+                            "html_instructions": "Continue onto <b>264 Street Diversion</b>/<wbr/><b>Aldergrove-Bellingham Hwy</b>/<wbr/><b>BC-13 N</b><div style=\"font-size:0.9em\">Parts of this road are closed 12:00 \u2013 8:00 AM</div>",
+                            "polyline": {
+                                "points": "wzajHnuqjVgA@U?I?G@I@G@GBA@CBABA@A@AFCFAHAD?F?D?@?F?F?F@FBP@D@H?F?D?FAD?@ABA@A?YPYJ"
+                            },
+                            "start_location": {
+                                "lat": 49.0028386,
+                                "lng": -122.4842392
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "0.6 mi",
+                                "value": 995
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 89
+                            },
+                            "end_location": {
+                                "lat": 49.0023174,
+                                "lng": -122.4733207
+                            },
+                            "html_instructions": "Turn <b>right</b> onto <b>0 Ave</b>",
+                            "maneuver": "turn-right",
+                            "polyline": {
+                                "points": "iabjH|{qjVDS@Q?k@C[Hi@FQDKDG@CHINORQJCJEDCDADEDC@C@E@A@C@E?C@C?C?G?I?[?iH?C?C@C?C@C?E@CBC@C@A@CBA@A@AB?@AvBA@?@AB?@A@C@A@ABC@E?C@E?E?E@E?C?C?W?w@AmB?kB?w@?Y?[?Y?]?yD?wL?u@?cD?w@?mA?Q?O@O?Q?Q?Q?MAO?]A]"
+                            },
+                            "start_location": {
+                                "lat": 49.0038917,
+                                "lng": -122.4852726
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "1.1 mi",
+                                "value": 1783
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 145
+                            },
+                            "end_location": {
+                                "lat": 49.0169449,
+                                "lng": -122.4707632
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>272 St</b>",
+                            "maneuver": "turn-left",
+                            "polyline": {
+                                "points": "owajHfqojVsDAiCAwA@c@?sDBoC@i@?gA?]?mA?oC?c@?oC?c@?kB?kC?o@?s@?c@?kBAgA?sD?kB?iB@A?W?GACAAAECIIGIAEAAEKAKAKAK?C?I?O?iC?q@?k@?a@?MAM?C?ICKAICIAG?ACGEIEGEGCCCCEECCGAGAA?CA_@@c@?c@?kB@c@?c@@c@?c@?iB@"
+                            },
+                            "start_location": {
+                                "lat": 49.0023174,
+                                "lng": -122.4733207
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "1.0 mi",
+                                "value": 1592
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 110
+                            },
+                            "end_location": {
+                                "lat": 49.0167513,
+                                "lng": -122.4925931
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>8 Ave</b>/<wbr/><b>Warner Rd</b>",
+                            "maneuver": "turn-left",
+                            "polyline": {
+                                "points": "{rdjHfaojV@vL?t@@vL@nH@nE@xA@lB?^?T?v@@zE@^?T@zE?Z?B?jA@`@?bC?^B~I?^?lA?^?T@^@xG?dA@tC?L@jE?N@jE@dA?|A?dA@v@?^"
+                            },
+                            "start_location": {
+                                "lat": 49.0169449,
+                                "lng": -122.4707632
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "1.0 mi",
+                                "value": 1647
+                            },
+                            "duration": {
+                                "text": "2 mins",
+                                "value": 138
+                            },
+                            "end_location": {
+                                "lat": 49.0032546,
+                                "lng": -122.4852595
+                            },
+                            "html_instructions": "Turn <b>left</b> onto <b>264 St</b>/<wbr/><b>Aldergrove-Bellingham Hwy</b>/<wbr/><b>BC-13 S</b><div style=\"font-size:0.9em\">Continue to follow Aldergrove-Bellingham Hwy/<wbr/>BC-13 S</div><div style=\"font-size:0.9em\">Parts of this road are closed 12:00 \u2013 8:00 AM</div>",
+                            "maneuver": "turn-left",
+                            "polyline": {
+                                "points": "uqdjHtisjVdBAxA?P?`@?lB@\\@f@A^AfI?d@?l@?P?@?XA^E`@KXKZKb@S`@UBC^URQrCiCn@k@^[DEVWh@i@hE}DtCkCrDqDxAwA\\]|@{@x@y@\\]\\]z@y@PQj@i@NOHGf@g@TOHGNK`@@BANE|@OJCJALAP?"
+                            },
+                            "start_location": {
+                                "lat": 49.0167513,
+                                "lng": -122.4925931
+                            },
+                            "travel_mode": "DRIVING"
+                        },
+                        {
+                            "distance": {
+                                "text": "144 ft",
+                                "value": 44
+                            },
+                            "duration": {
+                                "text": "1 min",
+                                "value": 14
+                            },
+                            "end_location": {
+                                "lat": 49.0028787,
+                                "lng": -122.4851371
+                            },
+                            "html_instructions": "Slight <b>left</b><div style=\"font-size:0.9em\">Destination will be on the left</div>",
+                            "maneuver": "turn-slight-left",
+                            "polyline": {
+                                "points": "i}ajHz{qjVTSBCB?j@?"
+                            },
+                            "start_location": {
+                                "lat": 49.0032546,
+                                "lng": -122.4852595
+                            },
+                            "travel_mode": "DRIVING"
+                        }
+                    ],
+                    "traffic_speed_entry": [],
+                    "via_waypoint": []
+                }
+            ],
+            "overview_polyline": {
+                "points": "wc`jH~zqjV{@AmAKyB?sTCc@AkGAgBB?e@]q@Yk@[a@_@Q_@E[DOFMBgA@q@HeDBc@DOLIRC\\?XHh@AZEFs@\\Fe@CgAP{@Va@b@a@VIVOFOBQ@gJFQHKFC|BEHGFOBW?wAAyP@iYCoCyLAuLDkU?sFAqM@e@CYYK_@Ce@?wFAaAIi@K[SWIIOCiA?wEBgA?iB@@vL@lNB~NB|FBhIFlZLpk@?^dBAjB?tE@zLAR?x@Gz@W~@_@d@Yr@g@hFwE`LkKzOsOvAsA|@w@XS`@@RGhASXCP?TSFCj@?"
+            },
+            "summary": "272 St",
+            "warnings": [],
+            "waypoint_order": []
+        }
+    ],
+    "status": "OK"
+}

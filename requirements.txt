@@ -2,7 +2,7 @@ altair==4.1.0
 argon2-cffi==20.1.0
 astor==0.8.1
 async-generator==1.10
-#attrs @ file:///tmp/build/80754af9/attrs_1620827162558/work
+attrs
 backcall==0.2.0
 base58==2.1.0
 bleach==3.3.0
@@ -11,7 +11,7 @@ cachetools==4.2.2
 certifi==2021.5.30
 cffi==1.14.5
 chardet==4.0.0
-#click @ file:///home/linux1/recipes/ci/click_1610990599742/work
+click
 click-plugins==1.1.1
 cligj==0.7.2
 collection-json==0.1.1
@@ -25,7 +25,6 @@ entrypoints==0.3
 Fiona==1.8.13.post1
 GDAL==3.0.2
 geographiclib==1.52
-#geopandas @ file:///tmp/build/80754af9/geopandas_1594937497867/work
 geopy==2.1.0
 gitdb==4.0.7
 GitPython==3.1.18
@@ -49,7 +48,7 @@ matplotlib==3.4.2
 matplotlib-inline==0.1.2
 mistune==0.8.4
 mkl-fft==1.3.0
-#mkl-random @ file:///C:/ci/mkl_random_1618854593605/work
+mkl-random 
 mkl-service==2.3.0
 munch==2.5.0
 nbclient==0.5.3
@@ -57,9 +56,9 @@ nbconvert==6.1.0
 nbformat==5.1.3
 nest-asyncio==1.5.1
 notebook==6.4.0
-numpy #@ file:///C:/ci/numpy_and_numpy_base_1620831380353/work
+numpy 
 packaging==21.0
-pandas# @ file:///C:/ci/pandas_1624383628295/work
+pandas
 pandocfilters==1.4.3
 parso==0.8.2
 pickleshare==0.7.5
@@ -72,18 +71,18 @@ pycparser==2.20
 pydeck==0.6.2
 Pygments==2.9.0
 pyparsing==2.4.7
-pyproj #@ file:///C:/ci/pyproj_1614278152133/work
+pyproj
 pyrsistent==0.18.0
-python-dateutil #@ file:///home/ktietz/src/ci/python-dateutil_1611928101742/work
-pytz #@ file:///tmp/build/80754af9/pytz_1612215392582/work
+python-dateutil 
+pytz 
 pywin32==301
 pywinpty==1.1.3
 pyzmq==22.1.0
 requests==2.25.1
-Rtree #@ file:///C:/ci/rtree_1618421019532/work
+Rtree 
 Send2Trash==1.7.1
 Shapely==1.7.1
-six #@ file:///tmp/build/80754af9/six_1623709665295/work
+six
 smmap==4.0.0
 streamlit==0.84.0
 terminado==0.10.1

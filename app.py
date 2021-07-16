@@ -28,11 +28,11 @@ def make_coords(row):
 
 def return_colour(row):
     delay = row['delay']
-    if delay== 0:
+    if 0<= delay < (3*60):
         return [0,255,000]
-    elif delay > 0:
+    elif (3*60)<=delay < (5*60):
         return [252, 186, 3]
-    elif delay > 5*60:
+    elif (5*60) <= delay:
         return [255,0,0]
 
 df = pd.read_csv('baseline.csv')
@@ -96,7 +96,7 @@ view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=3, 
 
 r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{id} {name}\nDelay: {wait_times}"})
 st.pydeck_chart(r)
-display_cols=['name','province','wait_times','datetime' ]
+display_cols=['name','province','wait_times','datetime','delay' ]
 final = final.sort_values("delay", ascending=False)
 final = final[display_cols]
 final

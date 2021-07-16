@@ -4,7 +4,7 @@ from datetime import datetime as dt
 import csv
 
 if __name__=='__main__':
-    df = pd.read_csv("crossings_west.csv")
+    df = pd.read_csv("crossings.csv")
     df['dest'] = df['lat_actual'].astype(str) +", " +df['long_actual'].astype(str)
     df['origin'] = df['lat_origin'].astype(str) +", "+ df['long_origin'].astype(str)
 

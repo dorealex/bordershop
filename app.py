@@ -22,8 +22,8 @@ def wait_factor(row):
         return str(round(delta/60))+" minutes"
 
 def make_coords(row):
-    lat = row['lat']
-    lon = row['lon']
+    lat = row['lat'].astype(float)
+    lon = row['lon'].astype(float)
     return [lon,lat]
 
 def return_colour(row):

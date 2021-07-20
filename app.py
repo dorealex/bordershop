@@ -147,7 +147,8 @@ log2 = log2[cols]
 st.write("### Specific Crossing Info")
 choice = st.selectbox("Choose Crossing", log2['name'].sort_values().unique())
 filtered = log2[log2['name']== choice]
-filtered[['local time', 'delay','id']]
+display2 = filtered[['local time', 'delay']]
+#display2
 
 id=filtered['id'].iloc[0]
 final2=final[final['id']==id]
@@ -177,5 +178,12 @@ layer2 = pdk.Layer(
 
 view_state2 = pdk.ViewState(latitude=midpoint2[0], longitude=midpoint2[1], zoom=7, bearing=0, pitch=0)
 
-r = pdk.Deck(layers=[layer2], initial_view_state=view_state2, tooltip={"text": "{id} {name}\nDelay: {wait_times}"})
-st.pydeck_chart(r)
+r2 = pdk.Deck(layers=[layer2], initial_view_state=view_state2, tooltip={"text": "{id} {name}\nDelay: {wait_times}"})
+st.pydeck_chart(r2,use_container_width=True)
+
+display2['local time'] = pd.to_datetime(display2['local time'])
+display2['hour']=display2['local time'].dt.hour
+
+data = display2.groupby("hour").mean()
+data['delay'] = data['delay']/60
+st.area_chart(data)

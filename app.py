@@ -40,7 +40,11 @@ def return_colour(row):
         return [252, 186, 3]
     elif (5*60) <= delay:
         return [255,0,0]
-
+def return_line(row):
+    if row['selected']:
+        return [66, 135, 245]
+    else:
+        return [0,0,0]
 def format_time(row):
     return str(row['time']).replace("_",":")
     
@@ -125,10 +129,10 @@ view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=3, 
 
 r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{id} {name}\nDelay: {wait_times}"})
 st.pydeck_chart(r)
-display_cols=['name','province','wait_times','datetime','delay' ]
+display_cols=['name','id','province','wait_times','datetime','delay' ]
 final = final.sort_values("delay", ascending=False)
-final = final[display_cols]
-final
+display = final[display_cols]
+display
 
 log2 = pd.read_csv(log_file)
 log2['time']=log2.apply(format_time, axis=1)
@@ -143,4 +147,35 @@ log2 = log2[cols]
 st.write("### Specific Crossing Info")
 choice = st.selectbox("Choose Crossing", log2['name'].sort_values().unique())
 filtered = log2[log2['name']== choice]
-filtered[['local time', 'delay']]
+filtered[['local time', 'delay','id']]
+
+id=filtered['id'].iloc[0]
+final2=final[final['id']==id]
+
+
+midpoint2 = (np.average(final2['lat']), np.average(final2['lon']))
+
+
+
+layer2 = pdk.Layer(
+    "ScatterplotLayer",
+    data=final2,
+    pickable=True,
+    opacity=0.8,
+    stroked=True,
+    filled=True,
+    
+    radius_min_pixels=10,
+    radius_max_pixels=100,
+    line_width_min_pixels=1,
+    get_position='coordinates',
+    get_radius='delay',
+    get_weight='delay',
+    get_fill_color='color',
+    get_line_color=[0, 0, 0],
+)
+
+view_state2 = pdk.ViewState(latitude=midpoint2[0], longitude=midpoint2[1], zoom=7, bearing=0, pitch=0)
+
+r = pdk.Deck(layers=[layer2], initial_view_state=view_state2, tooltip={"text": "{id} {name}\nDelay: {wait_times}"})
+st.pydeck_chart(r)

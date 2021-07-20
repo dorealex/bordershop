@@ -4,6 +4,12 @@ import numpy as np
 import datetime
 from datetime import timedelta
 import pydeck as pdk
+
+from datetime import datetime as dt
+from matplotlib import pyplot as plt
+
+import pytz
+
 st.title("Border Wait Times Visualisation")
 def wait_seconds(row):
     return max([0,row['traffic']-row['baseline']])
@@ -34,6 +40,29 @@ def return_colour(row):
         return [252, 186, 3]
     elif (5*60) <= delay:
         return [255,0,0]
+
+def format_time(row):
+    return str(row['time']).replace("_",":")
+    
+
+def utc_time(row):
+    utc=pytz.timezone('UTC')
+    date_time=row['datetime']
+    return dt.astimezone(date_time,utc)
+def get_delay(row):
+    return max(0,row['traffic']-row['baseline'])
+
+
+def local_time(row):
+    sel = pytz.timezone(row['timeZoneId'])
+    return dt.astimezone(row['UTC'],sel)
+log_file = 'log.csv'
+tz_data = pd.read_csv("tz_data.csv")
+
+
+
+
+
 
 df = pd.read_csv('baseline.csv')
 df[['lat','lon']] = df['dest'].str.split(',',expand=True)
@@ -100,3 +129,18 @@ display_cols=['name','province','wait_times','datetime','delay' ]
 final = final.sort_values("delay", ascending=False)
 final = final[display_cols]
 final
+
+log2 = pd.read_csv(log_file)
+log2['time']=log2.apply(format_time, axis=1)
+log2['datetime'] = pd.to_datetime(log2['date'] + ' ' + log2['time'])
+if "utc_time" not in log2.columns:
+    log2['UTC'] = log2.apply(utc_time,axis=1)
+log2 = log2.merge(tz_data[['id','timeZoneId']], on='id')
+log2['local time'] = log2.apply(local_time,axis=1)
+log2['delay'] = log2.apply(get_delay,axis=1)
+cols = ['id','name', 'local time', 'delay']
+log2 = log2[cols]
+st.write("### Specific Crossing Info")
+choice = st.selectbox("Choose Crossing", log2['name'].sort_values().unique())
+filtered = log2[log2['name']== choice]
+filtered[['local time', 'delay']]

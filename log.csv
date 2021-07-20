@@ -615,3 +615,237 @@ date,time,id,name,traffic,baseline
 16-Jul-2021,12_55_43,518,Winkler,167,168
 16-Jul-2021,12_55_43,308,Woburn,88,86
 16-Jul-2021,12_55_43,212,Woodstock Road,67,58
+20-Jul-2021,13_41_10,817,Abbostford-Huntingdon,226,205
+20-Jul-2021,13_41_10,318,Abercorn,74,75
+20-Jul-2021,13_41_10,706,Aden,74,75
+20-Jul-2021,13_41_10,841,Aldergrove,155,154
+20-Jul-2021,13_41_10,453,Ambassador Bridge,181,178
+20-Jul-2021,13_41_10,214,Andover,108,108
+20-Jul-2021,13_41_10,329,Armstrong,103,102
+20-Jul-2021,13_41_10,892,Beaver Creek,103,99
+20-Jul-2021,13_41_10,200,Bloomfield,33,33
+20-Jul-2021,13_41_10,507,Boissevain,183,160
+20-Jul-2021,13_41_10,815,Boundary Bay,60,63
+20-Jul-2021,13_41_10,225,Campobello,73,71
+20-Jul-2021,13_41_10,612,Carievale,88,89
+20-Jul-2021,13_41_10,834,Carson,71,72
+20-Jul-2021,13_41_10,521,Cartwright,205,205
+20-Jul-2021,13_41_10,707,Carway,102,102
+20-Jul-2021,13_41_10,816,Cascade,110,110
+20-Jul-2021,13_41_10,215,Centreville,94,95
+20-Jul-2021,13_41_10,365,Chartierville,54,55
+20-Jul-2021,13_41_10,709,Chief Mountain,54,55
+20-Jul-2021,13_41_10,836,Chopaka,71,71
+20-Jul-2021,13_41_10,216,Clair,50,50
+20-Jul-2021,13_41_10,337,Clarenceville,90,90
+20-Jul-2021,13_41_10,619,Climax,94,95
+20-Jul-2021,13_41_10,409,Cornwall Traffic Office,133,122
+20-Jul-2021,13_41_10,615,Coronach,146,146
+20-Jul-2021,13_41_10,524,Coulter,143,144
+20-Jul-2021,13_41_10,705,Coutts,205,173
+20-Jul-2021,13_41_10,311,Covey Hill,124,115
+20-Jul-2021,13_41_10,520,Crystal City,44,44
+20-Jul-2021,13_41_10,708,Del Bonita,150,151
+20-Jul-2021,13_41_10,840,Douglas,145,86
+20-Jul-2021,13_41_10,330,Dundee,83,83
+20-Jul-2021,13_41_10,362,East Hereford,105,105
+20-Jul-2021,13_41_10,369,East Pinnacle,118,118
+20-Jul-2021,13_41_10,213,Edmunston,104,104
+20-Jul-2021,13_41_10,502,Emerson,163,142
+20-Jul-2021,13_41_10,610,Estevan Highway,175,176
+20-Jul-2021,13_41_10,222,Forest City,87,86
+20-Jul-2021,13_41_10,410,Fort Erie (Peace Bridge),226,202
+20-Jul-2021,13_41_10,478,Fort Frances Bridge,219,249
+20-Jul-2021,13_41_10,220,Fosterville,69,70
+20-Jul-2021,13_41_10,203,Four Falls,76,76
+20-Jul-2021,13_41_10,893,Fraser,54,55
+20-Jul-2021,13_41_10,332,Frelighsburg,59,60
+20-Jul-2021,13_41_10,219,Gillespie Portage,63,64
+20-Jul-2021,13_41_10,370,Glen Sutton,61,62
+20-Jul-2021,13_41_10,508,Goodlands,64,65
+20-Jul-2021,13_41_10,217,Grand Falls,67,68
+20-Jul-2021,13_41_10,503,Gretna,157,158
+20-Jul-2021,13_41_10,333,Hemmingford,50,50
+20-Jul-2021,13_41_10,302,Herdman,123,114
+20-Jul-2021,13_41_10,366,Hereford Road,64,64
+20-Jul-2021,13_41_10,334,Highwater,91,91
+20-Jul-2021,13_41_10,818,Kingsgate,209,214
+20-Jul-2021,13_41_10,324,Lacolle: Route 221,80,81
+20-Jul-2021,13_41_10,341,Lacolle: Route 223,88,89
+20-Jul-2021,13_41_10,456,Landsdowne (Thousand Islands Bridge),172,156
+20-Jul-2021,13_41_10,522,Lena,44,44
+20-Jul-2021,13_41_10,895,Little Gold Creek,57,57
+20-Jul-2021,13_41_10,523,Lyleton,122,122
+20-Jul-2021,13_41_10,835,Midway,18,19
+20-Jul-2021,13_41_10,230,Milltown,65,65
+20-Jul-2021,13_41_10,620,Monchy,65,65
+20-Jul-2021,13_41_10,367,Morses Line,71,71
+20-Jul-2021,13_41_10,828,Nelway,56,56
+20-Jul-2021,13_41_10,4272,Niagara Falls Rainbow Bridge,92,84
+20-Jul-2021,13_41_10,4271,Niagara Falls Whirlpool Birdge,99,100
+20-Jul-2021,13_41_10,602,North Portal,378,280
+20-Jul-2021,13_41_10,613,Northgate,117,117
+20-Jul-2021,13_41_10,368,Noyan,88,89
+20-Jul-2021,13_41_10,819,Osoyoos,114,130
+20-Jul-2021,13_41_10,616,Oungre,117,117
+20-Jul-2021,13_41_10,813,Pacific Highway,166,173
+20-Jul-2021,13_41_10,832,Paterson,142,144
+20-Jul-2021,13_41_10,475,Pigeon River,130,155
+20-Jul-2021,13_41_10,517,Piney,108,109
+20-Jul-2021,13_41_10,891,Pleasant Camp,104,104
+20-Jul-2021,13_41_10,331,Pohenegamook,55,55
+20-Jul-2021,13_41_10,439,Prescott,160,109
+20-Jul-2021,13_41_10,427,Queenston Lewiston Bridge,204,121
+20-Jul-2021,13_41_10,488,Rainy River,139,116
+20-Jul-2021,13_41_10,607,Regway,162,165
+20-Jul-2021,13_41_10,226,River de Chute,74,75
+20-Jul-2021,13_41_10,824,Roosville,110,126
+20-Jul-2021,13_41_10,822,Rykerts,128,129
+20-Jul-2021,13_41_10,440,Sarnia (Blue Water Bridge),417,125
+20-Jul-2021,13_41_10,441,Sault Ste. Marie Bridge,135,121
+20-Jul-2021,13_41_10,509,Snowflake,63,63
+20-Jul-2021,13_41_10,506,South Junction,80,80
+20-Jul-2021,13_41_10,505,Sprague,85,82
+20-Jul-2021,13_41_10,205,St. Croix,59,60
+20-Jul-2021,13_41_10,218,St. Leonard,181,175
+20-Jul-2021,13_41_10,211,St. Stephen (Ferry Point Bridge),59,60
+20-Jul-2021,13_41_10,231,St. Stephen 3rd Bridge,137,130
+20-Jul-2021,13_41_10,354,Stanhope,88,88
+20-Jul-2021,13_41_10,314,Stanstead(55),101,85
+20-Jul-2021,13_41_10,376,Stanstead(Beebe),114,114
+20-Jul-2021,13_41_10,375,Stanstead(Rte 143),78,77
+20-Jul-2021,13_41_10,328,St-Armand/Philipsburg,169,103
+20-Jul-2021,13_41_10,351,St-Bernard-de-Lacolle: Highway 15,90,70
+20-Jul-2021,13_41_10,339,Ste-Aurelie,69,69
+20-Jul-2021,13_41_10,896,Stewart,109,109
+20-Jul-2021,13_41_10,336,St-Just-de-Bretenieres,124,125
+20-Jul-2021,13_41_10,335,St-Pamphile,60,61
+20-Jul-2021,13_41_10,516,Tolstoi,88,89
+20-Jul-2021,13_41_10,617,Torquay,48,48
+20-Jul-2021,13_41_10,307,Trout River,101,101
+20-Jul-2021,13_41_10,833,Waneta,58,59
+20-Jul-2021,13_41_10,618,West Poplar,42,42
+20-Jul-2021,13_41_10,711,Wild Horse,140,141
+20-Jul-2021,13_41_10,621,Willow Creek,35,36
+20-Jul-2021,13_41_10,452,Windsor-Detroit Tunnel,124,107
+20-Jul-2021,13_41_10,519,Windygates,175,176
+20-Jul-2021,13_41_10,518,Winkler,167,168
+20-Jul-2021,13_41_10,308,Woburn,88,86
+20-Jul-2021,13_41_10,212,Woodstock Road,89,58
+20-Jul-2021,14_11_38,817,Abbostford-Huntingdon,257,205
+20-Jul-2021,14_11_38,318,Abercorn,74,75
+20-Jul-2021,14_11_38,706,Aden,74,75
+20-Jul-2021,14_11_38,841,Aldergrove,155,154
+20-Jul-2021,14_11_38,453,Ambassador Bridge,293,178
+20-Jul-2021,14_11_38,214,Andover,108,108
+20-Jul-2021,14_11_38,329,Armstrong,103,102
+20-Jul-2021,14_11_38,892,Beaver Creek,103,99
+20-Jul-2021,14_11_38,200,Bloomfield,33,33
+20-Jul-2021,14_11_38,507,Boissevain,183,160
+20-Jul-2021,14_11_38,815,Boundary Bay,60,63
+20-Jul-2021,14_11_38,225,Campobello,72,71
+20-Jul-2021,14_11_38,612,Carievale,88,89
+20-Jul-2021,14_11_38,834,Carson,71,72
+20-Jul-2021,14_11_38,521,Cartwright,205,205
+20-Jul-2021,14_11_38,707,Carway,102,102
+20-Jul-2021,14_11_38,816,Cascade,110,110
+20-Jul-2021,14_11_38,215,Centreville,94,95
+20-Jul-2021,14_11_38,365,Chartierville,54,55
+20-Jul-2021,14_11_38,709,Chief Mountain,54,55
+20-Jul-2021,14_11_38,836,Chopaka,71,71
+20-Jul-2021,14_11_38,216,Clair,50,50
+20-Jul-2021,14_11_38,337,Clarenceville,90,90
+20-Jul-2021,14_11_38,619,Climax,94,95
+20-Jul-2021,14_11_38,409,Cornwall Traffic Office,132,122
+20-Jul-2021,14_11_38,615,Coronach,146,146
+20-Jul-2021,14_11_38,524,Coulter,143,144
+20-Jul-2021,14_11_38,705,Coutts,200,173
+20-Jul-2021,14_11_38,311,Covey Hill,124,115
+20-Jul-2021,14_11_38,520,Crystal City,44,44
+20-Jul-2021,14_11_38,708,Del Bonita,150,151
+20-Jul-2021,14_11_38,840,Douglas,202,86
+20-Jul-2021,14_11_38,330,Dundee,83,83
+20-Jul-2021,14_11_38,362,East Hereford,105,105
+20-Jul-2021,14_11_38,369,East Pinnacle,118,118
+20-Jul-2021,14_11_38,213,Edmunston,104,104
+20-Jul-2021,14_11_38,502,Emerson,163,142
+20-Jul-2021,14_11_38,610,Estevan Highway,175,176
+20-Jul-2021,14_11_38,222,Forest City,87,86
+20-Jul-2021,14_11_38,410,Fort Erie (Peace Bridge),235,202
+20-Jul-2021,14_11_38,478,Fort Frances Bridge,219,249
+20-Jul-2021,14_11_38,220,Fosterville,69,70
+20-Jul-2021,14_11_38,203,Four Falls,76,76
+20-Jul-2021,14_11_38,893,Fraser,54,55
+20-Jul-2021,14_11_38,332,Frelighsburg,59,60
+20-Jul-2021,14_11_38,219,Gillespie Portage,63,64
+20-Jul-2021,14_11_38,370,Glen Sutton,61,62
+20-Jul-2021,14_11_38,508,Goodlands,64,65
+20-Jul-2021,14_11_38,217,Grand Falls,67,68
+20-Jul-2021,14_11_38,503,Gretna,157,158
+20-Jul-2021,14_11_38,333,Hemmingford,50,50
+20-Jul-2021,14_11_38,302,Herdman,123,114
+20-Jul-2021,14_11_38,366,Hereford Road,64,64
+20-Jul-2021,14_11_38,334,Highwater,91,91
+20-Jul-2021,14_11_38,818,Kingsgate,220,214
+20-Jul-2021,14_11_38,324,Lacolle: Route 221,80,81
+20-Jul-2021,14_11_38,341,Lacolle: Route 223,88,89
+20-Jul-2021,14_11_38,456,Landsdowne (Thousand Islands Bridge),163,156
+20-Jul-2021,14_11_38,522,Lena,44,44
+20-Jul-2021,14_11_38,895,Little Gold Creek,57,57
+20-Jul-2021,14_11_38,523,Lyleton,122,122
+20-Jul-2021,14_11_38,835,Midway,18,19
+20-Jul-2021,14_11_38,230,Milltown,65,65
+20-Jul-2021,14_11_38,620,Monchy,65,65
+20-Jul-2021,14_11_38,367,Morses Line,71,71
+20-Jul-2021,14_11_38,828,Nelway,56,56
+20-Jul-2021,14_11_38,4272,Niagara Falls Rainbow Bridge,86,84
+20-Jul-2021,14_11_38,4271,Niagara Falls Whirlpool Birdge,98,100
+20-Jul-2021,14_11_38,602,North Portal,506,280
+20-Jul-2021,14_11_38,613,Northgate,117,117
+20-Jul-2021,14_11_38,368,Noyan,88,89
+20-Jul-2021,14_11_38,819,Osoyoos,114,130
+20-Jul-2021,14_11_38,616,Oungre,117,117
+20-Jul-2021,14_11_38,813,Pacific Highway,183,173
+20-Jul-2021,14_11_38,832,Paterson,142,144
+20-Jul-2021,14_11_38,475,Pigeon River,130,155
+20-Jul-2021,14_11_38,517,Piney,108,109
+20-Jul-2021,14_11_38,891,Pleasant Camp,104,104
+20-Jul-2021,14_11_38,331,Pohenegamook,55,55
+20-Jul-2021,14_11_38,439,Prescott,164,109
+20-Jul-2021,14_11_38,427,Queenston Lewiston Bridge,289,121
+20-Jul-2021,14_11_38,488,Rainy River,139,116
+20-Jul-2021,14_11_38,607,Regway,162,165
+20-Jul-2021,14_11_38,226,River de Chute,74,75
+20-Jul-2021,14_11_38,824,Roosville,110,126
+20-Jul-2021,14_11_38,822,Rykerts,128,129
+20-Jul-2021,14_11_38,440,Sarnia (Blue Water Bridge),527,125
+20-Jul-2021,14_11_38,441,Sault Ste. Marie Bridge,159,121
+20-Jul-2021,14_11_38,509,Snowflake,63,63
+20-Jul-2021,14_11_38,506,South Junction,80,80
+20-Jul-2021,14_11_38,505,Sprague,85,82
+20-Jul-2021,14_11_38,205,St. Croix,59,60
+20-Jul-2021,14_11_38,218,St. Leonard,181,175
+20-Jul-2021,14_11_38,211,St. Stephen (Ferry Point Bridge),59,60
+20-Jul-2021,14_11_38,231,St. Stephen 3rd Bridge,137,130
+20-Jul-2021,14_11_38,354,Stanhope,88,88
+20-Jul-2021,14_11_38,314,Stanstead(55),122,85
+20-Jul-2021,14_11_38,376,Stanstead(Beebe),114,114
+20-Jul-2021,14_11_38,375,Stanstead(Rte 143),96,77
+20-Jul-2021,14_11_38,328,St-Armand/Philipsburg,171,103
+20-Jul-2021,14_11_38,351,St-Bernard-de-Lacolle: Highway 15,96,70
+20-Jul-2021,14_11_38,339,Ste-Aurelie,69,69
+20-Jul-2021,14_11_38,896,Stewart,109,109
+20-Jul-2021,14_11_38,336,St-Just-de-Bretenieres,124,125
+20-Jul-2021,14_11_38,335,St-Pamphile,60,61
+20-Jul-2021,14_11_38,516,Tolstoi,88,89
+20-Jul-2021,14_11_38,617,Torquay,48,48
+20-Jul-2021,14_11_38,307,Trout River,101,101
+20-Jul-2021,14_11_38,833,Waneta,58,59
+20-Jul-2021,14_11_38,618,West Poplar,42,42
+20-Jul-2021,14_11_38,711,Wild Horse,140,141
+20-Jul-2021,14_11_38,621,Willow Creek,35,36
+20-Jul-2021,14_11_38,452,Windsor-Detroit Tunnel,102,107
+20-Jul-2021,14_11_38,519,Windygates,175,176
+20-Jul-2021,14_11_38,518,Winkler,167,168
+20-Jul-2021,14_11_38,308,Woburn,88,86
+20-Jul-2021,14_11_38,212,Woodstock Road,101,58

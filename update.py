@@ -1,9 +1,10 @@
 import pandas as pd
 import utility_func
 from datetime import datetime as dt
+from datetime import timezone
 import csv
 
-if __name__=='__main__':
+def main():
     df = pd.read_csv("crossings.csv")
     df['dest'] = df['lat_actual'].astype(str) +", " +df['long_actual'].astype(str)
     df['origin'] = df['lat_origin'].astype(str) +", "+ df['long_origin'].astype(str)
@@ -14,7 +15,7 @@ if __name__=='__main__':
     time_strf = '%H_%M_%S'
     day_val = dt.now().strftime(day_strf)
     time_val = dt.now().strftime(time_strf)
-
+    utc_time = dt.now(tz=timezone.utc)
 
     #get traffic time
     rows=[]
@@ -30,7 +31,7 @@ if __name__=='__main__':
         utility_func.save_request(id,name,r)
         traffic = utility_func.get_traffic_time(r.json())
         baseline = utility_func.get_baseline_time(r.json())
-        row = [day_val, time_val, id, name, traffic, baseline]
+        row = [day_val, time_val,utc_time, id, name, traffic, baseline]
         rows.append(row)
     #write to log
     
@@ -38,3 +39,6 @@ if __name__=='__main__':
     with open(log_file, "a", newline="") as f:
         writer = csv.writer(f)
         writer.writerows(rows)
+
+if __name__ == '__main__':
+    main()

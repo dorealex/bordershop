@@ -24,21 +24,20 @@ log_file = 'log.csv'
 tz_data = pd.read_csv("tz_data.csv")
 
 
-log = pd.read_csv(log_file)
-log['time']=log.apply(format_time, axis=1)
-log['datetime'] = pd.to_datetime(log['date'] + ' ' + log['time'])
-if "utc_time" not in log.columns:
-    log['UTC'] = log.apply(utc_time,axis=1)
-log = log.merge(tz_data[['id','timeZoneId']], on='id')
-log['local time'] = log.apply(local_time,axis=1)
-log['delay'] = log.apply(get_delay,axis=1)
+log2 = pd.read_csv(log_file)
+log2['time']=log2.apply(format_time, axis=1)
+log2['datetime'] = pd.to_datetime(log2['date'] + ' ' + log2['time'])
+if "utc_time" not in log2.columns:
+    log2['UTC'] = log2.apply(utc_time,axis=1)
+log2 = log2.merge(tz_data[['id','timeZoneId']], on='id')
+log2['local time'] = log2.apply(local_time,axis=1)
+log2['delay'] = log2.apply(get_delay,axis=1)
 cols = ['id','name', 'local time', 'delay']
-log = log[cols]
+log2 = log2[cols]
 
-log.dtypes
-st.write(log.columns)
-choice = st.selectbox("Choose Crossing", log['name'].sort_values().unique())
-filtered = log[log['name']== choice]
+log2.dtypes
+st.write(log2.columns)
+choice = st.selectbox("Choose Crossing", log2['name'].sort_values().unique())
+filtered = log2[log2['name']== choice]
 filtered
-fig, ax = plt.subplots()
-fig = ax.hist(filtered['delay'],bins=24)
+

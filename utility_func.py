@@ -1,13 +1,28 @@
 import requests
 import json
 from datetime import datetime as dt
-
+import time
 
 #####
 #important, create file called config.py, in it declare a variable api_key with your google maps api key
 from config import api_key
 #####
-
+def get_timezone_data(id,name,point):
+  #ask google for the timezone data, store in file
+  ts=str(time.time())
+  base_url = 'https://maps.googleapis.com/maps/api/timezone/json?location='+point+'&timestamp='+ts+'&key='+api_key
+  r = requests.get(base_url)
+  if r.status_code == 200:
+    response = r.json()
+    fname = "-".join([str(id),name,"TimeZone",str(dt.today().strftime("%d_%m_%Y"))])+".json"
+    fname = fname.replace("/","_")
+    fname = fname.replace(":","_")
+    with open('timezone/'+fname,'w') as outfile:
+      json.dump(response, outfile, indent=4)
+  else:
+    print("Error on the api", r.status_code)
+    print(base_url)
+  
 
 def url_creator(origin, destination):
   #prepares http request url string

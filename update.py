@@ -44,7 +44,7 @@ def main():
         row = [day_val, time_val,utc_time, id, name, traffic, baseline]
         rows.append(row)
     #write to log
-        mydict = {"day":day_val, "time":time_val, "utc":utc_time, "crossing_id": int(id), "name":name,"traffic":traffic,"baseline":baseline, "timestamp":dt.timestamp()}
+        mydict = {"day":day_val, "time":time_val, "utc":utc_time, "crossing_id": int(id), "name":name,"traffic":traffic,"baseline":baseline}
         col.insert_one(mydict)
 
     with open(log_file, "a", newline="") as f:

@@ -3,3 +3,4 @@ config.py
 data/
 .vscode/
 __pycache__/
+utility_func.py

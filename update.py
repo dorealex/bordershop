@@ -2,6 +2,11 @@ import pandas as pd
 import utility_func
 from datetime import datetime as dt
 from datetime import timezone
+import pymongo
+
+cluster = pymongo.MongoClient("mongodb+srv://dorea:philo@tyche.tndz8.mongodb.net/test?retryWrites=true&w=majority")
+db = cluster['bordercross']
+
 import csv
 
 def main():

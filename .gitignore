@@ -3,3 +3,8 @@ config.py
 data/
 .vscode/
 __pycache__/
+scratch.py
+new_load.py
+target.json
+*.json
+.pytest_cache/

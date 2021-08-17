@@ -12,8 +12,11 @@ def job():
 
     
 
-schedule.every(10).minutes.until(timedelta(days=5)).do(job)
+schedule.every(10).minutes.until(timedelta(days=2)).do(job)
 
 while True:
-    schedule.run_pending()
-    time.sleep(1)
+    try:
+        schedule.run_pending()
+        time.sleep(1)
+    except:
+        print("Error")

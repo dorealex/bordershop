@@ -4,7 +4,7 @@ import numpy as np
 import datetime
 from datetime import timedelta
 import pydeck as pdk
-
+import os
 from datetime import datetime as dt
 from matplotlib import pyplot as plt
 
@@ -187,3 +187,8 @@ display2['hour']=display2['local time'].dt.hour
 data = display2.groupby("hour").mean()
 data['delay'] = data['delay']/60
 st.area_chart(data)
+on_heroku=False
+if 'on_heroku' in os.environ:
+  on_heroku = True
+
+st.write(on_heroku)

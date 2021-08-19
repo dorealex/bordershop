@@ -5,11 +5,17 @@ from datetime import datetime as dt
 from datetime import timezone
 import pymongo
 from config import cluster_uri
+import certifi
+ca = certifi.where()
 
-cluster = pymongo.MongoClient(cluster_uri)
+cluster = pymongo.MongoClient(cluster_uri,tlsCAFile=ca)
 db = cluster['bordercross']
 col= db['running']
 import csv
+
+
+def get_delay(row):
+    return max(0,row['traffic']-row['baseline'])
 
 def main():
     df = pd.read_csv("crossings.csv")
@@ -24,14 +30,15 @@ def main():
     day_val = dt.now().strftime(day_strf)
     time_val = dt.now().strftime(time_strf)
     utc_time = dt.now(tz=timezone.utc)
-    if len(df)>10:
-        import sys
-        sys.exit()
+    #if len(df)>10:
+        #import sys
+        #sys.exit()
     #get traffic time
     rows=[]
     for x in range(0, len(df)):
         #row=[]
         id = df['id'].iloc[x]
+        print(id)
         name = df['name'].iloc[x]
         orig = df['origin'].iloc[x]
         dest = df['dest'].iloc[x]
@@ -41,10 +48,12 @@ def main():
         #utility_func.save_request(id,name,r)
         traffic = utility_func.get_traffic_time(r.json())
         baseline = utility_func.get_baseline_time(r.json())
+        wait = max(0,traffic-baseline)
         row = [day_val, time_val,utc_time, id, name, traffic, baseline]
+
         rows.append(row)
     #write to log
-        mydict = {"day":day_val, "time":time_val, "utc":utc_time, "crossing_id": int(id), "name":name,"traffic":traffic,"baseline":baseline}
+        mydict = {"day":day_val, "time":time_val, "utc":utc_time, "crossing_id": int(id), "name":name,"traffic":traffic,"baseline":baseline, "wait":wait}
         col.insert_one(mydict)
 
     with open(log_file, "a", newline="") as f:

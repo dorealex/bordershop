@@ -217,7 +217,6 @@ on_heroku=False
 if 'on_heroku' in os.environ:
     on_heroku = True
     cluster_uri = os.environ['cluster_uri']
-    st.write(cluster_uri[0])
     cluster = pymongo.MongoClient(cluster_uri)
 else:
     from config import cluster_uri

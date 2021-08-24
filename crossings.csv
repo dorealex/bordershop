@@ -1,25 +1,25 @@
-﻿id,name,province,lat_actual,long_actual,lat_origin,long_origin,top10,Region,District,Timezone
+﻿id,name,province,lat_actual,long_actual,lat_origin,long_origin,profile,region,district,Timezone
 706,Aden,AB,48.997392,-111.257935,48.989516,-111.259147,FALSE,Prairie,Southern Alberta,America/Edmonton
 707,Carway,AB,48.998899,-113.378764,48.990829,-113.380902,FALSE,Prairie,Southern Alberta,America/Edmonton
 709,Chief Mountain,AB,48.998107,-113.661075,48.990547,-113.654793,FALSE,Prairie,Southern Alberta,America/Edmonton
 705,Coutts,AB,48.998691,-111.960121,48.990949,-111.959626,FALSE,Prairie,Southern Alberta,America/Edmonton
 708,Del Bonita,AB,48.999585,-112.788271,48.991103,-112.788331,FALSE,Prairie,Southern Alberta,America/Edmonton
 711,Wild Horse,AB,48.999455,-110.215937,48.991762,-110.215127,FALSE,Prairie,Southern Alberta,America/Edmonton
-824,Roosville,BC,49.000528,-115.055171,48.991668,-115.057572,FALSE,Pacific,Okanagan and Kootenay,America/Edmonton
+824,Roosville,BC,49.000528,-115.055171,48.991668,-115.057572,  ,Pacific,Okanagan and Kootenay,America/Edmonton
 818,Kingsgate,BC,49.000965,-116.180682,48.993412,-116.181466,FALSE,Pacific,Okanagan and Kootenay,America/Los_Angeles
 822,Rykerts,BC,49.001913,-116.500235,48.994073,-116.496399,FALSE,Pacific,Okanagan and Kootenay,America/Los_Angeles
-817,Abbostford-Huntingdon,BC,49.002677,-122.265168,48.993893,-122.264978,TRUE,Pacific,Pacific Highway,America/Vancouver
-841,Aldergrove,BC,49.002973,-122.484176,48.994042,-122.485111,TRUE,Pacific,Pacific Highway,America/Vancouver
+817,Abbostford-Huntingdon,BC,49.002677,-122.265168,48.993893,-122.264978,1,Pacific,Pacific Highway,America/Vancouver
+841,Aldergrove,BC,49.002973,-122.484176,48.994042,-122.485111,1,Pacific,Pacific Highway,America/Vancouver
 815,Boundary Bay,BC,49.00221,-123.067904,48.997061,-123.0679,FALSE,Pacific,Pacific Highway,America/Vancouver
 834,Carson,BC,49.000125,-118.50319,48.99218,-118.508089,FALSE,Pacific,Okanagan and Kootenay,America/Vancouver
 816,Cascade,BC,49.000498,-118.223779,48.991401,-118.22535,FALSE,Pacific,Okanagan and Kootenay,America/Vancouver
 836,Chopaka,BC,49.000989,-119.67113,48.999326,-119.658753,FALSE,Pacific,Okanagan and Kootenay,America/Vancouver
-840,Douglas,BC,49.004779,-122.757019,49.000467,-122.754699,TRUE,Pacific,Pacific Highway,America/Vancouver
+840,Douglas,BC,49.004779,-122.757019,49.000467,-122.754699,1,Pacific,Pacific Highway,America/Vancouver
 893,Fraser,BC,59.714948,-135.046195,59.709803,-135.060275,FALSE,Pacific,West Coast and Yukon,America/Vancouver
 835,Midway,BC,49.000475,-118.761216,48.998926,-118.761334,FALSE,Pacific,Okanagan and Kootenay,America/Vancouver
 828,Nelway,BC,49.000175,-117.299369,48.991759,-117.300794,FALSE,Pacific,Okanagan and Kootenay,America/Vancouver
 819,Osoyoos,BC,49.000475,-119.462717,48.992176,-119.458077,FALSE,Pacific,Okanagan and Kootenay,America/Vancouver
-813,Pacific Highway,BC,49.002965,-122.734753,48.994114,-122.734923,TRUE,Pacific,Pacific Highway,America/Vancouver
+813,Pacific Highway,BC,49.002965,-122.734753,48.994114,-122.734923,1,Pacific,Pacific Highway,America/Vancouver
 832,Paterson,BC,49.001273,-117.831678,48.993347,-117.830727,FALSE,Pacific,Okanagan and Kootenay,America/Vancouver
 891,Pleasant Camp,BC,59.454073,-136.364616,59.448415,-136.355085,FALSE,Pacific,West Coast and Yukon,America/Vancouver
 896,Stewart,BC,55.912031,-130.016167,55.916925,-130.025982,FALSE,Pacific,West Coast and Yukon,America/Vancouver
@@ -61,13 +61,13 @@
 456,Landsdowne (Thousand Islands Bridge),ON,44.348528,-75.984114,44.340702,-75.980317,FALSE,Northern Ontario ,St. Lawrence,America/New_York
 4272,Niagara Falls Rainbow Bridge,ON,43.092084,-79.069578,43.08888,-79.064737,FALSE,Southern Ontario,Niagara Falls,America/New_York
 4271,Niagara Falls Whirlpool Birdge,ON,43.10923,-79.060134,43.109755,-79.05587,FALSE,Southern Ontario,Niagara Falls,America/New_York
-453,Ambassador Bridge,ON,42.301273,-83.066005,42.310422,-83.073076,TRUE,Southern Ontario,Windsor,America/Toronto
+453,Ambassador Bridge,ON,42.301273,-83.066005,42.310422,-83.073076,1,Southern Ontario,Windsor,America/Toronto
 409,Cornwall Traffic Office,ON,45.010602,-74.737349,45.00275,-74.740574,FALSE,Northern Ontario ,Ottawa,America/Toronto
-410,Fort Erie (Peace Bridge),ON,42.908479,-78.916813,42.906855,-78.904971,TRUE,Southern Ontario,Fort Erie,America/Toronto
+410,Fort Erie (Peace Bridge),ON,42.908479,-78.916813,42.906855,-78.904971,1,Southern Ontario,Fort Erie,America/Toronto
 475,Pigeon River,ON,48.003661,-89.580957,47.998961,-89.592376,FALSE,Northern Ontario ,Northwestern Ontario ,America/Toronto
 439,Prescott,ON,44.745238,-75.468898,44.737734,-75.461544,FALSE,Northern Ontario ,St. Lawrence,America/Toronto
-427,Queenston Lewiston Bridge,ON,43.154644,-79.049258,43.15273,-79.034308,TRUE,Southern Ontario,Niagara Falls,America/Toronto
-440,Sarnia (Blue Water Bridge),ON,42.993422,-82.411883,42.998149,-82.42182,TRUE,Southern Ontario,St. Clair,America/Toronto
+427,Queenston Lewiston Bridge,ON,43.154644,-79.049258,43.15273,-79.034308,1,Southern Ontario,Niagara Falls,America/Toronto
+440,Sarnia (Blue Water Bridge),ON,42.993422,-82.411883,42.998149,-82.42182,1,Southern Ontario,St. Clair,America/Toronto
 441,Sault Ste. Marie Bridge,ON,46.519349,-84.349447,46.51341,-84.35871,FALSE,Northern Ontario ,Northwestern Ontario ,America/Toronto
 452,Windsor-Detroit Tunnel,ON,42.315718,-83.036999,42.323663,-83.040198,FALSE,Southern Ontario,Fort Erie,America/Toronto
 478,Fort Frances Bridge,ON,48.608524,-93.399916,48.60181,-93.402135,FALSE,Northern Ontario ,Northwestern Ontario ,America/Winnipeg
@@ -94,8 +94,8 @@
 314,Stanstead(55),QC,45.006421,-72.087452,45.001226,-72.096345,FALSE,Quebec,East Border,America/New_York
 376,Stanstead(Beebe),QC,45.00595,-72.142054,44.998897,-72.135362,FALSE,Quebec,East Border,America/New_York
 375,Stanstead(Rte 143),QC,45.006476,-72.098847,44.999092,-72.103839,FALSE,Quebec,East Border,America/New_York
-328,St-Armand/Philipsburg,QC,45.016525,-73.084195,45.008877,-73.085695,TRUE,Quebec,Monteregie,America/New_York
-351,St-Bernard-de-Lacolle: Highway 15,QC,45.009266,-73.451925,45.001434,-73.453778,TRUE,Quebec,Monteregie,America/New_York
+328,St-Armand/Philipsburg,QC,45.016525,-73.084195,45.008877,-73.085695,1,Quebec,Monteregie,America/New_York
+351,St-Bernard-de-Lacolle: Highway 15,QC,45.009266,-73.451925,45.001434,-73.453778,1,Quebec,Monteregie,America/New_York
 339,Ste-Aurelie,QC,46.207548,-70.276414,46.207861,-70.264349,FALSE,Quebec,East Border,America/New_York
 335,St-Pamphile,QC,46.942739,-69.750714,46.937935,-69.743397,FALSE,Quebec,East Border,America/New_York
 307,Trout River,QC,44.9920358,-74.3087304,44.98516,-74.303636,FALSE,Quebec,Monteregie,America/New_York

@@ -82,5 +82,6 @@ wincertstore==0.2
 zipp==3.5.0
 matplotlib
 pymongo==3.12.0
-pymongo[srv]
 dnspython==2.1.0
+beautifulsoup4
+lxml

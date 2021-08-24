@@ -22,7 +22,7 @@ def main():
     df['dest'] = df['lat_actual'].astype(str) +", " +df['long_actual'].astype(str)
     df['origin'] = df['lat_origin'].astype(str) +", "+ df['long_origin'].astype(str)
     #update top10 only.
-    df=df[df['top10']==True]
+    #df=df[df['top10']==True]
     log_file = 'log.csv'
     #headers: date,time,id,name,traffic,baseline
     day_strf = '%d-%b-%Y'

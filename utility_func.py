@@ -7,6 +7,8 @@ import time
 #important, create file called config.py, in it declare a variable api_key with your google maps api key
 from config import api_key
 #####
+
+
 def get_timezone_data(id,name,point):
   #ask google for the timezone data, store in file
   ts=str(time.time())
@@ -14,9 +16,11 @@ def get_timezone_data(id,name,point):
   r = requests.get(base_url)
   if r.status_code == 200:
     response = r.json()
+    print("response is of type",type(response))
     fname = "-".join([str(id),name,"TimeZone",str(dt.today().strftime("%d_%m_%Y"))])+".json"
     fname = fname.replace("/","_")
     fname = fname.replace(":","_")
+
     with open('timezone/'+fname,'w') as outfile:
       json.dump(response, outfile, indent=4)
   else:

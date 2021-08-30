@@ -53,6 +53,6 @@ df['travellers_seconds'] = df.apply(get_seconds_commercial,axis=1)
 df['commercial_seconds'] = df.apply(get_seconds_travellers,axis=1)
 df['City'] = df.apply(canadian_city,axis=1)
 crossings = pd.read_csv("crossings.csv")
-cities, id = crossings['name']
-print(cities)
-#print(df)
+name = crossings['name']
+
+print(df)

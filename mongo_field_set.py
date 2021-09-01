@@ -27,7 +27,7 @@ col= db['baseline']
 def get_column(df):
     valid = False
     cols = df.columns
-    while valid  == False:
+    while not valid:
         value = str(input("Column you want to upload to MongoDB collection: "))
         if value in cols and value !="id":
             valid = True
@@ -55,7 +55,7 @@ if __name__ == "__main__":
             print(df)
             if str(input("Is this correct? Y/N ").lower()) == "y":
                 print("Uploading field to MongoDB")
-                for x in range(0,len(df)):
+                for x in range(len(df)):
                     id = int(df['id'].iloc[x])
                     value = df[column].iloc[x]
                     if type(value) == np.int64:

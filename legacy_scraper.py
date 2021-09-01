@@ -13,7 +13,7 @@ def get_seconds_commercial(row):
   cat = 'Commercial Flow'
   text = row[cat]
   seconds=0
-  if 'minute' in row[cat]:
+  if 'minute' in text:
     if text =='1 minute':
       seconds=60
     else:
@@ -25,10 +25,10 @@ def get_seconds_commercial(row):
 
 def get_seconds_travellers(row):
   seconds=0
-  
+
   cat = 'Travellers Flow'
   text = row[cat]
-  if 'minute' in row[cat]:
+  if 'minute' in text:
     if text =='1 minute':
       seconds = 60
     else:

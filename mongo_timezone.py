@@ -25,7 +25,7 @@ col= db['baseline']
 
 print(col.find({"id":817})[0])
 
-for x in range(0,len(df)):
+for x in range(len(df)):
     id = int(df['id'].iloc[x])
     tz = df['timeZoneId'].iloc[x]
     query = {"id":id}

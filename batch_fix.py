@@ -22,8 +22,8 @@ else:
     cluster = pymongo.MongoClient(cluster_uri,tlsCAFile=ca)
 
 db = cluster['bordercross']
-col= db['running']
-
+col= db['baseline']
+run = db['running']
 # Requires the PyMongo package.
 # https://api.mongodb.com/python/current
 
@@ -43,6 +43,6 @@ def get_wait(t,b):
 #     update_val = {"$set":{"wait":wait}}
 #     print(unique, wait)
 #     col.find_one_and_update({"_id":ObjectId(unique)},update_val,upsert=True)
-
-d = col.delete_many(filter = {"_id": {"$type": "string"}})
+#
+d = run.delete_many(filter = {})
 print(d.deleted_count)

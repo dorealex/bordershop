@@ -10,7 +10,7 @@ baselines=[]
 traffics=[]
 distances=[]
 
-for x in range(0,len(df['dest'])):
+for x in range(len(df['dest'])):
     #build the URL query
     orig = df['origin'].iloc[x]
     dest = df['dest'].iloc[x]

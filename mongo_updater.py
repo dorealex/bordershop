@@ -8,11 +8,7 @@ import certifi
 import sys
 
 def get_columns(args):
-    cols=[]
-    for x in args:
-        if str(x)[-3:] != "csv" and str(x)[-2:] != "py":
-            cols.append(str(x))
-    return cols
+    return [str(x) for x in args if str(x)[-3:] != "csv" and str(x)[-2:] != "py"]
 
 
 if __name__ =='__main__':
@@ -28,7 +24,7 @@ if __name__ =='__main__':
 
     #print(dir_path)
     #print(str(args[1:]))
-    
+
     onlyfiles = [f for f in os.listdir(dir_path) if isfile(f)]
     #print(onlyfiles)
     file_sel = "crossings.csv"
@@ -44,16 +40,13 @@ if __name__ =='__main__':
 
         df = pd.read_csv(file_sel)
         if len(cols) >=1:
-            if id not in cols:
-                df = df[cols+['id']]
-            else:
-                df=df[cols]
+            df = df[cols+['id']] if id not in cols else df[cols]
         else:
             print("No columns specified, here's the df")
             print(df)
             sys.exit
         print(df)
-        for x in range(0,len(df)):
+        for x in range(len(df)):
             cross_id = int(df['id'].iloc[x])
             for y in df.columns:
                 value = df[y].iloc[x]

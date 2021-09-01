@@ -9,7 +9,7 @@ from datetime import timedelta
 import os
 import pymongo
 import certifi
-import utility_func
+
 from datetime import timezone
 import pytz
 
@@ -19,6 +19,7 @@ if 'on_heroku' in os.environ:
     cluster_uri = os.environ['cluster_uri']
     cluster = pymongo.MongoClient(cluster_uri)
 else:
+    import utility_func
     from config import cluster_uri
     ca = certifi.where()
     cluster = pymongo.MongoClient(cluster_uri,tlsCAFile=ca)

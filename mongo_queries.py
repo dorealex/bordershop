@@ -27,6 +27,7 @@ else:
 db = cluster['bordercross']
 col= db['baseline']
 run = db['running']
+leg = db['legacy']
 late = db['latest times']
 
 
@@ -178,6 +179,9 @@ def get_last_run(crossing_id):
         return datetime.datetime(1,1,1,tzinfo=pytz.utc)
     else:
         return result[0]['utc'].replace(tzinfo=pytz.UTC)
+
+def legacy_add(l):
+    leg.insert_many(l)
 
 if __name__ == '__main__':
     # print(get_all_ids())

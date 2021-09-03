@@ -1,13 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-
-URL = "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html"
-page = requests.get(URL)
-
-soup = BeautifulSoup(page.text, "html.parser")
-
-html_table = soup.find(id='bwttaf')
+import mongo_queries
+import datetime
+import schedule
+from datetime import timedelta
+import time
 
 def get_seconds_commercial(row):
   cat = 'Commercial Flow'
@@ -41,18 +39,32 @@ def canadian_city(row):
   text = text.split("/")
   return "".join(text[:-1])
 
-#df['commercial_seconds'] = df.apply(get_seconds_commercial,axis=1)
+def main():
+  URL = "https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html"
+  page = requests.get(URL)
 
-html_header = html_table.select("thead")[0]
-html_body = html_table.select("tbody")[0]
-html_body = str(html_body).replace("</b>","</b></th><th>").replace("<br/>","")
-html_header  =str(html_header).replace("<th>CBSA Office</th>","<th>CBSA Office</th><th>City</th>")
-temp = "<table>"+str(html_header)+html_body+"</table>"
-df = pd.read_html(temp)[0]
-df['travellers_seconds'] = df.apply(get_seconds_commercial,axis=1)
-df['commercial_seconds'] = df.apply(get_seconds_travellers,axis=1)
-df['City'] = df.apply(canadian_city,axis=1)
-crossings = pd.read_csv("crossings.csv")
-name = crossings['name']
+  soup = BeautifulSoup(page.text, "html.parser")
 
-print(df)
+  html_table = soup.find(id='bwttaf')
+  #df['commercial_seconds'] = df.apply(get_seconds_commercial,axis=1)
+
+  html_header = html_table.select("thead")[0]
+  html_body = html_table.select("tbody")[0]
+  html_body = str(html_body).replace("</b>","</b></th><th>").replace("<br/>","")
+  html_header  =str(html_header).replace("<th>CBSA Office</th>","<th>CBSA Office</th><th>City</th>")
+  temp = "<table>"+str(html_header)+html_body+"</table>"
+  df = pd.read_html(temp)[0]
+  df['travellers_seconds'] = df.apply(get_seconds_commercial,axis=1)
+  df['commercial_seconds'] = df.apply(get_seconds_travellers,axis=1)
+  df['City'] = df.apply(canadian_city,axis=1)
+  crossings = pd.read_csv("crossings.csv")
+  name = crossings['name']
+  df['timestamp'] = datetime.datetime.utcnow()
+  mongo_queries.legacy_add(df.to_dict('records'))
+  print(df)
+if __name__ == "__main__":
+    main()
+    schedule.every(15).minutes.until(timedelta(days=6)).do(main)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)

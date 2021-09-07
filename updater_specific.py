@@ -74,7 +74,7 @@ poc=True
 
 if __name__ == "__main__":
     init_run()
-    schedule.every(1).minutes.until(timedelta(days=1)).do(init_run)
+    schedule.every(1).minutes.until(timedelta(days=6)).do(init_run)
     while True:
         try:
             schedule.run_pending()

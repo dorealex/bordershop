@@ -76,6 +76,9 @@ if __name__ == "__main__":
     init_run()
     schedule.every(1).minutes.until(timedelta(days=1)).do(init_run)
     while True:
-        schedule.run_pending()
-        time.sleep(1)
+        try:
+            schedule.run_pending()
+            time.sleep(1)
+        except:
+            print("Error")
         

@@ -68,5 +68,8 @@ if __name__ == "__main__":
     main()
     schedule.every(15).minutes.until(timedelta(days=6)).do(main)
     while True:
+      try:
         schedule.run_pending()
         time.sleep(1)
+      except:
+        print("error occured")

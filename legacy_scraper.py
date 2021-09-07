@@ -8,6 +8,7 @@ import datetime
 import schedule
 from datetime import timedelta
 import time
+import sys
 
 def get_seconds_commercial(row):
   cat = 'Commercial Flow'
@@ -71,5 +72,8 @@ if __name__ == "__main__":
       try:
         schedule.run_pending()
         time.sleep(1)
+      except KeyboardInterrupt:
+        print("User interrupted script with keyboard")
+        sys.exit()
       except:
         print("error occured")

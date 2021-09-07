@@ -67,7 +67,7 @@ def main():
   print(df)
 if __name__ == "__main__":
     main()
-    schedule.every(15).minutes.until(timedelta(days=6)).do(main)
+    schedule.every(15).minutes.until(timedelta(days=5)).do(main)
     while True:
       try:
         schedule.run_pending()
@@ -75,5 +75,7 @@ if __name__ == "__main__":
       except KeyboardInterrupt:
         print("User interrupted script with keyboard")
         sys.exit()
-      except:
+      except Exception as Argument:
+        with open("error_log_legacy_scraper.txt","a") as f:
+                f.write(str(Argument,datetime.datetime.now()))
         print("error occured")

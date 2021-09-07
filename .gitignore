@@ -11,3 +11,5 @@ target.json
 Anaconda-1.4.0-Linux-x86_64.sh
 app2.py
 bordershop
+error_log_legacy_scraper.txt
+error_log_updater.txt

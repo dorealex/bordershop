@@ -74,7 +74,7 @@ poc=True
 
 if __name__ == "__main__":
     init_run()
-    schedule.every(1).minutes.until(timedelta(days=6)).do(init_run)
+    schedule.every(1).minutes.until(timedelta(days=5)).do(init_run)
     while True:
         try:
             schedule.run_pending()
@@ -82,6 +82,8 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             print("User interrupted script with keyboard")
             sys.exit()
-        except:
+        except Exception as Argument:
+            with open("error_log_updater.txt","a") as f:
+                f.write(str(Argument,datetime.datetime.now()))
             print("error occured")
         

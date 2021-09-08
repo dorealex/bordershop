@@ -9,6 +9,8 @@ import schedule
 from datetime import timedelta
 import time
 import sys
+import utility_func
+
 
 def get_seconds_commercial(row):
   cat = 'Commercial Flow'
@@ -62,7 +64,7 @@ def main():
   df['City'] = df.apply(canadian_city,axis=1)
   crossings = pd.read_csv("crossings.csv")
   name = crossings['name']
-  df['timestamp'] = datetime.datetime.utcnow()
+  df['timestamp'] = utility_func.round_to_10min(datetime.datetime.utcnow())
   mongo_queries.legacy_add(df.to_dict('records'))
   print(df)
 if __name__ == "__main__":

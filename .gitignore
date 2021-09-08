@@ -13,3 +13,6 @@ app2.py
 bordershop
 error_log_legacy_scraper.txt
 error_log_updater.txt
+legacy_fixer.py
+legacy_map.csv
+time_fixer.py

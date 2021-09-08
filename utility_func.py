@@ -1,13 +1,24 @@
 import requests
 import json
 from datetime import datetime as dt
+from datetime import timedelta
 import time
 
 #####
 #important, create file called config.py, in it declare a variable api_key with your google maps api key
 from config import api_key
 #####
-
+def round_to_10min(my_dt):
+  hours = my_dt.hour
+  minutes = round(my_dt.minute/10)*10
+  date = dt(my_dt.year,my_dt.month,my_dt.day)  
+  if minutes >= 60:
+    minutes = 0
+    hours = hours +1
+  if hours >=24:
+    hours =0
+    date = date + timedelta(days=1)
+  return dt(date.year, date.month,date.day, hours, minutes)
 
 def get_timezone_data(id,name,point):
   #ask google for the timezone data, store in file

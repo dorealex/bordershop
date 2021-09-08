@@ -1,4 +1,4 @@
-name: bordershop
+name: bordershop3
 channels:
   - defaults
 dependencies:
@@ -187,4 +187,4 @@ dependencies:
     - winkerberos==0.8.0
     - zipp==3.5.0
     - zstandard==0.15.2
-prefix: C:\Users\dorea\anaconda3\envs\bordershop
+prefix: C:\Users\dorea\anaconda3\envs\bordershop3

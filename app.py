@@ -104,7 +104,6 @@ choice = st.selectbox("Choose Crossing", df['name'].sort_values().unique())
 
 df2 = pd.DataFrame(list(run.aggregate(mongo_queries.get_local_tz(choice))))
 df2['local_time'] = df2.apply(get_local,axis=1)
-df2['wait'] = df2.apply(get_wait,axis=1)
 cols=['local_time', 'wait']
 hist = df2[cols].sort_values(by='local_time', ascending=False)
 st.write('#### Historical log')

@@ -53,7 +53,7 @@ def init_run():
             #current local time
             local_tz = pytz.timezone(x['timeZone'])
             #print(local_tz)
-            local_dt = datetime.datetime.now(local_tz)
+            local_dt = utility_func.round_to_10min(datetime.datetime.now(local_tz)) #pymongo always stores as utc...)
             #print(local_dt)
             #print(last_run)
             time_since =  datetime.datetime.now(pytz.timezone("UTC"))-last_run
@@ -84,6 +84,6 @@ if __name__ == "__main__":
             sys.exit()
         except Exception as Argument:
             with open("error_log_updater.txt","a") as f:
-                f.write(str(Argument,datetime.datetime.now()))
+                f.write(str(Argument))
             print("error occured")
-        
+                

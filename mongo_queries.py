@@ -134,8 +134,7 @@ merge_running_timezones = [
             'id': '$crossing_id', 
             'name': 1, 
             'utc': 1, 
-            'traffic': 1, 
-            'baseline': 1, 
+            'wait': 1, 
             'timezone': {
                 '$arrayElemAt': [
                     '$timezone.timeZone', 0
@@ -144,21 +143,22 @@ merge_running_timezones = [
         }
     }
 ]
-
+def mongo_setup():
+    return db, db.list_collections()
 def add_one_log(r,id):
     traffic = utility_func.get_traffic_time(r.json())
     baseline = utility_func.get_baseline_time(r.json())
     wait = max(0,traffic-baseline)
-    utc_time = dt.now(tz=timezone.utc)
+    utc_time = utility_func.round_to_10min(dt.now(tz=timezone.utc))
     name = id['name']
     local_tz = pytz.timezone(id['timeZone'])
     day_strf = '%d-%b-%Y'
     time_strf = '%H_%M_%S'
-    local_dt = datetime.datetime.now(local_tz)
+    local_dt = utility_func.round_to_10min(datetime.datetime.now(local_tz))
     day_val = local_dt.strftime(day_strf)
     time_val = local_dt.strftime(time_strf)
 
-    mydict = {"day":day_val, "time":time_val, "utc":utc_time, "crossing_id": id['id'], "name":name,"traffic":traffic,"baseline":baseline, "wait":wait,"local_tz":str(local_tz)}
+    mydict = {"utc":utc_time, "crossing_id": id['id'], "name":name,"wait":wait}
     run.insert_one(mydict)
     #print(mydict)
 

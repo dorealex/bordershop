@@ -79,5 +79,5 @@ if __name__ == "__main__":
         sys.exit()
       except Exception as Argument:
         with open("error_log_legacy_scraper.txt","a") as f:
-                f.write(str(Argument,datetime.datetime.now()))
+                f.write(str(Argument))
         print("error occured")

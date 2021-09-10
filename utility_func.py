@@ -10,7 +10,7 @@ from config import api_key
 #####
 def round_to_10min(my_dt):
   hours = my_dt.hour
-  minutes = round(my_dt.minute/10)*10
+  minutes =(my_dt.minute//10)*10
   date = dt(my_dt.year,my_dt.month,my_dt.day)  
   if minutes >= 60:
     minutes = 0

@@ -69,7 +69,7 @@ def main():
   print(df)
 if __name__ == "__main__":
     main()
-    schedule.every(15).minutes.until(timedelta(days=5)).do(main)
+    schedule.every(30).minutes.until(timedelta(days=5)).do(main)
     while True:
       try:
         schedule.run_pending()
@@ -79,5 +79,5 @@ if __name__ == "__main__":
         sys.exit()
       except Exception as Argument:
         with open("error_log_legacy_scraper.txt","a") as f:
-                f.write(str(Argument,datetime.datetime.now()))
+                f.write(str(Argument))
         print("error occured")

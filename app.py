@@ -16,7 +16,9 @@ from datetime import datetime as dt
 import mongo_queries
 import altair as alt
 
-
+############################################################################
+#config section
+############################################################################
 
 on_heroku=False
 if 'on_heroku' in os.environ:
@@ -27,6 +29,13 @@ else:
     from config import cluster_uri
     ca = certifi.where()
     cluster = pymongo.MongoClient(cluster_uri,tlsCAFile=ca)
+
+
+############################################################################
+#functions section
+############################################################################
+
+
 
 def get_local(row):
     utc = row['utc']
@@ -55,21 +64,32 @@ def return_colour(row):
         return [252, 186, 3]
     elif (5*60) <= delay:
         return [255,0,0]
+st.title("Border Wait Times")
+############################################################################
+#Sidebar
+############################################################################
 
+
+
+############################################################################
+#data table section
+############################################################################
 
 db = cluster['bordercross']
 col= db['baseline']
 run = db['running']
 late = db['latest times']
 
-st.title("Border Wait Times")
+
 df = pd.DataFrame(late.aggregate(mongo_queries.latest_result))
 df.sort_values(by="wait",ascending=False)
 df['local time'] = df.apply(get_local,axis=1)
 display_cols = ['name', 'province', 'wait', 'local time','utc']
 
-df[display_cols]
 
+############################################################################
+#map section
+############################################################################
 df['color'] = df.apply(return_colour,axis=1)
 
 df['lat'] = df.lat.astype(str).astype(float)
@@ -98,37 +118,84 @@ view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=3, 
 
 r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{name}\nDelay: {wait} seconds"})
 st.pydeck_chart(r)
+if st.checkbox('Show data table'):
+    df[display_cols]
+############################################################################
+#Detailed Port Info
+############################################################################
+with st.beta_expander('Specific Crossing Info'):
 
-st.write("### Specific Crossing Info")
-choice = st.selectbox("Choose Crossing", df['name'].sort_values().unique())
 
-df2 = pd.DataFrame(list(run.aggregate(mongo_queries.get_local_tz(choice))))
-df2['local_time'] = df2.apply(get_local,axis=1)
-df2['wait'] = df2.apply(get_wait,axis=1)
-cols=['local_time', 'wait']
-hist = df2[cols].sort_values(by='local_time', ascending=False)
-st.write('#### Historical log')
-day_filter = st.slider("Days to filter", min_value=0, max_value=None, value=7, step=1, format=None, key=None, help=None, on_change=None, args=None, kwargs=None)
-hist= df2[df2.utc.dt.date>=dt.utcnow().date()-timedelta(days=day_filter)]
+    choice = st.selectbox("Choose Crossing", df['name'].sort_values().unique())
 
-chart1 = alt.Chart(hist).mark_line().encode(
-    x='local_time',
-    y='wait',
-    tooltip=['local_time', 'wait']
-)
+    df2 = pd.DataFrame(list(run.aggregate(mongo_queries.get_local_tz(choice))))
+    df2['local_time'] = df2.apply(get_local,axis=1)
 
-st.altair_chart(chart1+chart1.mark_point(size=50, opacity=0,tooltip=alt.TooltipContent("data")),use_container_width=True)
-grp = df2.groupby(df2.local_time.dt.hour).wait.agg([('Average','mean'),('Max','max')])
-hist = hist[['local_time','wait']].sort_values("local_time",ascending=False)
-st.write("#### Summary Statistics for crossing during selected timeframe")
-st.write(hist.describe())
+    cols=['local_time', 'wait']
+    hist = df2[cols].sort_values(by='local_time', ascending=False)
+############################################################################
+#Historical Log
+############################################################################
+
+
+    st.write('#### Historical log')
+    day_filter = st.slider("Days to filter", min_value=0, max_value=None, value=7, step=1, format=None, key=None, help=None, on_change=None, args=None, kwargs=None)
+    hist= df2[df2.utc.dt.date>=dt.utcnow().date()-timedelta(days=day_filter)]
+
+    chart1 = alt.Chart(hist).mark_line().encode(
+        x='local_time',
+        y='wait',
+        tooltip=['local_time', 'wait']
+    )
+
+    st.altair_chart(chart1+chart1.mark_point(size=50, opacity=0,tooltip=alt.TooltipContent("data")),use_container_width=True)
+    grp = df2.groupby(df2.local_time.dt.hour).wait.agg([('Average','mean'),('Max','max')])
+    hist = hist[['local_time','wait']].sort_values("local_time",ascending=False)
+
 #hist
-st.write('#### Wait Time by Time of Day (local time)')
-grp=grp.reset_index()
+    grp=grp.reset_index()
 #st.line_chart(grp,use_container_width=True)
 
-df2['frac'] = round((df2.local_time.dt.hour + df2.local_time.dt.minute/60)*6)/6
+    df2['frac'] = round((df2.local_time.dt.hour + df2.local_time.dt.minute/60)*2)/2
 
-grp2 = df2.groupby(df2.frac).wait.agg([('Average','mean'),('Max','max')])
+    grp2 = df2.groupby(df2.frac).wait.agg([('Average','mean'),('Max','max')])
 
-st.line_chart(grp2,use_container_width=True)
+
+
+    lcol, rcol = st.beta_columns(2)
+    with lcol:
+        st.write("#### Summary Statistics for crossing during selected timeframe")
+        st.write(hist.describe())
+        type(hist.describe)
+    with rcol:
+        st.write('#### Wait Time by Time of Day (local time)')
+        st.line_chart(grp2,use_container_width=False)
+
+
+
+############################################################################
+#metdadata section
+############################################################################
+with st.beta_expander("Metadata"):
+    st.write("""
+        How many calls to the API this month:
+    """)
+    st.write(str(mongo_queries.queries_this_month())+" of 15817")
+    daily = pd.DataFrame(mongo_queries.totals_by_day())
+    daily.rename(columns={"_id":"day", "count":"count"}, inplace=True)
+    
+    daily['day'] = pd.to_datetime(daily['day'])
+    
+    
+    daily = daily.groupby('day')['count'].sum()
+    daily = daily.groupby(daily.index.month).cumsum().reset_index()
+    daily['month'] = daily['day'].dt.month
+    daily['day'] = daily['day'].dt.date
+    #daily
+    chart2 = alt.Chart(daily).mark_bar().encode(
+        x='day:O',
+        y='count',
+        color=alt.Color('month', legend=None)
+    )
+    #st.write(daily.dtypes)
+    st.altair_chart(chart2, use_container_width=True)

@@ -125,7 +125,6 @@ if st.checkbox('Show data table'):
 ############################################################################
 with st.beta_expander('Specific Crossing Info'):
 
-
     choice = st.selectbox("Choose Crossing", df['name'].sort_values().unique())
 
     df2 = pd.DataFrame(list(run.aggregate(mongo_queries.get_local_tz(choice))))

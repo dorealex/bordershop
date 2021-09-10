@@ -144,7 +144,8 @@ merge_running_timezones = [
         }
     }
 ]
-
+def mongo_setup():
+    return db, db.list_collections()
 def add_one_log(r,id):
     traffic = utility_func.get_traffic_time(r.json())
     baseline = utility_func.get_baseline_time(r.json())
@@ -158,7 +159,7 @@ def add_one_log(r,id):
     day_val = local_dt.strftime(day_strf)
     time_val = local_dt.strftime(time_strf)
 
-    mydict = {"utc":utc_time, "crossing_id": id['id'], "name":name,"wait":wait,"local_tz":str(local_tz)}
+    mydict = {"utc":utc_time, "crossing_id": id['id'], "name":name,"wait":wait}
     run.insert_one(mydict)
     #print(mydict)
 
@@ -197,7 +198,7 @@ def queries_this_month():
     return run.count_documents(filter)
 def mongo_setup():
     return db, db.list_collections()
-    
+
 def legacy_add(l):
     leg.insert_many(l)
 

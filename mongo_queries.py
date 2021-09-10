@@ -179,6 +179,22 @@ def get_last_run(crossing_id):
         return datetime.datetime(1,1,1,tzinfo=pytz.utc)
     else:
         return result[0]['utc'].replace(tzinfo=pytz.UTC)
+def queries_this_month():
+    m = dt.utcnow().month
+    y = dt.utcnow().year
+
+
+    start_date = dt(y,m,1)
+    if m > 11:
+        m = 1
+        y = y+1
+    else:
+        m = m+1
+    end_date = dt(y,m,1)
+
+    filter = {'utc':{'$gte':start_date,'$lt':end_date}}
+    
+    return run.count_documents(filter)
 
 def legacy_add(l):
     leg.insert_many(l)
@@ -187,4 +203,5 @@ if __name__ == '__main__':
     # print(get_all_ids())
     # print(len(get_all_ids()))
     #print(get_all_ids())
-    pass
+    #pass
+    print(queries_this_month())

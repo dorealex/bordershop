@@ -29,9 +29,171 @@ col= db['baseline']
 run = db['running']
 leg = db['legacy']
 late = db['latest times']
-
-
-
+def get_all_run_with_tz_latest():
+    query = [
+        {
+            '$sort': {
+                'utc': -1
+            }
+        }, {
+            '$lookup': {
+                'from': 'baseline', 
+                'localField': 'crossing_id', 
+                'foreignField': 'id', 
+                'as': 'string'
+            }
+        }, {
+            '$project': {
+                '_id': 1, 
+                'crossing_id': 1, 
+                'name': 1, 
+                'wait': 1, 
+                'utc': 1, 
+                'province': {
+                    '$arrayElemAt': [
+                        '$string.province', 0
+                    ]
+                }, 
+                'dest': {
+                    '$arrayElemAt': [
+                        '$string.dest', 0
+                    ]
+                }, 
+                'timezone': {
+                    '$arrayElemAt': [
+                        '$string.timeZone', 0
+                    ]
+                }
+            }
+        }, {
+            '$addFields': {
+                'coords': {
+                    '$split': [
+                        '$dest', ','
+                    ]
+                }
+            }
+        }, {
+            '$addFields': {
+                'lat': {
+                    '$arrayElemAt': [
+                        '$coords', 0
+                    ]
+                }, 
+                'long': {
+                    '$arrayElemAt': [
+                        '$coords', 1
+                    ]
+                }
+            }
+        }, {
+            '$project': {
+                '_id': 1, 
+                'crossing_id': 1, 
+                'name': 1, 
+                'wait': 1, 
+                'province': 1, 
+                'utc': 1, 
+                'lat': {
+                    '$trim': {
+                        'input': '$lat'
+                    }
+                }, 
+                'long': {
+                    '$trim': {
+                        'input': '$long'
+                    }
+                }, 
+                'timezone': 1
+            }
+        }, {
+            '$project': {
+                '_id': 1, 
+                'crossing_id': 1, 
+                'name': 1, 
+                'wait': 1, 
+                'utc': 1, 
+                'province': 1, 
+                'timezone': 1, 
+                'lat': {
+                    '$toDecimal': '$lat'
+                }, 
+                'long': {
+                    '$toDecimal': '$long'
+                }
+            }
+        }, {
+            '$group': {
+                '_id': '$crossing_id', 
+                'name': {
+                    '$first': '$name'
+                }, 
+                'wait': {
+                    '$first': '$wait'
+                }, 
+                'province': {
+                    '$first': '$province'
+                }, 
+                'timezone': {
+                    '$first': '$timezone'
+                }, 
+                'lat': {
+                    '$first': '$lat'
+                }, 
+                'long': {
+                    '$first': '$long'
+                }, 
+                'utc': {
+                    '$first': '$utc'
+                }
+            }
+        }, {
+            '$sort': {
+                'name': 1
+            }
+        }
+    ]
+    return run.aggregate(query)
+def get_all_run_with_tz():
+    query = [
+        {
+            '$lookup': {
+                'from': 'baseline', 
+                'localField': 'crossing_id', 
+                'foreignField': 'id', 
+                'as': 'string'
+            }
+        }, {
+            '$project': {
+                '_id': 1, 
+                'utc': 1, 
+                'crossing_id': 1, 
+                'name': 1, 
+                'wait': 1, 
+                'timezone': {
+                    '$arrayElemAt': [
+                        '$string.timeZone', 0
+                    ]
+                },
+                'profile': {
+                    '$arrayElemAt': [
+                        '$string.profile', 0
+                    ]
+                },
+                'district': {
+                    '$arrayElemAt': [
+                        '$string.district', 0
+                    ]
+                },
+                'region': {
+                    '$arrayElemAt': [
+                        '$string.region', 0
+                    ]
+                },                                  
+            }
+        }
+    ]
+    return run.aggregate(query)
 
 latest_result = [
     {

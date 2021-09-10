@@ -16,3 +16,4 @@ error_log_updater.txt
 legacy_fixer.py
 legacy_map.csv
 time_fixer.py
+vis_test.py

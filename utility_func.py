@@ -19,6 +19,13 @@ def round_to_10min(my_dt):
     hours =0
     date = date + timedelta(days=1)
   return dt(date.year, date.month,date.day, hours, minutes)
+def get_local(row):
+    utc = row['utc']
+    tz = row['timezone']
+    #df['timestamp'].dt.tz_localize('utc').dt.tz_convert('US/Central')
+    return utc.tz_localize('utc').tz_convert(tz)
+
+
 
 def get_timezone_data(id,name,point):
   #ask google for the timezone data, store in file

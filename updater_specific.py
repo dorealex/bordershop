@@ -19,6 +19,10 @@ def get_next_job(local_time, profile):
             next_time = datetime.timedelta(minutes=15)
     return next_time
 
+
+
+
+
 def update_one(id):
     #get data
     #print(id)

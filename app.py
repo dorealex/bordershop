@@ -12,7 +12,7 @@ import pymongo
 import pytz
 import csv
 import certifi
-import utility_func
+from utility_func import get_local
 import mongo_queries
 import altair as alt
 
@@ -79,7 +79,7 @@ late = db['latest times']
 
 df = pd.DataFrame(mongo_queries.get_all_run_with_tz_latest())
 df.sort_values(by="wait",ascending=False)
-df['local time'] = df.apply(utility_func.get_local,axis=1)
+df['local time'] = df.apply(get_local,axis=1)
 display_cols = ['name', 'province', 'wait', 'local time','utc']
 
 
@@ -124,7 +124,7 @@ with st.beta_expander('Specific Crossing Info'):
     choice = st.selectbox("Choose Crossing", df['name'].sort_values().unique())
 
     df2 = pd.DataFrame(list(run.aggregate(mongo_queries.get_local_tz(choice))))
-    df2['local_time'] = df2.apply(utility_func.get_local,axis=1)
+    df2['local_time'] = df2.apply(get_local,axis=1)
 
     cols=['local_time', 'wait']
     hist = df2[cols].sort_values(by='local_time', ascending=False)

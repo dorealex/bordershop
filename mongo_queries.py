@@ -3,6 +3,7 @@
 
 ###Gets the latest results, joins the specific data: coordinates, province, etc.
 import datetime
+from altair.vegalite.v4.schema.core import Projection
 from numpy import dtype
 from datetime import datetime as dt, time
 from datetime import timedelta
@@ -154,6 +155,12 @@ def get_all_run_with_tz_latest():
         }
     ]
     return run.aggregate(query)
+def baseline_info(query={},req={}):
+    return col.find(query,projection=req)
+
+def get_run_with_query(query={}):
+    return run.find(query)
+
 def get_all_run_with_tz():
     query = [
         {
@@ -195,6 +202,19 @@ def get_all_run_with_tz():
     ]
     return run.aggregate(query)
 
+def get_regions():
+    return list(col.distinct('region'))
+def get_district(region):
+    if region =='All':
+        return list(col.distinct('district'))
+    return list(col.distinct('district',filter={'region':region}))
+def get_ports(region,district):
+  filter = {}
+  if region != 'All':
+      filter.update({'region':region})
+  if district != 'All':
+      filter.update({'district':district})
+  return list(col.distinct('name',filter))
 latest_result = [
     {
         '$lookup': {

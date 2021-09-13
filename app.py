@@ -42,10 +42,11 @@ if district_sel !='All':
 if port_sel !='All':
     filter.update({'name':port_sel})
     zoom=10
+metric = st.sidebar.selectbox("Metric", ['Average','Maximum','Median'], index=0, key=None, help=None, on_change=None, args=None, kwargs=None)
+timeframe = st.sidebar.selectbox("Timeframe", ['All Time','1 day', '1 week', '1 month', '1 quarter', '1 year' ])
 
-
-
-df2 = pd.DataFrame(mongo_queries.new_vis_data(filter))
+day_filter = mongo_queries.update_filter_timeframe(filter,timeframe)
+df2 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
 df2['local_time'] = df2.apply(get_local,axis=1)
 mini = pd.DataFrame(mongo_queries.map_df(filter))
 mini['local_time'] = mini.apply(get_local,axis=1)
@@ -57,6 +58,7 @@ midpoint = (np.average(mini['lat']), np.average(mini['long']))
 cols=['name', 'wait', 'local_time']
 mini[cols].sort_values('local_time',ascending=False,inplace=True)
 #df2[cols]
+st.write("### Current wait times")
 mini[cols]
 
 
@@ -79,12 +81,12 @@ layer = pdk.Layer(
 view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=zoom, bearing=0, pitch=0)
 
 r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{name}\nDelay: {wait} seconds"})
+st.write("### Map")
 st.pydeck_chart(r)
 
 
 
-metric = st.sidebar.selectbox("Metric", ['Average','Maximum','Median'], index=0, key=None, help=None, on_change=None, args=None, kwargs=None)
-timeframe = st.sidebar.selectbox("Timeframe", ['All Time','1 day', '1 week', '1 month', '1 quarter', '1 year' ])
+
 alt_color = {'Maximum':'max(wait):Q', 'Average':'average(wait):Q','Median':'median(wait):Q'}
 #df2 = run.aggregate() #agg func, filter on name, then find the TZ use this {'name':{'$in':mongo_queries.get_ports(region_sel,district_sel)}}
 #df2['local']
@@ -104,25 +106,26 @@ scatter = alt.Chart(df2).mark_rect().encode(
     alt.X('day(local_time):O', title='Weekday'),        
     color=alt_color[metric]
 )
+st.write("### Schedule view")
 st.altair_chart(scatter, use_container_width=True)
 
-day_filter = mongo_queries.update_filter_timeframe(filter,timeframe)
 
 
 
 
-df3 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
-df3['local_time'] = df3.apply(get_local,axis=1)
+
+#df3 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
+#df3['local_time'] = df3.apply(get_local,axis=1)
 #df3
-st.write(timeframe+' trend')
-one_day = alt.Chart(df3).mark_bar().encode(
+st.write("### "+timeframe+' trend')
+one_day = alt.Chart(df2).mark_bar().encode(
     x='local_time:T',
     y=alt_color[metric]
 )
 
 st.altair_chart(one_day, use_container_width=True)
 
-
+st.write("### Distribution of wait times")
 st.altair_chart(histo, use_container_width=True)
 ################################################
 project = {
@@ -151,7 +154,7 @@ versus = alt.Chart(result).mark_line(point=True).encode(
     color='type',
     shape='name'
 )
-
+st.write("### Comparison to legacy system")
 st.altair_chart(versus, use_container_width=True)
 
 

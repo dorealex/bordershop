@@ -67,12 +67,12 @@ def get_baseline_time(response):
   #returns the regular time (without traffic)
   #iterate through the gmaps output and sum up the time values, in case it is more complex
   total= 0
-  
+
   if 'routes' in response.keys():
     for x in response['routes']:
       for y in x['legs']:
         z = y['duration']['value']
-        total=total+z
+        total += z
   return total
 
 

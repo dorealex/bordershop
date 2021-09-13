@@ -407,7 +407,27 @@ def mongo_setup():
 
 def legacy_add(l):
     leg.insert_many(l)
-
+def records_by_day():
+    pipeline = [
+        {
+            '$addFields': {
+                'Date': {
+                    '$dateToString': {
+                        'format': '%Y-%m-%d', 
+                        'date': '$utc'
+                    }
+                }
+            }
+        }, {
+            '$group': {
+                '_id': '$Date', 
+                'count': {
+                    '$sum': 1
+                }
+            }
+        }
+    ]
+    return run.aggregate(pipeline)
 def update_filter_timeframe(filter, selection):
     month = dt.utcnow().month
     day = dt.utcnow().day

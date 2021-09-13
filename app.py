@@ -1,3 +1,4 @@
+from altair.vegalite.v4.schema.core import Projection
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -123,7 +124,51 @@ st.altair_chart(one_day, use_container_width=True)
 
 
 st.altair_chart(histo, use_container_width=True)
+################################################
+project = {
+    'crossing_id':1,
+    'utc':1,
+    'wait':1,
+    'name':1,
+    'timezone':1,
+    'type':1,
+    'district':1,
+    'region':1
+}
 
+legacy_data = db['legacy_mapped'].find(filter,projection=project)
+new_data = db['run_merge_vs'].find(filter,projection=project)
+test_df  =pd.DataFrame(legacy_data)
+other_df = pd.DataFrame(new_data)
+result = pd.concat([test_df,other_df])
+
+
+
+
+versus = alt.Chart(result).mark_line(point=True).encode(
+    alt.X('utc'),
+    alt.Y('wait'),
+    color='type',
+    shape='name'
+)
+
+st.altair_chart(versus, use_container_width=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+################################################
 ############################################################################
 #metdadata section
 ############################################################################

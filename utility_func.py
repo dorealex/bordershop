@@ -24,8 +24,20 @@ def get_local(row):
     tz = row['timezone']
     #df['timestamp'].dt.tz_localize('utc').dt.tz_convert('US/Central')
     return utc.tz_localize('utc').tz_convert(tz)
+def make_coords(row):
+    lat = row['lat']
+    lon = row['long']
+    return (lon,lat)
 
 
+def return_color(row):
+    delay = row['wait']
+    if 0<= delay < (3*60):
+        return [0,255,000]
+    elif (3*60)<=delay < (5*60):
+        return [252, 186, 3]
+    elif (5*60) <= delay:
+        return [255,0,0]
 
 def get_timezone_data(id,name,point):
   #ask google for the timezone data, store in file
@@ -87,7 +99,7 @@ def get_traffic_time(response):
     for x in response['routes']:
       for y in x['legs']:
         z = y['duration_in_traffic']['value']
-        total=total+z
+        total += z
   return total
 
 def get_distance(response):
@@ -99,7 +111,7 @@ def get_distance(response):
     for x in response['routes']:
       for y in x['legs']:
         z = y['distance']['value']
-        total=total+z
+        total += z
   return total
 
 

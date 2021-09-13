@@ -12,7 +12,7 @@ import pymongo
 import pytz
 import csv
 import certifi
-from utility_func import get_local
+from utility_func import get_local, return_color, make_coords
 import mongo_queries
 import altair as alt
 
@@ -38,10 +38,7 @@ else:
 
 
 
-def make_coords(row):
-    lat = row['lat']
-    lon = row['long']
-    return [lon,lat]
+
 
 def get_wait(row):
     traf = row['traffic']
@@ -52,14 +49,6 @@ def get_wait(row):
     else:
         return delta
 
-def return_colour(row):
-    delay = row['wait']
-    if 0<= delay < (3*60):
-        return [0,255,000]
-    elif (3*60)<=delay < (5*60):
-        return [252, 186, 3]
-    elif (5*60) <= delay:
-        return [255,0,0]
 st.title("Border Wait Times")
 ############################################################################
 #Sidebar
@@ -86,7 +75,7 @@ display_cols = ['name', 'province', 'wait', 'local time','utc']
 ############################################################################
 #map section
 ############################################################################
-df['color'] = df.apply(return_colour,axis=1)
+df['color'] = df.apply(return_color,axis=1)
 
 df['lat'] = df.lat.astype(str).astype(float)
 
@@ -114,6 +103,8 @@ view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=3, 
 
 r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{name}\nDelay: {wait} seconds"})
 st.pydeck_chart(r)
+df
+st.write(df.dtypes)
 if st.checkbox('Show data table'):
     df[display_cols]
 ############################################################################

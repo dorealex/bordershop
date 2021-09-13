@@ -78,7 +78,7 @@ poc=True
 
 if __name__ == "__main__":
     count = mongo_queries.queries_this_month()
-    if count >= 15817:
+    if count >= 15500:
         print("Free-tier monthly limit reached")
         with open("error_log_updater.txt","a") as f:
                 f.write('Free-tier monthly limit reached')

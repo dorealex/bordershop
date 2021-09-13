@@ -30,6 +30,25 @@ col= db['baseline']
 run = db['running']
 leg = db['legacy']
 late = db['latest times']
+merge = db['running_merge']
+lm = db['latest_merged']
+
+def map_pipeline():
+    pipeline = [{
+        '$group': {
+            '_id': '$crossing_id', 
+            'name': {'$last': '$name'}, 
+            'utc': {'$last': '$utc'}, 
+            'district': {'$last': '$district'}, 
+            'region': {'$last': '$region'}, 
+            'lat': {'$last': '$lat'}, 
+            'long': {'$last': '$long'}, 
+            'wait': {'$last': '$wait'}
+        }
+    }]
+    return merge.aggregate(pipeline)
+
+
 def get_all_run_with_tz_latest():
     query = [
         {
@@ -208,12 +227,17 @@ def get_district(region):
     if region =='All':
         return list(col.distinct('district'))
     return list(col.distinct('district',filter={'region':region}))
+def map_df(filter):
+    return lm.find(filter)
+def new_vis_data(filter):
+    return merge.find(filter)
 def get_ports(region,district):
-  filter = {}
+  filter = {'profile':1} #DEBUG ONLY FOR NOW BECAUSE WE ONLY GET DATA FOR 26 SITES
   if region != 'All':
       filter.update({'region':region})
   if district != 'All':
       filter.update({'district':district})
+
   return list(col.distinct('name',filter))
 latest_result = [
     {
@@ -384,6 +408,36 @@ def mongo_setup():
 def legacy_add(l):
     leg.insert_many(l)
 
+def update_filter_timeframe(filter, selection):
+    month = dt.utcnow().month
+    day = dt.utcnow().day
+    year = dt.utcnow().year
+    delta_d=0
+    delta_m = 0
+    delta_y = 0
+    if selection == '1 day':
+        delta_d = 1
+    elif selection == ' 1 week':
+        delta_d = 7
+    elif selection == '1 month':
+        delta_m = 1
+    elif selection == '1 quarter':
+        delta_m = 3
+    elif selection == '1 year':
+        delta_y = 1
+    else:
+        return filter
+    newday = day - delta_d
+    newmonth = month - delta_m
+    newyear = year - delta_y
+    if newday < 1:
+        newmonth = newmonth - 1
+    if newmonth < 1:
+        newmonth = newmonth + 12
+        newyear = newyear - 1
+    newdate = dt(newyear,newmonth,day)
+    filter.update({'utc':{'$gte':newdate}})
+    return filter
 
 def totals_by_day():
     pipeline = [

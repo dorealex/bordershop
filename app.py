@@ -3,12 +3,21 @@ import pandas as pd
 import numpy as np
 from streamlit import util
 import mongo_queries
-from utility_func import get_local, return_color, make_coords
+from utility_cloud import get_local, return_color, make_coords
 import altair as alt
 import datetime as dt
 from datetime import timedelta
 from pandas.api.types import CategoricalDtype
 import pydeck as pdk
+
+
+
+
+    
+    
+
+
+
 
 def get_local_mongo(row):
     return mongo_queries.get_local_tz(row['crossing_id'])

@@ -50,7 +50,7 @@ day_filter = mongo_queries.update_filter_timeframe(filter,timeframe)
 df2 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
 
 
-df2.drop('')
+
 df2['local_time'] = df2.apply(get_local,axis=1)
 mini = pd.DataFrame(mongo_queries.map_df(filter))
 mini['local_time'] = mini.apply(get_local,axis=1)

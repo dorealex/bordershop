@@ -43,10 +43,14 @@ if port_sel !='All':
     filter.update({'name':port_sel})
     zoom=10
 metric = st.sidebar.selectbox("Metric", ['Average','Maximum','Median'], index=0, key=None, help=None, on_change=None, args=None, kwargs=None)
-timeframe = st.sidebar.selectbox("Timeframe", ['All Time','1 day', '1 week', '1 month', '1 quarter', '1 year' ])
+timeframe = st.sidebar.selectbox("Timeframe", ['1 week','All Time','1 day', '1 month', '1 quarter', '1 year' ])
 
 day_filter = mongo_queries.update_filter_timeframe(filter,timeframe)
+
 df2 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
+
+
+df2.drop('')
 df2['local_time'] = df2.apply(get_local,axis=1)
 mini = pd.DataFrame(mongo_queries.map_df(filter))
 mini['local_time'] = mini.apply(get_local,axis=1)
@@ -144,13 +148,13 @@ new_data = db['run_merge_vs'].find(filter,projection=project)
 test_df  =pd.DataFrame(legacy_data)
 other_df = pd.DataFrame(new_data)
 result = pd.concat([test_df,other_df])
-
+result['local_time'] = result.apply(get_local,axis=1)
 
 
 
 versus = alt.Chart(result).mark_line(point=True).encode(
-    alt.X('utc'),
-    alt.Y('wait'),
+    alt.X('local_time:T'),
+    alt.Y('wait:Q'),
     color='type',
     shape='name'
 )

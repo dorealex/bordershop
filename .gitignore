@@ -17,3 +17,4 @@ legacy_fixer.py
 legacy_map.csv
 time_fixer.py
 vis_test.py
+old_loader.py

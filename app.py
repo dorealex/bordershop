@@ -47,128 +47,130 @@ timeframe = st.sidebar.selectbox("Timeframe", ['1 week','All Time','1 day', '1 m
 
 day_filter = mongo_queries.update_filter_timeframe(filter,timeframe)
 
-df2 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
 
 
 
-df2['local_time'] = df2.apply(get_local,axis=1)
-mini = pd.DataFrame(mongo_queries.map_df(filter))
-mini['local_time'] = mini.apply(get_local,axis=1)
-mini['color'] = mini.apply(return_color,axis=1)
-mini['lat'] = mini.lat.astype(str).astype(float)
-mini['long'] = mini.long.astype(str).astype(float)
-mini['coordinates'] = mini.apply(make_coords, axis=1)
-midpoint = (np.average(mini['lat']), np.average(mini['long']))
-cols=['name', 'wait', 'local_time']
-mini[cols].sort_values('local_time',ascending=False,inplace=True)
-#df2[cols]
-st.write("### Current wait times")
-mini[cols]
+def clicked():
+    df2 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
+
+    df2['local_time'] = df2.apply(get_local,axis=1)
+    mini = pd.DataFrame(mongo_queries.map_df(filter))
+    mini['local_time'] = mini.apply(get_local,axis=1)
+    mini['color'] = mini.apply(return_color,axis=1)
+    mini['lat'] = mini.lat.astype(str).astype(float)
+    mini['long'] = mini.long.astype(str).astype(float)
+    mini['coordinates'] = mini.apply(make_coords, axis=1)
+    midpoint = (np.average(mini['lat']), np.average(mini['long']))
+    cols=['name', 'wait', 'local_time']
+    mini[cols].sort_values('local_time',ascending=False,inplace=True)
+    #df2[cols]
+    st.write("### Current wait times")
+    mini[cols]
 
 
-layer = pdk.Layer(
-    "ScatterplotLayer",
-    mini,
-    pickable=True,
-    opacity=0.8,
-    stroked=True,
-    filled=True,
-    radius_scale=6,
-    radius_min_pixels=10,
-    radius_max_pixels=100,
-    line_width_min_pixels=1,
-    get_position="coordinates",
-    get_radius=15,
-    get_fill_color='color',
-    get_line_color=[0, 0, 0],
-)
-view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=zoom, bearing=0, pitch=0)
+    layer = pdk.Layer(
+        "ScatterplotLayer",
+        mini,
+        pickable=True,
+        opacity=0.8,
+        stroked=True,
+        filled=True,
+        radius_scale=6,
+        radius_min_pixels=10,
+        radius_max_pixels=100,
+        line_width_min_pixels=1,
+        get_position="coordinates",
+        get_radius=15,
+        get_fill_color='color',
+        get_line_color=[0, 0, 0],
+    )
+    view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=zoom, bearing=0, pitch=0)
 
-r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{name}\nDelay: {wait} seconds"})
-st.write("### Map")
-st.pydeck_chart(r)
-
-
-
-
-alt_color = {'Maximum':'max(wait):Q', 'Average':'average(wait):Q','Median':'median(wait):Q'}
-#df2 = run.aggregate() #agg func, filter on name, then find the TZ use this {'name':{'$in':mongo_queries.get_ports(region_sel,district_sel)}}
-#df2['local']
-#st.write(subset)
-
-histo = alt.Chart(df2).mark_bar().encode(
-    alt.X('wait:Q', bin=True),
-    #y='count()',
-    y=alt.Y('count():Q',stack=None),
-    
-)
-
-
-scatter = alt.Chart(df2).mark_rect().encode(
-    
-    alt.Y('hours(local_time):O', title='hour of day',),
-    alt.X('day(local_time):O', title='Weekday'),        
-    color=alt_color[metric]
-)
-st.write("### Schedule view")
-st.altair_chart(scatter, use_container_width=True)
+    r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{name}\nDelay: {wait} seconds"})
+    st.write("### Map")
+    st.pydeck_chart(r)
 
 
 
 
+    alt_color = {'Maximum':'max(wait):Q', 'Average':'average(wait):Q','Median':'median(wait):Q'}
+    #df2 = run.aggregate() #agg func, filter on name, then find the TZ use this {'name':{'$in':mongo_queries.get_ports(region_sel,district_sel)}}
+    #df2['local']
+    #st.write(subset)
+
+    histo = alt.Chart(df2).mark_bar().encode(
+        alt.X('wait:Q', bin=True),
+        #y='count()',
+        y=alt.Y('count():Q',stack=None),
+        
+    )
 
 
-#df3 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
-#df3['local_time'] = df3.apply(get_local,axis=1)
-#df3
-st.write("### "+timeframe+' trend')
-one_day = alt.Chart(df2).mark_bar().encode(
-    x='local_time:T',
-    y=alt_color[metric]
-)
-
-st.altair_chart(one_day, use_container_width=True)
-
-st.write("### Distribution of wait times")
-st.altair_chart(histo, use_container_width=True)
-################################################
-project = {
-    'crossing_id':1,
-    'utc':1,
-    'wait':1,
-    'name':1,
-    'timezone':1,
-    'type':1,
-    'district':1,
-    'region':1
-}
-
-legacy_data = db['legacy_mapped'].find(filter,projection=project)
-new_data = db['run_merge_vs'].find(filter,projection=project)
-test_df  =pd.DataFrame(legacy_data)
-other_df = pd.DataFrame(new_data)
-result = pd.concat([test_df,other_df])
-result['local_time'] = result.apply(get_local,axis=1)
-
-
-
-versus = alt.Chart(result).mark_line(point=True).encode(
-    alt.X('local_time:T'),
-    alt.Y('wait:Q'),
-    color='type',
-    shape='name'
-)
-st.write("### Comparison to legacy system")
-st.altair_chart(versus, use_container_width=True)
+    scatter = alt.Chart(df2).mark_rect().encode(
+        
+        alt.Y('hours(local_time):O', title='hour of day',),
+        alt.X('day(local_time):O', title='Weekday'),        
+        color=alt_color[metric]
+    )
+    st.write("### Schedule view")
+    st.altair_chart(scatter, use_container_width=True)
 
 
 
 
 
 
+    #df3 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
+    #df3['local_time'] = df3.apply(get_local,axis=1)
+    #df3
+    st.write("### "+timeframe+' trend')
+    one_day = alt.Chart(df2).mark_bar().encode(
+        x='local_time:T',
+        y=alt_color[metric]
+    )
+
+    st.altair_chart(one_day, use_container_width=True)
+
+    st.write("### Distribution of wait times")
+    st.altair_chart(histo, use_container_width=True)
+    ################################################
+    project = {
+        'crossing_id':1,
+        'utc':1,
+        'wait':1,
+        'name':1,
+        'timezone':1,
+        'type':1,
+        'district':1,
+        'region':1
+    }
+
+    legacy_data = db['legacy_mapped'].find(filter,projection=project)
+    new_data = db['run_merge_vs'].find(filter,projection=project)
+    test_df  =pd.DataFrame(legacy_data)
+    other_df = pd.DataFrame(new_data)
+    result = pd.concat([test_df,other_df])
+    result['local_time'] = result.apply(get_local,axis=1)
 
 
 
+    versus = alt.Chart(result).mark_line(point=True).encode(
+        alt.X('local_time:T'),
+        alt.Y('wait:Q'),
+        color='type',
+        shape='name'
+    )
+    st.write("### Comparison to legacy system")
+    st.altair_chart(versus, use_container_width=True)
+
+
+
+
+
+
+
+
+btn = st.sidebar.button('Update',on_click=clicked)
 
 
 

@@ -33,6 +33,10 @@ def update_one(id):
     mongo_queries.add_one_log(r,id) #saves to running log, returns dict of what was added.
 
 def init_run():
+    #OCTOBER 2021 test: 5 sites
+    
+
+    sites = [427,440,602,452,453]
     time_strf = '%H:%M:%S'
     print(datetime.datetime.utcnow().strftime(time_strf))
     count=0
@@ -50,6 +54,8 @@ def init_run():
         try:
             count += 1
             id = x['id']
+            if id not in sites:
+                continue
             #last run
             last_run = mongo_queries.get_last_run(id) #UTC
             #profile 
@@ -78,7 +84,7 @@ poc=True
 
 if __name__ == "__main__":
     count = mongo_queries.queries_this_month()
-    if count >= 15500:
+    if count >= 15000:
         print("Free-tier monthly limit reached")
         with open("error_log_updater.txt","a") as f:
                 f.write('Free-tier monthly limit reached')

@@ -12,7 +12,7 @@ def job():
 
     
 
-schedule.every(30).minutes.until(timedelta(days=1)).do(job)
+schedule.every(30).minutes.until(timedelta(days=26)).do(job)
 
 while True:
     try:

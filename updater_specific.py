@@ -92,7 +92,7 @@ if __name__ == "__main__":
         sys.exit()
 
     init_run()
-    schedule.every(1).minutes.until(timedelta(days=5)).do(init_run)
+    schedule.every(1).minutes.until(timedelta(days=26)).do(init_run)
     while True:
         try:
             schedule.run_pending()

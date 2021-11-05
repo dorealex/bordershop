@@ -25,7 +25,7 @@ def get_local_mongo(row):
 
 
 db, collections = mongo_queries.mongo_setup()
-
+st.set_page_config(layout="wide")
 st.title("Border Wait Times")
 filter = {}
 region_sel = st.sidebar.selectbox('Region',['All']+mongo_queries.get_regions())

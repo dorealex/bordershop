@@ -10,7 +10,7 @@ import datetime as dt
 from datetime import timedelta
 from pandas.api.types import CategoricalDtype
 import pydeck as pdk
-
+#st.set_page_config(layout="wide")
 
 
 
@@ -25,9 +25,12 @@ def get_local_mongo(row):
 
 
 db, collections = mongo_queries.mongo_setup()
-st.set_page_config(layout="wide")
+
 st.title("Border Wait Times")
 filter = {}
+sites = [427,440,602,452,453,456]
+#filter.update({'crossing_id':{'$in':[427,440,602,452,453,456]}})
+
 region_sel = st.sidebar.selectbox('Region',['All']+mongo_queries.get_regions())
 district_sel = st.sidebar.selectbox('District',['All']+mongo_queries.get_district(region_sel))
 port_sel = st.sidebar.selectbox('Border Crossing',['All']+mongo_queries.get_ports(region_sel,district_sel))
@@ -42,6 +45,9 @@ if district_sel !='All':
 if port_sel !='All':
     filter.update({'name':port_sel})
     zoom=10
+
+
+
 metric = st.sidebar.selectbox("Metric", ['Average','Maximum','Median'], index=0, key=None, help=None, on_change=None, args=None, kwargs=None)
 timeframe = st.sidebar.selectbox("Timeframe", ['1 week','All Time','1 day', '1 month', '1 quarter', '1 year' ])
 
@@ -51,10 +57,20 @@ day_filter = mongo_queries.update_filter_timeframe(filter,timeframe)
 
 
 def clicked():
-    df2 = pd.DataFrame(mongo_queries.new_vis_data(day_filter))
-
+    
+    day_filter2 = day_filter
+    day_filter2.update({'crossing_id':{'$in':sites}})
+    
+    
+    df2 = pd.DataFrame(mongo_queries.new_vis_data(day_filter2))
+    
     df2['local_time'] = df2.apply(get_local,axis=1)
-    mini = pd.DataFrame(mongo_queries.map_df(filter))
+    
+    day_filter.update({'_id':{'$in':sites}})
+
+    day_filter.pop('crossing_id', None)
+    mini = pd.DataFrame(mongo_queries.map_df(day_filter))
+    
     mini['local_time'] = mini.apply(get_local,axis=1)
     mini['color'] = mini.apply(return_color,axis=1)
     mini['lat'] = mini.lat.astype(str).astype(float)
@@ -144,9 +160,11 @@ def clicked():
         'district':1,
         'region':1
     }
+    day_filter.pop('_id')
+    day_filter.update({'crossing_id':{'$in':sites}})
 
-    legacy_data = db['legacy_mapped'].find(filter,projection=project)
-    new_data = db['run_merge_vs'].find(filter,projection=project)
+    legacy_data = db['legacy_mapped'].find(day_filter,projection=project)
+    new_data = db['run_merge_vs'].find(day_filter,projection=project)
     test_df  =pd.DataFrame(legacy_data)
     other_df = pd.DataFrame(new_data)
     result = pd.concat([test_df,other_df])

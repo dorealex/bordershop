@@ -30,7 +30,8 @@ col= db['baseline']
 run = db['running']
 leg = db['legacy']
 late = db['latest times']
-merge = db['running_merge']
+#merge = db['running_merge']
+merge = db['running_merge2'] #for smaller queries
 lm = db['latest_merged']
 
 def map_pipeline():
@@ -429,33 +430,25 @@ def records_by_day():
     ]
     return run.aggregate(pipeline)
 def update_filter_timeframe(filter, selection):
-    month = dt.utcnow().month
-    day = dt.utcnow().day
-    year = dt.utcnow().year
-    delta_d=0
-    delta_m = 0
-    delta_y = 0
+    
+    day = dt.utcnow()
+    
+
     if selection == '1 day':
-        delta_d = 1
-    elif selection == ' 1 week':
+        delta_d=1
+    elif selection == '1 week':
         delta_d = 7
     elif selection == '1 month':
-        delta_m = 1
+        delta_d = 30
     elif selection == '1 quarter':
-        delta_m = 3
+        delta_d = 90
     elif selection == '1 year':
-        delta_y = 1
+        delta_d = 365
     else:
         return filter
-    newday = day - delta_d
-    newmonth = month - delta_m
-    newyear = year - delta_y
-    if newday < 1:
-        newmonth = newmonth - 1
-    if newmonth < 1:
-        newmonth = newmonth + 12
-        newyear = newyear - 1
-    newdate = dt(newyear,newmonth,day)
+    
+    newdate = day - timedelta(days=delta_d)
+    
     filter.update({'utc':{'$gte':newdate}})
     return filter
 
@@ -480,6 +473,27 @@ def totals_by_day():
         }
     ]
     return run.aggregate(pipeline)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
     # print(get_all_ids())

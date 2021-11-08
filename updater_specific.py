@@ -33,7 +33,7 @@ def update_one(id):
     mongo_queries.add_one_log(r,id) #saves to running log, returns dict of what was added.
 
 def init_run():
-    #OCTOBER 2021 test: 5 sites
+    #OCTOBER 2021 test: 6 sites
     
 
     sites = [427,440,602,452,453,456]

@@ -36,7 +36,7 @@ def init_run():
     #OCTOBER 2021 test: 6 sites
     
 
-    sites = [427,440,602,452,453,456]
+    sites = [427,440,602,351,453,840]
     time_strf = '%H:%M:%S'
     print(datetime.datetime.utcnow().strftime(time_strf))
     count=0

@@ -28,7 +28,11 @@ db, collections = mongo_queries.mongo_setup()
 
 
 filter = {}
-sites = [427,440,602,452,453,456]
+#DOuglas 840
+#Lacolle 351
+#Remove Landsdowne 456
+#Remove Windsor 452
+sites = [427,440,602,351,453,840]
 #filter.update({'crossing_id':{'$in':[427,440,602,452,453,456]}})
 
 region_sel = st.sidebar.selectbox('Region',['All']+mongo_queries.get_regions())

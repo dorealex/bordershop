@@ -17,6 +17,11 @@ def return_color(row):
         return [255,0,0]
 
 def make_coords(row):
+    
     lat = row['lat']
     lon = row['long']
+    if type(lat) == str:
+        lat = float(lat)
+    if type(lon) == str:
+        lon = float(lon)
     return (lon,lat)

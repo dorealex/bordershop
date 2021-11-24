@@ -33,6 +33,265 @@ late = db['latest times']
 #merge = db['running_merge']
 merge = db['running_merge2'] #for smaller queries
 lm = db['latest_merged']
+current = db['current_updaters']
+profs = db['profiles']
+leg_map = db['leg_map']
+
+
+def prepare_legacy_compare(f):
+    #get regular wait times
+    print(f)
+    timeframe = f.pop('utc') if 'utc' in f else False
+    first = {'$match':f}
+    q1 = [first]
+    q2 = [first]
+    q1.append({'$unwind':{'path':'$legacy_times'}})
+    q2.append({'$unwind':{'path':'$wait_times'}})
+    if timeframe:
+        q1.append({'$match': {'legacy_times.timestamp':timeframe}})
+        q2.append({'$match': {'wait_times.utc':timeframe}})
+    q1.append({'$project':{
+        'name': 1,
+        'timezone': '$timeZone',
+        'utc': '$legacy_times.timestamp',
+        'wait': '$legacy_times.travellers_seconds',
+        'type': 'legacy'}})
+    q2.append({'$project':{
+        'name':1,
+        'timezone':'$timeZone',
+        'utc':'$wait_times.utc',
+        'wait':'$wait_times.wait',
+        'type':'api'
+    }})
+    print(q1,"\n-----")
+    res1 = list(col.aggregate(q1))
+    print(len(res1),"\n-----")
+    print(q2,"\n-----")
+    res2 = list(col.aggregate(q2))
+    print(len(res2),"\n-----")
+    
+    
+    
+    
+    return res1+res2
+
+
+def legacy_name_to_id(name):
+    #given a name, as per the legacy times website, provide an ID as per the mapping
+    res = leg_map.find_one({'CBSA_Office':name})
+    return res['crossing_id']
+def id_to_legacy_name(id):
+    #given an id, as per the legacy times website, provide a name
+    res = leg_map.find_one({'crossing_id':id})
+    if res:
+        return res['CBSA_Office']
+    else:
+        return
+
+def convert_to_local(ut,tz):
+    #given a utc and a timezone, convert UTC into local time at that time zone and return it
+    if ut.tzinfo != pytz.UTC:
+        ut = pytz.utc.localize(ut) # convert to aware
+    if type(tz)==str:
+        tz = pytz.timezone(tz) #in case the input is just string
+    res = ut.astimezone(tz)
+    #print(ut,">>>",res) #debug
+    return res
+
+
+def get_poll_rate(profile, local_time):
+    #returns the poll rate in number of minutes for the profile given local time
+    #based on latest info from database
+    #local_time has to be a datetime
+    hour = local_time.hour
+    #minu = local_time.minute #not needed?
+    if type(profile) == int: #mongodb keys are strings
+        profile  =str(profile)
+
+    default = 60 # in case we can't find the rate
+    latest = list(profs.aggregate([
+        {'$sort':{'utc':-1}},
+        {'$limit':1}
+    ]))[0] #finds the latest set of profile rates
+    try:
+        sub_d = latest['profiles'][profile]
+        for seg in sub_d:
+            if hour in range(seg['segment_start'],seg['segment_end']):
+                return seg['poll_rate']
+        return default #if for whatever reason there was no time match
+    except KeyError:
+        return default
+def get_hist_data(f):
+    #print(f)
+    timeframe = f.pop('utc') if 'utc' in f else False 
+    q = [
+    {
+        '$match': f
+    }, {
+        '$unwind': {
+            'path': '$wait_times', 
+            'preserveNullAndEmptyArrays': False
+        }
+    }, {
+        '$project': {
+            'timezone': '$timeZone', 
+            'utc': '$wait_times.utc', 
+            'wait': '$wait_times.wait',
+            '_id':0,
+        }
+    }
+    ]
+    
+    if timeframe:
+            q.append({'$match': {'utc':timeframe}})
+    res = col.aggregate(q,allowDiskUse=True)
+    #print(q)
+    
+    return list(res)
+
+def get_last_run_by_filter(f,req = None):
+    timeframe = f.pop('utc') if 'utc' in f else False
+    q=[
+        {
+            '$match': f
+        }, {
+            '$unwind': {
+                'path': '$wait_times', 
+                'preserveNullAndEmptyArrays': False
+            }
+        }, {
+            '$group': {
+                '_id': '$id', 
+                'utc': {
+                    '$last': '$wait_times.utc'
+                }, 
+                'wait': {
+                    '$last': '$wait_times.wait'
+                }
+            }
+        }]
+    if timeframe:
+        q.append({'$match': {'utc':timeframe}})
+
+    tail = [{
+            '$lookup': {
+                'from': 'baseline', 
+                'localField': '_id', 
+                'foreignField': 'id', 
+                'as': 'string'
+            }
+        }, {
+            '$project': {
+                '_id': {
+                    '$arrayElemAt': [
+                        '$string.id', 0
+                    ]
+                }, 
+                'name': {
+                    '$arrayElemAt': [
+                        '$string.name', 0
+                    ]
+                }, 
+                'province': {
+                    '$arrayElemAt': [
+                        '$string.province', 0
+                    ]
+                }, 
+                'dest': {
+                    '$arrayElemAt': [
+                        '$string.dest', 0
+                    ]
+                }, 
+                'origin': {
+                    '$arrayElemAt': [
+                        '$string.origin', 0
+                    ]
+                }, 
+                'timezone': {
+                    '$arrayElemAt': [
+                        '$string.timeZone', 0
+                    ]
+                }, 
+                'region': {
+                    '$arrayElemAt': [
+                        '$string.region', 0
+                    ]
+                }, 
+                'district': {
+                    '$arrayElemAt': [
+                        '$string.region', 0
+                    ]
+                }, 
+                'profile': {
+                    '$arrayElemAt': [
+                        '$string.profile', 0
+                    ]
+                }, 
+                'utc': 1, 
+                'wait': 1
+            }
+        }
+    ]
+
+    q.extend(tail)
+    #print(q)
+    res = col.aggregate(q,allowDiskUse=True)
+    return list(res)
+def get_last_run_base(id, req = None):
+    ###Given an id, return the last reading
+    ###Part of DB reset, times are now sub doc arrays on the baseline collection
+    res = col.aggregate([
+    {
+        '$match': {
+            'id': id
+        }
+    }, {
+        '$unwind': {
+            'path': '$wait_times', 
+            'preserveNullAndEmptyArrays': False
+        }
+    }, {
+        '$project': {
+            '_id': 0, 
+            'id': 1, 
+            'name': 1, 
+            'province': 1, 
+            'dest': 1, 
+            'timeZone': 1, 
+            'region': 1, 
+            'district': 1,
+            'origin':1,
+            'profile':1, 
+            'utc': '$wait_times.utc', 
+            'wait': '$wait_times.wait'
+        }
+    }, {
+        '$sort': {
+            'utc': -1
+        }
+    }, {
+        '$limit': 1
+    }
+])
+    res = list(res)[0]
+    if req == 'wait':
+        return res['wait']
+    elif req =='utc':
+        return res['utc'].astimezone(pytz.utc)
+    elif req =='local':
+        utc = res['utc']
+        local_tz = res['timeZone']
+        
+        return utc.astimezone(pytz.timezone(local_tz))
+    else:
+        return res
+def ids_to_names(ids):
+    if type(ids) != list:
+        ids = [ids]
+    return list(col.find({'id':{'$in':ids}},projection={'name':1, '_id':0}))
+def get_updating_list():
+    ###Part of db reset, collection gets the latest array and queries those only.
+    return list(current.find({}).sort('datetime',-1).limit(1))[0]['sites']
 
 def map_pipeline():
     pipeline = [{
@@ -353,6 +612,18 @@ merge_running_timezones = [
 ]
 def mongo_setup():
     return db, db.list_collections()
+
+def add_one_base(r,id):
+    ###DB RESET FRIENDLY
+    #r is the request
+    #id is the crossing id as an integer, from the baseline collection, ex 817 -> Abbotsford
+    traffic = utility_func.get_traffic_time(r.json())
+    baseline = utility_func.get_baseline_time(r.json())
+    wait = max(0,traffic-baseline)
+    utc_time = utility_func.round_to_10min(dt.now(tz=timezone.utc))
+    doc = {'utc':utc_time,'wait':wait}
+    col.update_one({'id':id},{'$push':{'wait_times':doc}})
+
 def add_one_log(r,id):
     traffic = utility_func.get_traffic_time(r.json())
     baseline = utility_func.get_baseline_time(r.json())
@@ -387,6 +658,44 @@ def get_last_run(crossing_id):
         return datetime.datetime(1,1,1,tzinfo=pytz.utc)
     else:
         return result[0]['utc'].replace(tzinfo=pytz.UTC)
+
+def queries_this_month_base(curr=None):
+    #how many queries were sent to google this month, if a date is supplied it will use that calendar month. If not, it will use today (UTC)
+    if not curr:
+        curr = dt.utcnow()
+    y = curr.year
+    m = curr.month
+
+    start = dt(y,m,1)
+    if m==12:
+        end = dt(y+1,1,1) - timedelta(days=1) #if its in December, then you go to the day before Jan 1st.
+    else:
+        end = dt(y,m+1,1) - timedelta(days=1) #otherwise go to the next month, and go back 1 day. This handles the months of varying length
+
+    res = col.aggregate([
+        {
+            '$unwind': {
+                'path': '$wait_times', 
+                'includeArrayIndex': 'string', 
+                'preserveNullAndEmptyArrays': False
+            }
+        }, {
+            '$project': {
+                'utc': '$wait_times.utc'
+            }
+        }, {
+            '$match': {
+                'utc': {
+                    '$gte': start, 
+                    '$lt': end
+                }
+            }
+        }, {
+            '$count': 'utc'
+        }
+    ])
+    return list(res)[0]['utc']
+
 def queries_this_month():
     m = dt.utcnow().month
     y = dt.utcnow().year
@@ -429,6 +738,26 @@ def records_by_day():
         }
     ]
     return run.aggregate(pipeline)
+def timeframe(selection):
+    #given a selection, return the filter text to generate the appropriate query
+    day = dt.utcnow()    
+
+    if selection == '1 day':
+        delta_d=1
+    elif selection == '1 week':
+        delta_d = 7
+    elif selection == '1 month':
+        delta_d = 30
+    elif selection == '1 quarter':
+        delta_d = 90
+    elif selection == '1 year':
+        delta_d = 365
+    else:
+        return ""
+    newdate = day - timedelta(days=delta_d)
+    
+    return {'utc':{'$gte':newdate}}
+
 def update_filter_timeframe(filter, selection):
     
     day = dt.utcnow()

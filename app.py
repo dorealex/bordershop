@@ -98,12 +98,14 @@ def clicked():
     )
     view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=zoom, bearing=0, pitch=0)
     r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{name}\nDelay: {wait} seconds"})
+    mini
     st.write("### Map")
     st.pydeck_chart(r)
     alt_color = {'Maximum':'max(wait):Q', 'Average':'average(wait):Q','Median':'median(wait):Q'}
     #df2 = run.aggregate() #agg func, filter on name, then find the TZ use this {'name':{'$in':mongo_queries.get_ports(region_sel,district_sel)}}
     #df2['local']
     #st.write(subset)
+    df2
     histo = alt.Chart(df2).mark_bar().encode(
         alt.X('wait:Q', bin=True),
         #y='count()',
@@ -148,6 +150,7 @@ def clicked():
     other_df = pd.DataFrame(new_data)
     result = pd.concat([test_df,other_df])
     result['local_time'] = result.apply(get_local,axis=1)
+    result
     versus = alt.Chart(result).mark_line(point=True).encode(
         alt.X('local_time:T'),
         alt.Y('wait:Q'),

@@ -65,8 +65,17 @@ def main():
   crossings = pd.read_csv("crossings.csv")
   name = crossings['name']
   df['timestamp'] = utility_func.round_to_10min(datetime.datetime.utcnow())
-  mongo_queries.legacy_add(df.to_dict('records'))
-  print(df)
+  for i in range(len(df)):
+    office = df['CBSA Office'].iloc[i]
+    id = int(mongo_queries.legacy_name_to_id(office))
+    timestamp = df['timestamp'].iloc[i]
+    wait = int(df['travellers_seconds'].iloc[i])
+    doc = {'timestamp':timestamp,'travellers_seconds':wait}
+    #print(id, office, wait)
+    mongo_queries.col.update_one({"id":id}, {'$push':{'legacy_times':doc}})
+  #mongo_queries.legacy_add(df.to_dict('records'))
+  #print(df)
+  return df
 if __name__ == "__main__":
     main()
     schedule.every(30).minutes.until(timedelta(days=5)).do(main)

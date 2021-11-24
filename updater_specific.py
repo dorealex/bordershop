@@ -83,17 +83,18 @@ poc=True
 
 
 if __name__ == "__main__":
-    count = mongo_queries.queries_this_month()
-    if count >= 15000:
-        print("Free-tier monthly limit reached")
-        with open("error_log_updater.txt","a") as f:
-                f.write('Free-tier monthly limit reached')
-        schedule.jobs.clear()
-        sys.exit()
+
 
     init_run()
     schedule.every(1).minutes.until(timedelta(days=26)).do(init_run)
     while True:
+        count = mongo_queries.queries_this_month()
+        if count >= 15000:
+            print("Free-tier monthly limit reached")
+            with open("error_log_updater.txt","a") as f:
+                f.write('Free-tier monthly limit reached')
+            schedule.jobs.clear()
+            sys.exit()
         try:
             schedule.run_pending()
             time.sleep(1)

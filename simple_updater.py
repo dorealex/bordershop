@@ -40,7 +40,7 @@ def main():
 
 if __name__ == "__main__":
     count = mongo_queries.queries_this_month_base()
-    if count >= 15000: ###TODO remove once debug is over
+    if count >= 15500: ###TODO remove once debug is over
         print("Free-tier monthly limit reached")
         with open("error_log_updater.txt","a") as f:
                 f.write('Free-tier monthly limit reached')

@@ -1,3 +1,4 @@
+from altair.vegalite.v4.schema.channels import Tooltip
 from altair.vegalite.v4.schema.core import Projection
 import streamlit as st
 import pandas as pd
@@ -63,6 +64,8 @@ if not data:
 else:
 
     df = pd.DataFrame(data)
+    
+    
     df['local_time'] = df.apply(get_local,axis=1)
     df['color'] = df.apply(return_color,axis=1)
     df[['lat','long']] = df['dest'].str.split(', ',expand=True)
@@ -104,17 +107,20 @@ else:
     
     f.update(mongo_queries.timeframe(timeframe))
     
-    hist = pd.DataFrame(mongo_queries.get_hist_data(f))
-    hist['local_time'] = hist.apply(get_local,axis=1)
+    hist = pd.DataFrame(mongo_queries.get_hist_data(f)) # get the data
+    hist['utc'] = hist['utc'].dt.tz_localize('UTC')
+    hist['local_time'] = hist.apply(get_local,axis=1) # convert UTC to local time
     
     alt_color = {'Maximum':'max(wait):Q', 'Average':'average(wait):Q','Median':'median(wait):Q'}
-
+    
     st.write('### Schedule View')
     scatter = alt.Chart(hist).mark_rect().encode(
         alt.Y('hours(local_time):O', title='hour of day',),
         alt.X('day(local_time):O', title='Weekday'),        
-        color=alt_color[metric]
-    )
+        alt.Tooltip(['hours(local_time):O','day(local_time):O',alt_color[metric]]),
+        color=alt_color[metric],
+        
+    ).interactive()
     st.altair_chart(scatter, use_container_width=True)
     ####
     st.write('### Trend ('+timeframe+')')
@@ -134,22 +140,22 @@ else:
     )
     st.altair_chart(histo, use_container_width=True)
     ####
-    f.update(mongo_queries.timeframe(timeframe))
-    st.write("### Comparison to legacy system")
-    ####
-    versus = pd.DataFrame(mongo_queries.prepare_legacy_compare(f))
-    #versus['local_time'] = versus.apply(get_local,axis=1),
-    versusChart = alt.Chart(versus).mark_line(point=True).encode(
-        #alt.X('local_time:T'),
-        alt.X('utc:T'),
-        alt.Y('wait:Q'),
-        color='type',
-        shape='name'
-    )
+    # f.update(mongo_queries.timeframe(timeframe))
+    # st.write("### Comparison to legacy system")
+    # ####
+    # versus = pd.DataFrame(mongo_queries.prepare_legacy_compare(f))
+    # #versus['local_time'] = versus.apply(get_local,axis=1),
+    # versusChart = alt.Chart(versus).mark_line(point=True).encode(
+    #     #alt.X('local_time:T'),
+    #     alt.X('utc:T'),
+    #     alt.Y('wait:Q'),
+    #     color='type',
+    #     shape='name'
+    # )
     
-    st.altair_chart(versusChart, use_container_width=True)
+    # st.altair_chart(versusChart, use_container_width=True)
 
-with st.beta_expander("Metadata"):
+with st.expander("Metadata"):
     st.write("""
         How many calls to the API this month:
     """)
@@ -172,3 +178,51 @@ with st.beta_expander("Metadata"):
     )
     #st.write(daily.dtypes)
     st.altair_chart(chart2, use_container_width=True)
+with st.expander('Traveller'):
+    st.write("## Travellers BWT Example")
+    st.write('#### Note, each run of this is an API call to Google.')
+    gmaps = mongo_queries.gmaps
+    col = mongo_queries.col
+
+
+
+
+
+
+
+    
+
+
+
+
+    use = st.checkbox('Use my current location')
+
+    if not use:
+        start = st.text_input('Start location','Orlando, FL')
+
+
+    stop = st.text_input('Destination in Canada','Laval, QC')
+    when = st.date_input('When are you leaving?',dt.datetime.now())
+    time = st.time_input('At what time?', dt.datetime.now())
+
+    submit = st.button('Estimate')
+    dtime = dt.datetime.combine(when,time)
+
+    if submit:
+        if use:
+            loc = gmaps.geolocate()['location']
+        
+        else:
+            loc = gmaps.geocode(start)[0]['geometry']['location']
+        st.components.v1.iframe(mongo_queries.mapmaker(start = loc, dest =stop,key=mongo_queries.api_key),height=400)
+
+        df = pd.DataFrame(mongo_queries.get_trip_wait(loc,stop,dtime))
+        cols = ['route name', 'crossing name']
+        df
+        st.write('''
+        #### TO-DO
+        - Convert to local time
+        - Fix table height
+        - Fix number formatting
+        - Fix column ordering
+        ''')

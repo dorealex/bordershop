@@ -10,7 +10,7 @@ from datetime import timedelta
 import os
 import pymongo
 import certifi
-
+import googlemaps
 from datetime import timezone
 import pytz
 
@@ -19,12 +19,13 @@ if 'on_heroku' in os.environ:
     on_heroku = True
     cluster_uri = os.environ['cluster_uri']
     cluster = pymongo.MongoClient(cluster_uri)
+    api_key = os.environ['gmaps']
 else:
     import utility_func
-    from config import cluster_uri
+    from config import cluster_uri, api_key
     ca = certifi.where()
     cluster = pymongo.MongoClient(cluster_uri,tlsCAFile=ca)
-
+gmaps = googlemaps.Client(key=api_key)
 db = cluster['bordercross']
 col= db['baseline']
 run = db['running']
@@ -37,10 +38,174 @@ current = db['current_updaters']
 profs = db['profiles']
 leg_map = db['leg_map']
 
+def mapmaker(start,dest,key,crossing=None, day=None,time=None):
+    base = 'https://www.google.com/maps/embed/v1/directions'
+    key = '?key='+key
+    origin = '&origin='+str(start['lat'])+","+str(start['lng'])
+    dest = '&destination='+dest
+    src = base+key+origin+dest
+    html_str = '<iframe width="450" height="250" frameborder="0" style="border:0" src='+src+'</iframe>'
+    #print(src)
+    #return html_str
+    return src
+
+def get_trips(start_location,end_location,utc_start_time=None):
+  #maps out a trip using google maps api
+  #finds when the user is crossing into Canada, returns that GPS coordinate, and when
+  gmaps = googlemaps.Client(key=api_key)
+  trips = []
+  directions = gmaps.directions(origin=start_location, destination=end_location,alternatives=True,departure_time=utc_start_time,)
+  if not utc_start_time:
+    utc_start_time= dt.datetime.utcnow()
+  for r in range(len(directions)):
+    route = directions[r]
+    val = 0
+    duration = 0
+    dist = 0
+    summary = route['summary'] 
+    for l in range(len(route['legs'])):
+      leg = route['legs'][l]
+      dist = dist + leg['distance']['value']/1000 #km
+      duration = duration + leg['distance']['value']/3600 #hours
+      for s in range(len(leg['steps'])):
+        
+        step = leg['steps'][s]
+        val = val + step['duration']['value']
+        #print(r,l,s)
+        instructions = step['html_instructions']
+        if "Entering Canada" in instructions:
+          end_loc = step['end_location']
+          #print(step.keys())
+          lat = end_loc['lat']
+          lng = end_loc['lng']
+          cross_time = utc_start_time + datetime.timedelta(seconds=val)
+          #print(r,l,s,instructions, (lng,lat), cross_time)
+          trips.append({'lat': lat, 'long':lng, 'time_utc':cross_time, 'duration':duration, 'distance':dist, 'summary':summary})
+  if len(trips) == 0:
+    return "Could not find crossing"
+  else:
+    return trips
+
+def lookup_geo(lat,lng):
+  #provide a latitude, longitude, returns crossing nearest, filter set to 10KM
+  q = [
+    {
+        '$geoNear': {
+            'near': {
+                'type': 'Point', 
+                'coordinates': [
+                    lng, lat
+                ]
+            }, 
+            'distanceField': 'distanceCalc', 
+            'maxDistance': 10000, 
+            'query': {}, 
+            'spherical': True
+        }
+    }, {
+        '$sort': {
+            'distanceCalc': 1
+        }
+    }, {
+        '$limit': 1
+    }, {
+        '$project': {
+            'name': 1, 
+            'province': 1, 
+            'location': 1,
+            'id':1,
+            'timezone':'$timeZone',
+            '_id':0
+        }
+    }
+]
+  return list(col.aggregate(q))[0]
+
+def get_avg_wait(id,utc):
+    #provide a crossing ID and a UTC time, returns the average wait time for that location, weekday and hour, based on historical data (all of it)
+    #todo replace with better estimatation model
+    hour = utc.hour
+    dayofweek = utc.date().isoweekday()
+    
+    q = [
+    {
+        '$match': {
+            'id': id
+        }
+    }, {
+        '$project': {
+            'id': 1, 
+            'wait_times': 1
+        }
+    }, {
+        '$unwind': {
+            'path': '$wait_times'
+        }
+    }, {
+        '$project': {
+            'id': 1, 
+            'utc': '$wait_times.utc', 
+            'wait': '$wait_times.wait', 
+            'dayofweek': {
+                '$isoDayOfWeek': '$wait_times.utc'
+            }, 
+            'hour': {
+                '$hour': '$wait_times.utc'
+            }
+        }
+    }, {
+        '$group': {
+            '_id': {
+                'dayofweek': '$dayofweek', 
+                'hour': '$hour'
+            }, 
+            'avg_wait': {
+                '$avg': '$wait'
+            }
+        }
+    }, {
+        '$match': {
+            '_id.dayofweek': dayofweek, 
+            '_id.hour': hour
+        }
+    }
+]
+    return list(col.aggregate(q))[0]['avg_wait']
+
+def get_trip_wait(start_loc,end_loc, start_time=None):
+  #wrapper for the user functions, gets all the trips, the crossings and the wait times returns a list of dicts with the info
+  #todo smart handling, for example, start location must be in USA
+  results= []
+  trips = get_trips(start_location=start_loc, end_location=end_loc,utc_start_time = start_time)
+  for t in trips:
+    
+    crossing = lookup_geo(t['lat'],t['long'])
+    duration = t['duration'],
+    distance = t['distance'],
+    summary = t['summary'],
+    driving_time = duration[0]
+    #driving_time = driving_time - datetime.timedelta(microseconds = driving_time.microseconds)
+
+    time = t['time_utc']
+    id = crossing['id']
+    wait = get_avg_wait(id,time)
+    #wait = datetime.timedelta(seconds=get_avg_wait(id,time))
+    #print(wait)
+    d = {'crossing name':crossing['name'],
+         'province':crossing['province'],
+         'id':id,
+         'timezone':crossing['timezone'],
+         'est. arrival at border (utc)':time,
+         'est. wait at border (s)':wait,
+         'total driving time':driving_time,
+         'total driving distance':distance[0],
+         'route name':summary[0]}
+    results.append(d)
+  return results
 
 def prepare_legacy_compare(f):
     #get regular wait times
-    print(f)
+    #print(f)
     timeframe = f.pop('utc') if 'utc' in f else False
     first = {'$match':f}
     q1 = [first]
@@ -55,20 +220,22 @@ def prepare_legacy_compare(f):
         'timezone': '$timeZone',
         'utc': '$legacy_times.timestamp',
         'wait': '$legacy_times.travellers_seconds',
-        'type': 'legacy'}})
+        'type': 'legacy',
+        '_id':0}})
     q2.append({'$project':{
         'name':1,
         'timezone':'$timeZone',
         'utc':'$wait_times.utc',
         'wait':'$wait_times.wait',
-        'type':'api'
+        'type':'api',
+        '_id':0
     }})
-    print(q1,"\n-----")
+    #print(q1,"\n-----")
     res1 = list(col.aggregate(q1))
-    print(len(res1),"\n-----")
-    print(q2,"\n-----")
+   # print(len(res1),"\n-----")
+   # print(q2,"\n-----")
     res2 = list(col.aggregate(q2))
-    print(len(res2),"\n-----")
+   # print(len(res2),"\n-----")
     
     
     

@@ -50,7 +50,7 @@ Pillow==8.3.1
 prometheus-client==0.11.0
 prompt-toolkit==3.0.19
 protobuf==3.17.3
-pyarrow==4.0.1
+pyarrow
 pycparser==2.20
 pydeck==0.6.2
 Pygments==2.9.0
@@ -63,7 +63,7 @@ requests==2.26.0
 Send2Trash==1.7.1
 six==1.16.0
 smmap==4.0.0
-streamlit==0.84.1
+streamlit
 terminado==0.10.1
 testpath==0.5.0
 toml==0.10.2

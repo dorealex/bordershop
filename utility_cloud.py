@@ -1,11 +1,29 @@
 from datetime import datetime as dt
+from datetime import timezone
+from dateutil import tz
+
+
 import pandas as pd
 
 def get_local(row):
-    utc = row['utc']
-    tz = row['timezone']
+    
+    
+    utc = pd.to_datetime(row['utc'])
+    tzone = row['timezone']
+    # METHOD 1: Hardcode zones:
+    from_zone = tz.gettz('UTC')
+    
+    to_zone = tz.gettz(tzone)
+    
     #df['timestamp'].dt.tz_localize('utc').dt.tz_convert('US/Central')
-    return utc.tz_localize('utc').tz_convert(tz)
+    utc = utc.replace(tzinfo=from_zone)
+    
+    lt = utc.astimezone(to_zone)
+    
+    #lt=utc.tz_localize('utc').tz_convert(tz).isoformat()
+    
+
+    return str(lt)
 
 def return_color(row):
     delay = row['wait']

@@ -4,7 +4,16 @@ from dateutil import tz
 
 
 import pandas as pd
-
+def get_local_one(utc,tzone):
+    #utc = dt(utc)
+    print(type(utc))
+    print(utc)
+    from_zone = tz.gettz('UTC')
+    to_zone = tz.gettz(tzone)
+    utc = utc.replace(tzinfo=from_zone)
+    
+    lt = utc.astimezone(to_zone)
+    return str(lt)
 def get_local(row):
     
     

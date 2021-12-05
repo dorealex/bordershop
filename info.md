@@ -32,7 +32,7 @@ The response provided includes both a "time in traffic" and "time without traffi
 
 
 ## API
-The database of stored wait times is accessible via an API service. Currently, this is hosted on the CBSA AWS environment.
+The database of stored wait times is accessible via an API service. Currently, this is hosted on the CBSA AWS environment. The service could be consumed interally by CBSA, or opened up to other GC orgs, or even the public. The API service is essentially the backbone, providing the data for the various visualizations, apps, and dashboards.
 ## Display
 This app, hosted on Heroku (free-tier) is a simple Python Application using Streamlit as a front-end.
 ### User: Management

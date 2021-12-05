@@ -55,6 +55,8 @@ test_dict = [
 ]
 
 
+
+
 sites = mongo_queries.get_updating_list()
 names = mongo_queries.ids_to_names(sites)
 names = [i['name'] for i in names]
@@ -107,6 +109,10 @@ for n in names:
 
 st.title("Border Wait Times")
 st.markdown("The current ports being polled by the API:\n"+"\n".join(items))
+with st.expander('Details'):
+    md = read_markdown_file("info.md")
+    st.markdown(md)
+
 with st.expander('User: Management'):
     region_sel = st.selectbox('Region',['All']+mongo_queries.get_regions())
     district_sel = st.selectbox('District',['All']+mongo_queries.get_district(region_sel))
@@ -262,9 +268,7 @@ with st.expander('User: Traveller'):
         
         for r in routeinfo:        
             writeRoute(r)
-with st.expander('Details'):
-    md = read_markdown_file("info.md")
-    st.markdown(md)
+
 with st.expander("Metadata"):
     st.write("""
         How many calls to the API this month:

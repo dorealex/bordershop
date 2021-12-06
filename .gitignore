@@ -19,4 +19,4 @@ time_fixer.py
 vis_test.py
 old_loader.py
 test.ipynb
-.ipynb
+*.ipynb

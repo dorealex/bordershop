@@ -38,6 +38,8 @@ current = db['current_updaters']
 profs = db['profiles']
 leg_map = db['leg_map']
 
+
+
 def mapmaker(start,dest,key,crossing=None, day=None,time=None):
     base = 'https://www.google.com/maps/embed/v1/directions'
     key = '?key='+key
@@ -56,7 +58,7 @@ def get_trips(start_location,end_location,utc_start_time=None):
   trips = []
   directions = gmaps.directions(origin=start_location, destination=end_location,alternatives=True,departure_time=utc_start_time,)
   if not utc_start_time:
-    utc_start_time= dt.datetime.utcnow()
+    utc_start_time= dt.utcnow()
   for r in range(len(directions)):
     route = directions[r]
     val = 0
@@ -87,18 +89,16 @@ def get_trips(start_location,end_location,utc_start_time=None):
     return trips
 
 def lookup_geo(lat,lng):
+    #print(lat,lng)
   #provide a latitude, longitude, returns crossing nearest, filter set to 10KM
-  q = [
-    {
-        '$geoNear': {
-            'near': {
-                'type': 'Point', 
-                'coordinates': [
-                    lng, lat
+    q = [{'$geoNear':
+        {'near': {'type': 'Point', 
+            'coordinates': [
+                lng, lat
                 ]
             }, 
             'distanceField': 'distanceCalc', 
-            'maxDistance': 10000, 
+            'maxDistance': 15000, 
             'query': {}, 
             'spherical': True
         }
@@ -117,9 +117,10 @@ def lookup_geo(lat,lng):
             'timezone':'$timeZone',
             '_id':0
         }
-    }
-]
-  return list(col.aggregate(q))[0]
+    }]
+    res = list(col.aggregate(q))[0]
+    #print(res)
+    return res
 
 def get_avg_wait(id,utc):
     #provide a crossing ID and a UTC time, returns the average wait time for that location, weekday and hour, based on historical data (all of it)
@@ -170,7 +171,13 @@ def get_avg_wait(id,utc):
         }
     }
 ]
-    return list(col.aggregate(q))[0]['avg_wait']
+    
+    res = list(col.aggregate(q))
+    if len(res)>0:
+        
+        return res[0]['avg_wait']
+    else:
+        return 0
 
 def get_trip_wait(start_loc,end_loc, start_time=None):
   #wrapper for the user functions, gets all the trips, the crossings and the wait times returns a list of dicts with the info

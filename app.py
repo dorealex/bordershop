@@ -12,7 +12,7 @@ from datetime import timedelta
 from pandas.api.types import CategoricalDtype
 import pydeck as pdk
 from pathlib import Path
-
+from PIL import Image
 import pytz
 
 def read_markdown_file(markdown_file):
@@ -120,9 +120,12 @@ with st.expander('How this works'):
 
      The response provided includes both a "time in traffic" and "time without traffic", for our purposes, the difference between these two is assumed to be the wait time.
     '''
-    st.image('pics\\trip.png')
+    image = Image.open('pics/trip.png')
+
+    st.image(image, caption='Example trip for Ambassador Bridge')
+    
     '''
-     For example, this is the "trip" for Ambassador Bridge.  
+      
      #### Pros:
     - Automated, CBSA staff do not need to provide any input
     - Google Maps is an industry leader and has a lot of data

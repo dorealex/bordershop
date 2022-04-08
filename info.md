@@ -5,7 +5,7 @@ The proposed methodology for this experiment is to use the Google Maps API to es
 
 This is achieved by requesting directions from the Google Maps API service for a trip that starts approximately 1km from the border, on the USA side, with the destination being the CBSA port of entry.
 
-The response provided includes both a "time in traffic" and "time without traffic", for our purposes, the differene between these two is assumed to be the wait time.
+The response provided includes both a "time in traffic" and "time without traffic", for our purposes, the difference between these two is assumed to be the wait time.
 
 #### Pros:
 - Automated, CBSA staff do not need to provide input, around the clock

@@ -107,7 +107,7 @@ for n in names:
 
 
 st.title("Border Wait Times")
-st.markdown('##### !!! Experimental !!!')
+
 st.markdown("The current ports being polled by the API:\n"+"\n".join(items))
 with st.expander('How this works'):
     ''' 

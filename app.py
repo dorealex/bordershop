@@ -350,8 +350,8 @@ with st.expander('User: Management'):
             ####
             versus = pd.DataFrame(mongo_queries.prepare_legacy_compare(f2))
             #versus['local_time'] = versus.apply(get_local,axis=1),
-            f2 
-            versus
+            #f2 
+            #versus
 
             
             

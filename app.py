@@ -120,7 +120,7 @@ with st.expander('How this works'):
 
      The response provided includes both a "time in traffic" and "time without traffic", for our purposes, the difference between these two is assumed to be the wait time.
     '''
-    st.image('pics/trip.png')
+    st.image('pics\\trip.png')
     '''
      For example, this is the "trip" for Ambassador Bridge.  
      #### Pros:
@@ -175,10 +175,10 @@ with st.expander('How this works'):
     5. Distribution
     This is a histogram that shows the distribution of the wait times.
 
-    6. Legacy wait times comparison **(currently disabled)**
+    6. Legacy wait times comparison
     This 2 line graph directly comparing the data we're collecting with what the current wait times are, according to the current CBSA Border Wait times website (https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html).
 
-    This has been disabled for performance reason.
+    
 
 
 
@@ -324,9 +324,17 @@ with st.expander('User: Management'):
         ###
         f.update(mongo_queries.timeframe(timeframe))
         st.write("### Comparison to legacy system")
+        f2 = f
+        f2['id'] = 705
+        if 'name' in f2.keys():
+            f2.pop("name")
         ####
-        versus = pd.DataFrame(mongo_queries.prepare_legacy_compare(f))
+        versus = pd.DataFrame(mongo_queries.prepare_legacy_compare(f2))
         #versus['local_time'] = versus.apply(get_local,axis=1),
+        versus
+
+        
+        
         versusChart = alt.Chart(versus).mark_line(point=True).encode(
             #alt.X('local_time:T'),
             alt.X('utc:T'),

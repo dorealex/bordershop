@@ -317,12 +317,21 @@ with st.expander('User: Management'):
 
         ####
         st.write('### Distribution')
-        histo = alt.Chart(hist).mark_bar().encode(
-            alt.X('wait:Q', bin=True),
-            #y='count()',
-            y=alt.Y('count():Q',stack=None),
-        
+        histo = alt.Chart(hist).transform_joinaggregate(
+        total='count(*)'
+        ).transform_calculate(
+            pct='1 / datum.total'
+        ).mark_bar().encode(
+            alt.X('wait:Q', bin=True,title='Wait time (s)'),
+            alt.Y('sum(pct):Q', axis=alt.Axis(format='%'), title='Percent of count')
         )
+
+        # histo = alt.Chart(hist).mark_bar().encode(
+        #     alt.X('wait:Q', bin=True),
+        #     #y='count()',
+        #     y=alt.Y('count():Q',stack=None),
+        
+        # )
         st.altair_chart(histo, use_container_width=True)
         ###
         f.update(mongo_queries.timeframe(timeframe))
@@ -340,7 +349,7 @@ with st.expander('User: Management'):
         
         versusChart = alt.Chart(versus).mark_line(point=True).encode(
             #alt.X('local_time:T'),
-            alt.X('utc:T'),
+            alt.X('utc:T', title='Date'),
             alt.Y('wait:Q'),
             color='type',
             shape='name'
@@ -355,8 +364,8 @@ with st.expander('User: Traveller'):
     col = mongo_queries.col
     use = st.checkbox('Use my current location')
     if not use:
-        start = st.text_input('Start location','Seattle, WA')
-    stop = st.text_input('Destination in Canada','Vancouver, BC')
+        start = st.text_input('Start location','Philadelphia, PA')
+    stop = st.text_input('Destination in Canada','Peterborough, ON')
     tcol = st.columns(2)
     when = tcol[0].date_input('When are you leaving?',dt.datetime.now())
     time = tcol[1].time_input('Time?', dt.datetime.now())

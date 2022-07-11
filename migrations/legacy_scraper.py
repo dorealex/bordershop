@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import mongo_queries
+import tools.mongo_queries as mongo_queries
 import datetime
 import schedule
 from datetime import timedelta

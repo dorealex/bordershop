@@ -169,7 +169,7 @@ dependencies:
     - service-identity==21.1.0
     - smmap==4.0.0
     - soupsieve==2.2.1
-    - streamlit==0.84.0
+    - streamlit==1.10.0
     - terminado==0.10.1
     - testpath==0.5.0
     - toml==0.10.2

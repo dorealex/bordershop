@@ -21,7 +21,7 @@ if 'on_heroku' in os.environ:
     cluster = pymongo.MongoClient(cluster_uri)
     api_key = os.environ['gmaps']
 else:
-    import utility_func
+    import tools.utility_func
     from config import cluster_uri, api_key
     ca = certifi.where()
     cluster = pymongo.MongoClient(cluster_uri,tlsCAFile=ca)

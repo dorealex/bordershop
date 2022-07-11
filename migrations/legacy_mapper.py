@@ -1,4 +1,4 @@
-import mongo_queries
+import tools.mongo_queries as mongo_queries
 import json
 import pandas as pd
 

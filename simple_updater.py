@@ -5,7 +5,7 @@ import time
 import legacy_scraper
 import pytz
 import utility_func
-import mongo_queries
+import tools.mongo_queries as mongo_queries
 import sys
 
 

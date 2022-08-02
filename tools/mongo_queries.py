@@ -21,7 +21,7 @@ if 'on_heroku' in os.environ:
     cluster = pymongo.MongoClient(cluster_uri)
     api_key = os.environ['gmaps']
 else:
-    import tools.utility_func
+    import tools.utility_func as utility_func
     from config import cluster_uri, api_key
     ca = certifi.where()
     cluster = pymongo.MongoClient(cluster_uri,tlsCAFile=ca)
@@ -37,10 +37,14 @@ lm = db['latest_merged']
 current = db['current_updaters']
 profs = db['profiles']
 leg_map = db['leg_map']
-
-
+controller = db['controller'] # This is the collection of documents that dictates which sites are updated and when
+hist = db['hist']
 
 def mapmaker(start,dest,key,crossing=None, day=None,time=None):
+    #######################################
+    # used in the traveller page          #
+    #######################################
+
     base = 'https://www.google.com/maps/embed/v1/directions'
     key = '?key='+key
     origin = '&origin='+str(start['lat'])+","+str(start['lng'])
@@ -51,9 +55,44 @@ def mapmaker(start,dest,key,crossing=None, day=None,time=None):
     #return html_str
     return src
 
+
+
+def find_latest_from_ID(x,write=True):
+    #goes in the hist collection, finds the latest wait and writes that to the collection (baseline)
+
+    #######################################
+    # used to update the hist coll        #
+    # July 2022, keep for new version     #
+    #######################################
+
+    filter={'id': x}
+    project = {'utc':1,'id':1,'wait':1,'_id':0}
+    sort=list({'utc': -1}.items())
+    limit=1
+    latest = list(hist.find(filter=filter, projection=project,sort=sort, limit=limit))[0]
+    
+    wait = latest['wait']
+    utc = latest['utc']
+    update = {'latest_times':{
+        'utc':utc,
+        'wait':wait
+    }}
+    if write:
+        col.find_one_and_update({'id':x},{'$set':update})
+    else:
+        return latest
+
+
+
+
 def get_trips(start_location,end_location,utc_start_time=None):
   #maps out a trip using google maps api
   #finds when the user is crossing into Canada, returns that GPS coordinate, and when
+
+    #######################################
+    # used in the traveller page          #
+    #######################################
+
   gmaps = googlemaps.Client(key=api_key)
   trips = []
   directions = gmaps.directions(origin=start_location, destination=end_location,alternatives=True,departure_time=utc_start_time,)
@@ -89,8 +128,11 @@ def get_trips(start_location,end_location,utc_start_time=None):
     return trips
 
 def lookup_geo(lat,lng):
-    #print(lat,lng)
-  #provide a latitude, longitude, returns crossing nearest, filter set to 10KM
+
+    #########################################
+    # input: latitude, longitude            #
+    # output: nearest crossing (within 15km)#
+    #########################################
     q = [{'$geoNear':
         {'near': {'type': 'Point', 
             'coordinates': [
@@ -123,8 +165,15 @@ def lookup_geo(lat,lng):
     return res
 
 def get_avg_wait(id,utc):
-    #provide a crossing ID and a UTC time, returns the average wait time for that location, weekday and hour, based on historical data (all of it)
-    #todo replace with better estimatation model
+
+
+    #################################################
+    # input: crossing ID, crossing datetime         #
+    # output: provides estimated wait time          #
+    # todo: replace with better estimation model    #
+    #################################################
+
+
     hour = utc.hour
     dayofweek = utc.date().isoweekday()
     
@@ -180,8 +229,11 @@ def get_avg_wait(id,utc):
         return 0
 
 def get_trip_wait(start_loc,end_loc, start_time=None):
-  #wrapper for the user functions, gets all the trips, the crossings and the wait times returns a list of dicts with the info
-  #todo smart handling, for example, start location must be in USA
+    #################################################################
+    # used in the traveller page                                    #
+    # input: start location (USA) end location (Canada), start time #
+    # output: trips, crossings and estimated wait at crossing       #
+    #################################################################
   results= []
   trips = get_trips(start_location=start_loc, end_location=end_loc,utc_start_time = start_time)
   for t in trips:
@@ -211,8 +263,11 @@ def get_trip_wait(start_loc,end_loc, start_time=None):
   return results
 
 def prepare_legacy_compare(f):
-    #get regular wait times
-    #print(f)
+    #############################################################################
+    #input: a dict which is used to filter the database of legacy wait times    #
+    #output: the legacy wait times                                              #
+    #TODO: update to reflect new structure of db and how times are stored       #
+    #############################################################################
     timeframe = f.pop('utc') if 'utc' in f else False
     first = {'$match':f}
     q1 = [first]
@@ -248,6 +303,86 @@ def prepare_legacy_compare(f):
     
     
     return res1+res2
+
+def crossing_is_due(id):
+    #########################################################
+    # input: crossing id                                    #
+    # lookup in db to find when it was last updated
+    # !!! Pre supposes site is already on the list          #
+    # find out how often it needs to be updated             #
+    # output: whether or not site is due for an update      #
+    #########################################################
+    
+    projection={'_id':0,"wait_times":0,"legacy_times":0} # get rid of all the unnecessary info
+    doc = col.find_one({'id':id},projection)    #find the baseline doc 
+    tz = pytz.timezone(doc['timeZone'])     # timezone of crossing
+    utcmoment_naive = dt.utcnow() #now
+    utcmoment = utcmoment_naive.replace(tzinfo=pytz.utc) #to tz
+    local_dt = utcmoment.astimezone(tz) #convert current UTC time to local time
+    local_time = local_dt.time() # get rid of the date portion
+    time_format = "%H:%M:%S" #time is stored in this format in the db
+    last_time = doc['latest_times']['utc'] # last time this crossing was updated
+    last_time = last_time.replace(tzinfo=pytz.utc)
+    time_since = utcmoment - last_time
+
+    sites = get_current_updaters()['sites'] # go through the control collection to see which sites are being updated and how often
+    due=False # do not update by default
+    for s in sites:
+        
+        if s['id'] == id: #once we find the site we are looking for
+            
+            segments = s['segments'] 
+            for e in segments: # loop through all the segments
+                start = dt.strptime(e['start'],time_format).time() #figure out if we are in this segment
+                end = dt.strptime(e['end'],time_format).time()
+                if start <= local_time <= end:
+                    rate = e['rate'] # get the rate in minutes
+                    if time_since>=timedelta(seconds=rate*60): # convert to seconds
+                        due=True
+            
+    return due
+
+def get_current_updaters(full=True):
+    #####################################################################################
+    #input: whether you want the full segment details of the sites being updated or not #
+    #output: the data regarding which sites are being updated                           #
+    #####################################################################################
+
+    ### part of July 2022 update, multipage setup
+    ### this will be used
+    #get a list of dict of the currently updating sites
+    #format
+    # {'utc': datetime,
+    #   'sites': [
+    #       {'id': int,
+    #       'segments':[
+    #           {'start':strftime,'end':strftime, 'rate':int} ### rate in number of minutes
+    #           ]
+    #       }
+    #   ]
+    # }
+
+
+
+    filter={}
+    sort=list({
+        'utc': -1
+    }.items())
+    limit=1
+    project={'_id':0}
+    result = controller.find(
+    filter=filter,
+    sort=sort,
+    limit=limit,
+    projection=project
+    )
+    result = list(result)[0]
+    if full:
+        return result
+    else:
+        return [s['id'] for s in result['sites']]
+
+
 
 
 def legacy_name_to_id(name):

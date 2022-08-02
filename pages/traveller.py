@@ -3,28 +3,13 @@ import streamlit as st
 import pytz
 import datetime as dt
 import tools.mongo_queries as mongo_queries
-from tools.utility_cloud import get_local_one
+from tools.utility_cloud import formatWait, get_local_one
 
 
 
 st.markdown("# Traveller Use Case")
 st.sidebar.markdown("# Traveller Use Case")
-def formatWait(wait):
-    wait = int(wait)
-    hours = 0
-    minutes = 0
-    if wait > 60:
-        minutes = wait // 60
-        wait -= minutes * 60
-    if minutes > 60:
-        hours = minutes // 60
-        minutes -= hours * 60
-    result = f'{hours}h ' if hours > 0 else ""
-    if minutes > 0:
-        result = result + str(minutes)+"m "
-    if wait > 0:
-        result = result + str(wait)+"s "
-    return result
+
 def writeRoute(route):
     name = route['crossing name']   #1
     prov = route['province']            #2

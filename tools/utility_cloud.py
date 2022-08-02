@@ -52,3 +52,20 @@ def make_coords(row):
     if type(lon) == str:
         lon = float(lon)
     return (lon,lat)
+
+def formatWait(wait):
+    wait = int(wait)
+    hours = 0
+    minutes = 0
+    if wait > 60:
+        minutes = wait // 60
+        wait -= minutes * 60
+    if minutes > 60:
+        hours = minutes // 60
+        minutes -= hours * 60
+    result = f'{hours}h ' if hours > 0 else ""
+    if minutes > 0:
+        result = result + str(minutes)+"m "
+    if wait > 0:
+        result = result + str(wait)+"s "
+    return result

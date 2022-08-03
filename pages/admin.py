@@ -104,8 +104,8 @@ if 'sites' not in st.session_state:
     st.session_state['sites'] = []
 
 if 'on_heroku' in os.environ:
-    admin_code = st.text_input("Code")
-    submit_adm = st.button("Submit")
+    admin_code = st.sidebar.text_input("Code")
+    submit_adm = st.sidebar.button("Submit")
     if submit_adm:
         if os.environ['admin_pass'] == admin_code: cleared = True
 

@@ -21,7 +21,7 @@ if 'on_heroku' in os.environ:
     cluster = pymongo.MongoClient(cluster_uri)
     api_key = os.environ['gmaps']
 else:
-    import utility_func
+    import tools.utility_func as utility_func
     from config import cluster_uri, api_key
     ca = certifi.where()
     cluster = pymongo.MongoClient(cluster_uri,tlsCAFile=ca)
@@ -37,10 +37,20 @@ lm = db['latest_merged']
 current = db['current_updaters']
 profs = db['profiles']
 leg_map = db['leg_map']
+controller = db['controller'] # This is the collection of documents that dictates which sites are updated and when
+hist = db['hist']
+leg_hist = db['legacy_hist']
 
+def write_config(doc):
+    # insert document in the controller database
+    controller.insert_one(doc)
 
 
 def mapmaker(start,dest,key,crossing=None, day=None,time=None):
+    #######################################
+    # used in the traveller page          #
+    #######################################
+
     base = 'https://www.google.com/maps/embed/v1/directions'
     key = '?key='+key
     origin = '&origin='+str(start['lat'])+","+str(start['lng'])
@@ -51,9 +61,45 @@ def mapmaker(start,dest,key,crossing=None, day=None,time=None):
     #return html_str
     return src
 
+
+
+def find_latest_from_ID(x,write=True):
+    #goes in the hist collection, finds the latest wait and writes that to the collection (baseline)
+
+    #########################################
+    # input: x is the id as integer         #
+    # used to update the hist coll          #
+    # July 2022, keep for new version       #
+    #########################################
+
+    filter={'id': x}
+    project = {'utc':1,'id':1,'wait':1,'_id':0}
+    sort=list({'utc': -1}.items())
+    limit=1
+    latest = list(hist.find(filter=filter, projection=project,sort=sort, limit=limit))[0]
+    
+    wait = latest['wait']
+    utc = latest['utc']
+    update = {'latest_times':{
+        'utc':utc,
+        'wait':wait
+    }}
+    if write:
+        col.find_one_and_update({'id':x},{'$set':update})
+    else:
+        return latest
+
+
+
+
 def get_trips(start_location,end_location,utc_start_time=None):
   #maps out a trip using google maps api
   #finds when the user is crossing into Canada, returns that GPS coordinate, and when
+
+    #######################################
+    # used in the traveller page          #
+    #######################################
+
   gmaps = googlemaps.Client(key=api_key)
   trips = []
   directions = gmaps.directions(origin=start_location, destination=end_location,alternatives=True,departure_time=utc_start_time,)
@@ -89,8 +135,11 @@ def get_trips(start_location,end_location,utc_start_time=None):
     return trips
 
 def lookup_geo(lat,lng):
-    #print(lat,lng)
-  #provide a latitude, longitude, returns crossing nearest, filter set to 10KM
+
+    #########################################
+    # input: latitude, longitude            #
+    # output: nearest crossing (within 15km)#
+    #########################################
     q = [{'$geoNear':
         {'near': {'type': 'Point', 
             'coordinates': [
@@ -123,35 +172,74 @@ def lookup_geo(lat,lng):
     return res
 
 def get_avg_wait(id,utc):
-    #provide a crossing ID and a UTC time, returns the average wait time for that location, weekday and hour, based on historical data (all of it)
-    #todo replace with better estimatation model
+
+
+    #################################################
+    # input: crossing ID, crossing datetime         #
+    # output: provides estimated wait time          #
+    # todo: lookup new data                         #
+    # replace with better estimation model          #
+    #################################################
+
+
     hour = utc.hour
     dayofweek = utc.date().isoweekday()
-    
-    q = [
+    #print(id, hour, dayofweek)
+#     q = [
+#     {
+#         '$match': {
+#             'id': id
+#         }
+#     }, {
+#         '$project': {
+#             'id': 1, 
+#             'wait_times': 1
+#         }
+#     }, {
+#         '$unwind': {
+#             'path': '$wait_times'
+#         }
+#     }, {
+#         '$project': {
+#             'id': 1, 
+#             'utc': '$wait_times.utc', 
+#             'wait': '$wait_times.wait', 
+#             'dayofweek': {
+#                 '$isoDayOfWeek': '$wait_times.utc'
+#             }, 
+#             'hour': {
+#                 '$hour': '$wait_times.utc'
+#             }
+#         }
+#     }, {
+#         '$group': {
+#             '_id': {
+#                 'dayofweek': '$dayofweek', 
+#                 'hour': '$hour'
+#             }, 
+#             'avg_wait': {
+#                 '$avg': '$wait'
+#             }
+#         }
+#     }, {
+#         '$match': {
+#             '_id.dayofweek': dayofweek, 
+#             '_id.hour': hour
+#         }
+#     }
+# ]
+    q=[
     {
         '$match': {
             'id': id
         }
     }, {
-        '$project': {
-            'id': 1, 
-            'wait_times': 1
-        }
-    }, {
-        '$unwind': {
-            'path': '$wait_times'
-        }
-    }, {
-        '$project': {
-            'id': 1, 
-            'utc': '$wait_times.utc', 
-            'wait': '$wait_times.wait', 
+        '$addFields': {
             'dayofweek': {
-                '$isoDayOfWeek': '$wait_times.utc'
+                '$isoDayOfWeek': '$utc'
             }, 
             'hour': {
-                '$hour': '$wait_times.utc'
+                '$hour': '$utc'
             }
         }
     }, {
@@ -165,14 +253,13 @@ def get_avg_wait(id,utc):
             }
         }
     }, {
-        '$match': {
+        '$match':{
             '_id.dayofweek': dayofweek, 
-            '_id.hour': hour
-        }
-    }
+            '_id.hour': hour}}
 ]
     
-    res = list(col.aggregate(q))
+    res = list(hist.aggregate(q))
+
     if len(res)>0:
         
         return res[0]['avg_wait']
@@ -180,8 +267,11 @@ def get_avg_wait(id,utc):
         return 0
 
 def get_trip_wait(start_loc,end_loc, start_time=None):
-  #wrapper for the user functions, gets all the trips, the crossings and the wait times returns a list of dicts with the info
-  #todo smart handling, for example, start location must be in USA
+    #################################################################
+    # used in the traveller page                                    #
+    # input: start location (USA) end location (Canada), start time #
+    # output: trips, crossings and estimated wait at crossing       #
+    #################################################################
   results= []
   trips = get_trips(start_location=start_loc, end_location=end_loc,utc_start_time = start_time)
   for t in trips:
@@ -209,10 +299,41 @@ def get_trip_wait(start_loc,end_loc, start_time=None):
          'route name':summary[0]}
     results.append(d)
   return results
+def legacy_versus_api(f):
+    timeframe = f.pop('utc') if 'utc' in f else False
+    
+    if 'id' in f.keys(): name = ids_to_names(f['id'])[0]['name']
+    
+    base_q = [{"$match":f},{'$project':{'_id':0}}]
+    if timeframe: base_q.append({"$match":{'utc':timeframe}})
+    leg_q = base_q + [
+        {"$addFields":{
+            "wait": {"$max":[0,"$legacy_com","$legacy_trav"]},
+            "type":"legacy",
+            "name":name}
 
+        },
+
+    ]
+
+    hist_q = base_q + [
+        {'$addFields':{
+            "type":"API",
+            "name": name
+        }}
+    ]
+
+    
+    res1 = list(leg_hist.aggregate(leg_q))
+    res2 = list(hist.aggregate(hist_q))
+    
+    return  res1 + res2
 def prepare_legacy_compare(f):
-    #get regular wait times
-    #print(f)
+    #############################################################################
+    #input: a dict which is used to filter the database of legacy wait times    #
+    #output: the legacy wait times                                              #
+    #TODO: update to reflect new structure of db and how times are stored       #
+    #############################################################################
     timeframe = f.pop('utc') if 'utc' in f else False
     first = {'$match':f}
     q1 = [first]
@@ -248,6 +369,106 @@ def prepare_legacy_compare(f):
     
     
     return res1+res2
+
+def crossing_is_due(id,details=False):
+    #########################################################
+    # input: crossing id                                    #
+    # lookup in db to find when it was last updated
+    # !!! Pre supposes site is already on the list          #
+    # find out how often it needs to be updated             #
+    # output: whether or not site is due for an update      #
+    #########################################################
+    
+    projection={'_id':0,"wait_times":0,"legacy_times":0} # get rid of all the unnecessary info
+    doc = col.find_one({'id':id},projection)    #find the baseline doc 
+    tz = pytz.timezone(doc['timeZone'])     # timezone of crossing
+    utcmoment_naive = dt.utcnow() #now
+    utcmoment = utcmoment_naive.replace(tzinfo=pytz.utc) #to tz
+    local_dt = utcmoment.astimezone(tz) #convert current UTC time to local time
+    local_time = local_dt.time() # get rid of the date portion
+    time_format = "%H:%M:%S" #time is stored in this format in the db
+    last_time = doc['latest_times']['utc'] # last time this crossing was updated
+    last_time = last_time.replace(tzinfo=pytz.utc)
+    time_since = utcmoment - last_time
+    rate=0
+    sites = get_current_updaters()['sites'] # go through the control collection to see which sites are being updated and how often
+    due=False # do not update by default
+    for s in sites:
+        
+        if s['id'] == id: #once we find the site we are looking for
+            
+            segments = s['segments'] 
+            for e in segments: # loop through all the segments
+                start = dt.strptime(e['start'],time_format).time() #figure out if we are in this segment
+                end = dt.strptime(e['end'],time_format).time()
+                if start <= local_time <= end:
+                    rate = e['rate'] # get the rate in minutes
+                    if time_since>=timedelta(seconds=rate*60): # convert to seconds
+                        due=True
+            
+    if details: 
+        return due, time_since, rate
+    else: return due
+    
+def get_current_deadline():
+    #get the date on which this is supposed to stop the script
+    filter={}
+    sort=list({
+        'utc': -1
+    }.items())
+    limit=1
+    project={'_id':0}
+    result = controller.find(
+    filter=filter,
+    sort=sort,
+    limit=limit,
+    projection=project
+    )
+    result = list(result)[0]
+    return result['until_date']
+def get_current_updaters(full=True):
+    #####################################################################################
+    #input: whether you want the full segment details of the sites being updated or not #
+    #output: the data regarding which sites are being updated                           #
+    #####################################################################################
+
+    ### part of July 2022 update, multipage setup
+    ### this will be used
+    #get a list of dict of the currently updating sites
+    #format
+    # {'utc': datetime,
+    #   'sites': [
+    #       {'id': int,
+    #       'segments':[
+    #           {'start':strftime,'end':strftime, 'rate':int} ### rate in number of minutes
+    #           ]
+    #       }
+    #   ]
+    # }
+
+    ### TODO: misleading, this just brings up the latest sites, even if it is past the deadline
+
+
+
+    filter={}
+    sort=list({
+        'utc': -1
+    }.items())
+    limit=1
+    project={'_id':0}
+    result = controller.find(
+    filter=filter,
+    sort=sort,
+    limit=limit,
+    projection=project
+    )
+    result = list(result)[0]
+    if full:
+        return result
+    else:
+        return [s['id'] for s in result['sites']]
+
+
 
 
 def legacy_name_to_id(name):
@@ -295,6 +516,25 @@ def get_poll_rate(profile, local_time):
         return default #if for whatever reason there was no time match
     except KeyError:
         return default
+def get_historical_data(f):
+    timeframe = f.pop('utc') if 'utc' in f else False 
+    q = [
+    {
+        '$match':f
+    }, {
+        '$project':{
+            'timezone':"$timeZone",
+            'utc':1,
+            'wait':1,
+            '_id':0
+        }
+    }
+    ]
+    if timeframe:
+            q.append({'$match': {'utc':timeframe}})
+    res = hist.aggregate(q)
+    
+    return list(res)
 def get_hist_data(f):
     #print(f)
     timeframe = f.pop('utc') if 'utc' in f else False 
@@ -322,8 +562,96 @@ def get_hist_data(f):
     #print(q)
     
     return list(res)
+def get_latest_times(f):
+    timeframe = f.pop('utc') if 'utc' in f else False
+    q=[
+        {
+            '$match': f
+        },  {
+            '$project': {
+            '_id': 0, 
+            'utc': '$latest_times.utc', 
+            'wait': '$latest_times.wait', 
+            '_id': '$id', 
+            'name': 1, 
+            'province': 1, 
+            'dest': 1, 
+            'origin': 1, 
+            'timezone': '$timeZone', 
+            'region': 1, 
+            'district': 1, 
+            'profile': 1 
+            }
+        }]
+    if timeframe:
+        q.append({'$match': {'utc':timeframe}})
 
+    tail = [{
+            '$lookup': {
+                'from': 'baseline', 
+                'localField': '_id', 
+                'foreignField': 'id', 
+                'as': 'string'
+            }
+        }, {
+            '$project': {
+                '_id': {
+                    '$arrayElemAt': [
+                        '$string.id', 0
+                    ]
+                }, 
+                'name': {
+                    '$arrayElemAt': [
+                        '$string.name', 0
+                    ]
+                }, 
+                'province': {
+                    '$arrayElemAt': [
+                        '$string.province', 0
+                    ]
+                }, 
+                'dest': {
+                    '$arrayElemAt': [
+                        '$string.dest', 0
+                    ]
+                }, 
+                'origin': {
+                    '$arrayElemAt': [
+                        '$string.origin', 0
+                    ]
+                }, 
+                'timezone': {
+                    '$arrayElemAt': [
+                        '$string.timeZone', 0
+                    ]
+                }, 
+                'region': {
+                    '$arrayElemAt': [
+                        '$string.region', 0
+                    ]
+                }, 
+                'district': {
+                    '$arrayElemAt': [
+                        '$string.region', 0
+                    ]
+                }, 
+                'profile': {
+                    '$arrayElemAt': [
+                        '$string.profile', 0
+                    ]
+                }, 
+                'utc': 1, 
+                'wait': 1
+            }
+        }
+    ]
+
+    q.extend(tail)
+    #print(q)
+    res = col.aggregate(q,allowDiskUse=True)
+    return list(res)
 def get_last_run_by_filter(f,req = None):
+    
     timeframe = f.pop('utc') if 'utc' in f else False
     q=[
         {
@@ -459,7 +787,7 @@ def get_last_run_base(id, req = None):
         return utc.astimezone(pytz.timezone(local_tz))
     else:
         return res
-def ids_to_names(ids):
+def ids_to_names(ids,include_number=False):
     if type(ids) != list:
         ids = [ids]
     return list(col.find({'id':{'$in':ids}},projection={'name':1, '_id':0}))
@@ -787,16 +1115,23 @@ merge_running_timezones = [
 def mongo_setup():
     return db, db.list_collections()
 
-def add_one_base(r,id):
+def add_one_base(r,x):
     ###DB RESET FRIENDLY
     #r is the request
+    #x is the doc from baseline
     #id is the crossing id as an integer, from the baseline collection, ex 817 -> Abbotsford
+    id = x['id']
     traffic = utility_func.get_traffic_time(r.json())
     baseline = utility_func.get_baseline_time(r.json())
     wait = max(0,traffic-baseline)
     utc_time = utility_func.round_to_10min(dt.now(tz=timezone.utc))
-    doc = {'utc':utc_time,'wait':wait}
-    col.update_one({'id':id},{'$push':{'wait_times':doc}})
+    doc = {'utc':utc_time,'wait':wait, 'id':id,'timeZone':x['timeZone']}
+    #col.update_one({'id':id},{'$push':{'wait_times':doc}}) # deprecated
+    #update col
+    #add hist
+    hist.insert_one(doc)
+    find_latest_from_ID(id)
+    
 
 def add_one_log(r,id):
     traffic = utility_func.get_traffic_time(r.json())

@@ -6,8 +6,8 @@ from dateutil import tz
 import pandas as pd
 def get_local_one(utc,tzone):
     #utc = dt(utc)
-    print(type(utc))
-    print(utc)
+    #print(type(utc))
+    #print(utc)
     from_zone = tz.gettz('UTC')
     to_zone = tz.gettz(tzone)
     utc = utc.replace(tzinfo=from_zone)
@@ -15,6 +15,7 @@ def get_local_one(utc,tzone):
     lt = utc.astimezone(to_zone)
     return str(lt)
 def get_local(row):
+    
     
     
     utc = pd.to_datetime(row['utc'])
@@ -34,6 +35,7 @@ def get_local(row):
 
     return str(lt)
 
+
 def return_color(row):
     delay = row['wait']
     if 0<= delay < (3*60):
@@ -52,3 +54,20 @@ def make_coords(row):
     if type(lon) == str:
         lon = float(lon)
     return (lon,lat)
+
+def formatWait(wait):
+    wait = int(wait)
+    hours = 0
+    minutes = 0
+    if wait > 60:
+        minutes = wait // 60
+        wait -= minutes * 60
+    if minutes > 60:
+        hours = minutes // 60
+        minutes -= hours * 60
+    result = f'{hours}h ' if hours > 0 else ""
+    if minutes > 0:
+        result = result + str(minutes)+"m "
+    if wait > 0:
+        result = result + str(wait)+"s "
+    return result

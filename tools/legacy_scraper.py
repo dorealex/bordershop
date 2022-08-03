@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import mongo_queries
+import tools.mongo_queries as mongo_queries
 import datetime
 import schedule
 from datetime import timedelta
@@ -72,6 +72,7 @@ def main():
     wait = int(df['travellers_seconds'].iloc[i])
     doc = {'timestamp':timestamp,'travellers_seconds':wait}
     #print(id, office, wait)
+    
     mongo_queries.col.update_one({"id":id}, {'$push':{'legacy_times':doc}})
   #mongo_queries.legacy_add(df.to_dict('records'))
   #print(df)

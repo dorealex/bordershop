@@ -2,10 +2,10 @@ import datetime
 import schedule
 from datetime import timedelta
 import time
-import legacy_scraper
+import tools.legacy_scraper as legacy_scraper
 import pytz
-import utility_func
-import mongo_queries
+import tools.utility_func as utility_func
+import tools.mongo_queries as mongo_queries
 import sys
 
 
@@ -42,8 +42,8 @@ if __name__ == "__main__":
     count = mongo_queries.queries_this_month_base()
     if count >= 15500: ###TODO remove once debug is over
         print("Free-tier monthly limit reached")
-        with open("error_log_updater.txt","a") as f:
-                f.write('Free-tier monthly limit reached')
+        with open("error_log_updater.txt","a") as fil:
+            fil.write(f'{datetime.datetime.now()}: Free-tier monthly limit reached')
         schedule.jobs.clear()
         sys.exit()
     main()

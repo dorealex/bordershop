@@ -1,0 +1,12 @@
+## Script
+- A very light script runs every minute.
+- Each minute, it looks up which sites are to be updated.
+- For each site identified, it looks up which "profile" it belongs to
+    - A profile determines how often a location is polled for wait times
+    - These profiles can be defined by hour, for example:
+        - From 12:00 AM to 7:00 AM, poll at a reduced rate
+        - From 7:00 AM to 7:00 PM, poll often
+        - From 7:00 PM to 12:00 AM, poll at a reduced rate
+    - More complex profiles (based on weekdays, month for example) are possible but not currently implemented.
+- If this location is due to be polled based on the profile, the request is sent to Google to estimate the wait times.
+- The result is stored in a database (currently: MongoDB Cloud Atlas DB, free-tier)

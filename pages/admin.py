@@ -10,10 +10,11 @@ st.markdown("# Admin")
 st.sidebar.markdown("# Admin")
 
 on_heroku=False
+cleared = False
 if 'on_heroku' in os.environ:
 
     on_heroku = True
-    cleared = False
+    
     cluster_uri = os.environ['cluster_uri']
     cluster = pymongo.MongoClient(cluster_uri)
     api_key = os.environ['gmaps']
@@ -108,36 +109,36 @@ if 'on_heroku' in os.environ:
     submit_adm = st.sidebar.button("Submit")
     if submit_adm:
         if os.environ['admin_pass'] == admin_code: cleared = True
+    
 
-if cleared:
 
-    st.session_state.doc['utc'] = dt.datetime.utcnow()
+st.session_state.doc['utc'] = dt.datetime.utcnow()
 
-    id_input = st.number_input('Crossing ID',1,1000,427,1)
-    #todo error catching
-    #todo bulk entries
-    peak_rate = st.number_input('Peak rate (minutes between updates)',1,60,10,1)
-    offpeak_rate = st.number_input('Off Peak rate (minutes between updates)',1,60,20,1)
-    slider_range = st.slider("Peak Time (local time)",dt.time(0,0),dt.time(23,59),value=[dt.time(7,0),dt.time(19,0)])
-    segments = make_segments(slider_range[0],slider_range[1],offpeak_rate,peak_rate)
-    add = st.button('Add crossing to updating list', key=None, help=None, on_click=None, args=None, kwargs=None, disabled=False)
-    date_until = st.date_input("Run script until",dt.datetime.utcnow() + dt.timedelta(days=7))
-    cols = ['Time', 'Calls', 'Total Estimate']
-    times = ['Daily', 'Weekly', 'Monthly', 'Yearly','Target End']
+id_input = st.number_input('Crossing ID',1,1000,427,1)
+#todo error catching
+#todo bulk entries
+peak_rate = st.number_input('Peak rate (minutes between updates)',1,60,10,1)
+offpeak_rate = st.number_input('Off Peak rate (minutes between updates)',1,60,20,1)
+slider_range = st.slider("Peak Time (local time)",dt.time(0,0),dt.time(23,59),value=[dt.time(7,0),dt.time(19,0)])
+segments = make_segments(slider_range[0],slider_range[1],offpeak_rate,peak_rate)
+add = st.button('Add crossing to updating list', key=None, help=None, on_click=None, args=None, kwargs=None, disabled=False)
+date_until = st.date_input("Run script until",dt.datetime.utcnow() + dt.timedelta(days=7))
+cols = ['Time', 'Calls', 'Total Estimate']
+times = ['Daily', 'Weekly', 'Monthly', 'Yearly','Target End']
 
-    if add:
-        site = {'id':id_input,'segments':segments}
-        st.session_state.sites = st.session_state.sites + [site]
-        st.dataframe(costing_table({'until_date':date_until,'sites':st.session_state.sites}))
+if add:
+    site = {'id':id_input,'segments':segments}
+    st.session_state.sites = st.session_state.sites + [site]
+    st.dataframe(costing_table({'until_date':date_until,'sites':st.session_state.sites}))
 
-    st.session_state.doc['sites']= st.session_state.sites
+st.session_state.doc['sites']= st.session_state.sites
 
-    st.session_state.doc['until_date']= dt.datetime(date_until.year,date_until.month,date_until.day)
-    with st.expander("Doc contructed:"):
+st.session_state.doc['until_date']= dt.datetime(date_until.year,date_until.month,date_until.day)
+with st.expander("Doc contructed:"):
 
-        st.session_state.doc
+    st.session_state.doc
 
-    write = st.button("Write to DB")
-    if write:
-        mongo_queries.write_config(st.session_state.doc)
-        st.session_state.doc = {}
+write = st.button("Write to DB",disabled= not cleared)
+if write:
+    mongo_queries.write_config(st.session_state.doc)
+    st.session_state.doc = {}

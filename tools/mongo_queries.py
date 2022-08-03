@@ -516,6 +516,32 @@ def get_poll_rate(profile, local_time):
         return default #if for whatever reason there was no time match
     except KeyError:
         return default
+def fix_filter(f):
+    res = False
+    #takes in a filter (dict) which may have regions, districts, names
+    #outputs filter with ids only
+    if 'name' in f.keys():
+        
+        res = [col.find_one({'name':f['name']},projection={'id':1,"_id":0})['id']]
+        f.pop('name')
+        if 'region' in f.keys(): f.pop('region')
+        if 'district' in f.keys(): f.pop('district')
+    elif 'district' in f.keys() or 'region' in f.keys():
+        if 'district' in f.keys():
+            k='district'
+            if 'region' in f.keys():
+                f.pop('region')
+        elif 'region' in f.keys():
+            k='region'
+        v= f[k]
+        res = list(col.find({k:v},projection={'id':1,"_id":0}))
+        res = [i['id'] for i in res]
+        f.pop(k)  
+        
+    if res:
+        f['id'] = {"$in":res}
+    return f
+
 def get_historical_data(f):
     timeframe = f.pop('utc') if 'utc' in f else False 
     q = [

@@ -114,6 +114,8 @@ if refresh:
         
         f.update(mongo_queries.timeframe(timeframe))
         
+        f = mongo_queries.fix_filter(f)
+        
         hist = pd.DataFrame(mongo_queries.get_historical_data(f)) # get the data #update this
         
         #hist = pd.DataFrame(mongo_queries.get_hist_data(f)) # get the data #update this

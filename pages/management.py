@@ -7,7 +7,7 @@ import pydeck as pdk
 from altair.vegalite.v4.schema.channels import Tooltip
 from altair.vegalite.v4.schema.core import Projection
 import altair as alt
-
+import datetime as dt
 import tools.mongo_queries as mongo_queries
 from tools.utility_cloud import get_local, return_color, make_coords, get_local_one
 
@@ -166,6 +166,10 @@ if refresh:
         f2 = f
         f2['id'] = 705
         pops = ['region', 'district', 'name']
+        
+        d1 = dt.datetime(2021,9,1)
+        d2 = dt.datetime(2022,1,1)
+        f2['utc'] = {'$gte':d1,'$lte':d2}
         for p in pops:
             if p in f2.keys():
                 f2.pop(p)

@@ -25,10 +25,10 @@ def main():
             mongo_queries.add_one_base(r,x)
         else:
             print(f"{s} is not due, skipping. Time since: {time_since}. Current poll rate: {rate}")
-    try:
-        #legacy_scraper.main()
-    except:
-        print("Legacy scrape failed")
+    # try:
+    #     #legacy_scraper.main()
+    # except:
+    #     print("Legacy scrape failed")
     print("=================================")
 
 if __name__ == "__main__":

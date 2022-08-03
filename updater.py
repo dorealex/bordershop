@@ -2,7 +2,7 @@ import datetime as dt
 import schedule
 from datetime import timedelta,timezone
 import time
-import legacy_scraper
+#import tools.legacy_scraper
 
 import tools.utility_func as utility_func
 import tools.mongo_queries as mongo_queries
@@ -26,7 +26,7 @@ def main():
         else:
             print(f"{s} is not due, skipping. Time since: {time_since}. Current poll rate: {rate}")
     try:
-        legacy_scraper.main()
+        #legacy_scraper.main()
     except:
         print("Legacy scrape failed")
     print("=================================")

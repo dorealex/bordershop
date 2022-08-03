@@ -6,8 +6,8 @@ from dateutil import tz
 import pandas as pd
 def get_local_one(utc,tzone):
     #utc = dt(utc)
-    print(type(utc))
-    print(utc)
+    #print(type(utc))
+    #print(utc)
     from_zone = tz.gettz('UTC')
     to_zone = tz.gettz(tzone)
     utc = utc.replace(tzinfo=from_zone)
@@ -15,6 +15,7 @@ def get_local_one(utc,tzone):
     lt = utc.astimezone(to_zone)
     return str(lt)
 def get_local(row):
+    
     
     
     utc = pd.to_datetime(row['utc'])
@@ -33,6 +34,7 @@ def get_local(row):
     
 
     return str(lt)
+
 
 def return_color(row):
     delay = row['wait']

@@ -72,6 +72,7 @@ def main():
     wait = int(df['travellers_seconds'].iloc[i])
     doc = {'timestamp':timestamp,'travellers_seconds':wait}
     #print(id, office, wait)
+    
     mongo_queries.col.update_one({"id":id}, {'$push':{'legacy_times':doc}})
   #mongo_queries.legacy_add(df.to_dict('records'))
   #print(df)

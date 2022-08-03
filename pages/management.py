@@ -13,11 +13,16 @@ from tools.utility_cloud import get_local, return_color, make_coords, get_local_
 
 
 
+
+
+
+########################################
+#OLD METHOD
 st.markdown("# Management Use Case")
 st.sidebar.markdown("# Management Use Case")
 
+sites = mongo_queries.get_current_updaters(False)
 
-sites = mongo_queries.get_updating_list()
 names = mongo_queries.ids_to_names(sites)
 names = [i['name'] for i in names]
 items = []
@@ -55,9 +60,11 @@ if refresh:
             zoom=10
             f.update({'name':port_sel})
     f.update(mongo_queries.timeframe(timeframe))
-
-
-    data = mongo_queries.get_last_run_by_filter(f)
+    
+    #data = mongo_queries.get_last_run_by_filter(f) #deprecated
+    
+    data = mongo_queries.get_latest_times(f)
+    
     #catch empty data
     if not data:
         st.write('No data available')
@@ -107,7 +114,10 @@ if refresh:
         
         f.update(mongo_queries.timeframe(timeframe))
         
-        hist = pd.DataFrame(mongo_queries.get_hist_data(f)) # get the data
+        hist = pd.DataFrame(mongo_queries.get_historical_data(f)) # get the data #update this
+        
+        #hist = pd.DataFrame(mongo_queries.get_hist_data(f)) # get the data #update this
+        
         hist['utc'] = hist['utc'].dt.tz_localize('UTC')
         hist['local_time'] = hist.apply(get_local,axis=1) # convert UTC to local time
         
@@ -157,12 +167,16 @@ if refresh:
         for p in pops:
             if p in f2.keys():
                 f2.pop(p)
-
+        
         ####
-        versus = pd.DataFrame(mongo_queries.prepare_legacy_compare(f2))
+        data_comp = mongo_queries.legacy_versus_api(f2)
+
+        
+        versus = pd.DataFrame(data_comp)
+ 
         #versus['local_time'] = versus.apply(get_local,axis=1),
-        #f2 
-        #versus
+        
+        
 
         
         

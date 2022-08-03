@@ -36,8 +36,8 @@ if __name__ == "__main__":
     res = mongo_queries.get_current_updaters()
     stop_date = res['until_date'] if 'until_date' in res.keys() else dt.utcnow()+timedelta(days=4)
     
-    numdays = dt.datetime.utcnow() - stop_date
-    
+    numdays = stop_date - dt.datetime.utcnow()
+    print(numdays)
     
     schedule.every(1).minutes.until(timedelta(days=numdays.days)).do(main)
     while True:

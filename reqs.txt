@@ -84,7 +84,7 @@ Send2Trash==1.7.1
 Shapely==1.7.1
 six @ file:///tmp/build/80754af9/six_1623709665295/work
 smmap==4.0.0
-streamlit==1.10.0
+streamlit==1.11.1
 terminado==0.10.1
 testpath==0.5.0
 toml==0.10.2
